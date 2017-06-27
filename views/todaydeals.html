@@ -1,0 +1,228 @@
+<div class="wrap">
+   <!-- Static navbar -->
+   <section class="top" id="top-header">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
+            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="">Login / Signup</a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> (<span class="cart-value"> 0</span> )</a></div>
+         </div>
+      </div>
+   </section>
+   <header class="header">
+      <nav class="navbar navbar-default">
+         <div class="container">
+            <div class="row">
+               <div class="col-xs-12 ">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                     <a class="navbar-brand" href="#/"></a>
+                     <figure> </figure>
+                     </a>
+                  </div>
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li class="active"><a href="#/todaydeals">Today's Deals</a></li>
+                        <li><a href="#">Buy/Sell</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li class="store"><a href="#">Our Store</a></li>
+                        <li><a href="#">My Account</a></li>
+                        <li>
+                           <div class="search">
+                              <div class="input">
+                                 <input type="text" placeholder="Search">
+                              </div>
+                           </div>
+                        </li>
+                        <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
+                     </ul>
+                  </div>
+                  <!--.nav-collapse -->
+               </div>
+            </div>
+         </div>
+         <!--/.container-fluid -->
+      </nav>
+   </header>
+   <div class="container">
+      <div class="category-menu" >
+        <ul>
+          <li>
+             <a href="#">Categories</a>
+               <ul class="dropdown bgcover" ng-style="set_bg()">
+                  <li  ng-repeat="x in menuitem" >
+                     <a href="#" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                     <ul class="dropdown">
+                        <li  ng-repeat="sub in x.subCategory">
+                           <a href="{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>	                           
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+      <section class="todaydeals title" >
+         <div class="row">
+            <div class="col-xs-12  ">
+               <h2 class="sec-title"><strong>Hot Deals - Save upto 50%</strong></h2>
+               <p class="sub-tag">Great Savings. Every Day. Shop from our Deal of the Day, Lightning Deals and avail other great 
+                  offers. <a href="#">Sign up</a> for deal notifications
+               </p>
+               <div class="links"> 
+                  <a href="#" class="active">Active </a> 
+                  <a href="#">Upcoming</a>
+                  <a href="#">Expired</a> 
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="todaydeals mid">
+         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 left">
+            <div class="todaydeal-sorting">
+               <p>Showing 1-21of 99 Results</p>
+               <div ng-repeat="x in menuitem">
+                  <input id="box" type="checkbox" /><label for="box">{{ x.title }}</label>
+               </div>
+            </div>
+            <div class="todaydeals rp">
+               <div class="rp-block">
+                  <h2 class="sec-title2"><strong>Recommended Products </strong></h2>
+                  <section  id="fp">
+                     <slick settings="slickrecommendedprocutsConfig" ng-if="RecomendLoaded">
+                        <li class="block" ng-repeat="image in recommend">
+                           <A HREF="">
+                              <figure>
+                           <a href="#productpage"><img data-lazy="{{image.imgurl}}"></a>
+                           <span class="dis">{{image.discount}}</span>
+                           </figure>
+                           <h3> {{image.description}}</h3>
+                           <h4>Rs.{{image.price}}</h4>
+                           <a href="#productpage" class="va">View Details</a>
+                           </A>
+                        </li>
+                     </slick>
+                  </section>
+               </div>
+               <div class="pagination">
+                  <ul>
+                     <li><a href="#">1</a></li>
+                     <li class="active"><a href="#">2</a></li>
+                     <li><a href="#">3</a></li>
+                     <li><a href="#">4</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 tdm-block">
+            <div class="todaydeals-sort">
+               <ul>
+                  <li><span>Sory By</span></li>
+                  <li class="sec-block">
+                     <select>
+                        <option value="">Brand</option>
+                        <option value="">Brand</option>
+                        <option value="">Brand</option>
+                     </select>
+                  </li>
+                  <li class="sec-block">
+                     <select>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                     </select>
+                  </li>
+                  <li class="sec-block">
+                     <select>
+                        <option value="">Grade</option>
+                        <option value="">Grade</option>
+                        <option value="">Grade</option>
+                     </select>
+                  </li>
+               </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 todaydeal-block" ng-repeat="y in deal">
+               <figure>
+                  <a href="#productpage"><img ng-src="{{y.imgurl}}"></a>
+                  <span class="dis">{{y.discount}}</span>
+               </figure>
+               <h3>{{y.description}}</h3>
+               <h4>Rs.{{y.price}}</h4>
+               <a href="#productpage" class="va">View Details</a>
+            </div>
+            <div class="pagination">
+               <ul>
+                  <li class="prev"><a href="#">Prev</a></li>
+                  <li><a href="#">1</a></li>
+                  <li class="active"><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li class="dots"><a href="#">...</a></li>
+                  <li class="last"><a href="#">8</a></li>
+                  <li class="nxt"><a href="#">Next</a></li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <section class="todaydeals rview" >
+         <div class="row">
+            <div class="col-xs-12">
+               <h2 class="sec-title"><strong>Recently Brought</strong></h2>
+			    <ul class="all">
+               <slick settings="slickrecentbroughtConfig" ng-if="RecentlyLoaded">
+                 
+                     <li ng-repeat="brought in recently">
+                        <figure>
+                           <a href="#productpage"><img data-lazy="{{brought.imgurl}}"></a>
+                           <span class="dis">{{brought.discount}}</span>
+                        </figure>
+                        <h3>{{brought.description}}</h3>
+                        <h4> Rs.{{brought.price}}</h4>
+                        <a href="#productpage" class="va">View Details</a>
+                     </li>
+                 
+               </slick>
+			    </ul>
+            </div>
+         </div>
+      </section>
+   </div>
+</div>
+<footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-md-6 col-lg-3 ">
+            <h2>Buying Assurance</h2>
+            <p><a href="#">See authorised Dealers</a><br>
+               <a href="#">Certification</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Info &amp; News</h2>
+            <p><a href="#">About Us</a><br>
+               <a href="#">Contact Us</a><br>
+               <a href="#">Press Releases</a><br>
+               <a href="#">Product Support</a><br>
+               <a href="#">Carrers</a><br>
+               <a href="#">FAQ’s </a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Locations</h2>
+            <p><a href="#">Hyderabad</a><br>
+               <a href="#">Warangal</a><br>
+               <a href="#">Vijayawada</a><br>
+               <a href="#">Guntur</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Stay Updated </h2>
+            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a></p>
+            <div class="newsletter">
+               <input placeholder="Sign up for updates">
+               <button>Register</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="copy"> &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
+</footer>

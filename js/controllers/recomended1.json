@@ -1,0 +1,35 @@
+{
+	"recomended": [{
+			"imgurl": "img/prd5.jpg",
+			"title": "Water Washer",
+			"price": "2500",
+			"vendor": "Vendor Name",
+			"location": "Hyderabad",
+			"button": "Add to Cart"
+		},
+		{
+			"imgurl": "img/prd4.jpg",
+			"title": "Water Washer",
+			"price": "8500",
+			"vendor": "Vendor Name",
+			"location": "Hyderabad",
+			"button": "Add to Cart"
+		},
+		{
+			"imgurl": "img/prd5.jpg",
+			"title": "Water Washer",
+			"price": "2500",
+			"vendor": "Vendor Name",
+			"location": "Hyderabad",
+			"button": "Add to Cart"
+		},
+		{
+			"imgurl": "img/prd4.jpg",
+			"title": "Water Washer",
+			"price": "8500",
+			"vendor": "Vendor Name",
+			"location": "Hyderabad",
+			"button": "Add to Cart"
+		}
+	]
+}

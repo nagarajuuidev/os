@@ -1,0 +1,12 @@
+{
+"productpage": [{
+			"image1": "img/prd-thumb1.jpg",
+			"image2": "img/prd-thumb2.jpg",
+			"image3": "img/prd-lg.jpg",
+			"title": "EClearwater Elara Single Kitchen Mixer",
+			"description": "5 star hotel design available in every kitchen. This tap looks like it comes straight out of astylish chic 5 star penthouse in Monaco, and yet here it is for you to order today.",
+			"dprice":"799",
+			"oprice":"999",
+			"discount":"10% OFF"
+		}
+		]}

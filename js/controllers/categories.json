@@ -1,0 +1,818 @@
+{  
+   "categorydata":{  
+      "Architects":{  
+         "type":"category",
+         "title":"Architects",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":" Civil Architects",
+               "url":"/building_materials/ Civil Architects",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":" Interior Architects",
+               "url":"sub/building_materials/ Interior Architects",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            }
+         ]
+      },
+      "Building Materials":{  
+         "type":"category",
+         "title":"Building Materials",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":"Bricks and Blocks",
+               "url":"/building_materials/Bricks and Blocks",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"sand & aggregates",
+               "url":"sub/building_materials/sand & aggregates",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Cement ",
+               "url":"sub/building_materials/Cement ",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":" Steel and Iron",
+               "url":"/building_materials/ Steel and Iron",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":" Roofing & wall claddings",
+               "url":"/building_materials/Roofing & wall claddings",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Drainage and Supplies",
+               "url":"/building_materials/Drainage and Supplies",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":" Building Metalworks and Tools",
+               "url":"sub/building_materials/Building Metalworks and Tools",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"construction safety products",
+               "url":"/building_materials/construction safety products",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            }
+         ]
+      },
+      "Doors/Windows and Joinery":{  
+         "type":"category",
+         "title":"Doors/Windows and Joinery",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":" Internal Doors",
+               "url":"/building_materials/ Internal Doors",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"External Doors",
+               "url":"sub/building_materials/External Doors",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Door Furniture and accessories",
+               "url":"sub/building_materials/Door Furniture and accessories",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Door Frames, Linings & Casings",
+               "url":"/building_materials/Door Frames, Linings & Casings",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Garage Doors",
+               "url":"/building_materials/Garage Doors",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Windows & accessories",
+               "url":"/building_materials/Windows & accessories",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            }
+         ]
+      },
+      "Plumbing":{  
+         "type":"category",
+         "title":"Plumbing",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":" Pipes and Tubes",
+               "url":"/building_materials/ Pipes and Tubes",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Plumbing Fittings",
+               "url":"sub/building_materials/Plumbing Fittings",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Plumbing waste and traps",
+               "url":"sub/building_materials/Plumbing waste and traps",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Water treatment",
+               "url":"/building_materials/Water treatment",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":" Water pumps & tanks ",
+               "url":"/building_materials/ Water pumps & tanks ",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Ducting and Ventilation",
+               "url":"/building_materials/Ducting and Ventilation",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Plumbing accessories",
+               "url":"sub/building_materials/Plumbing accessories",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            }
+         ]
+      },
+      "Electrical":{  
+         "type":"category",
+         "title":"Electrical",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":"Cable reels and wires",
+               "url":"/building_materials/Cable reels and wires",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Cable management and accessories",
+               "url":"sub/building_materials/Cable management and accessories",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Junction and Pattress boxes",
+               "url":"sub/building_materials/Junction and Pattress boxes",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Switches & sockets",
+               "url":"/building_materials/Switches & sockets",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"  exterior & interior lightings",
+               "url":"/building_materials/  exterior & interior lightings",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"fans & exhaust ",
+               "url":"/building_materials/fans & exhaust ",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            }
+         ]
+      },
+      "Electronics":{  
+         "type":"category",
+         "title":"Electronics",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":" televisions",
+               "url":"/building_materials/ televisions",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":" air conditioners & coolers",
+               "url":"sub/building_materials/ air conditioners & coolers",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":" refrigeratos & microwave ovens",
+               "url":"sub/building_materials/ refrigeratos & microwave ovens",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"water purifiers & water heaters",
+               "url":"/building_materials/water purifiers & water heaters",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"vaccum cleaners & washing machines",
+               "url":"/building_materials/vaccum cleaners & washing machines",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"invertors",
+               "url":"/building_materials/invertors",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":" other small accessories",
+               "url":"sub/building_materials/ other small accessories",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Faucets",
+               "url":"/building_materials/Faucets",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            }
+         ]
+      },
+      "Bathroom & Sanitary":{  
+         "type":"category",
+         "title":"Bathroom & Sanitary",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":"washBasins & Pedestals",
+               "url":"/building_materials/washBasins & Pedestals",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":" Toilets & urinals",
+               "url":"sub/building_materials/Toilets & urinals",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Showers & enclosures",
+               "url":"sub/building_materials/Showers & enclosures",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Bathroom taps and accessories",
+               "url":"/building_materials/Bathroom taps and accessories",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Bathroom furniture",
+               "url":"/building_materials/Bathroom furniture",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            }
+         ]
+      },
+      "Kitchen":{  
+         "type":"category",
+         "title":"Kitchen",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":"Kitchen ranges or Modular kitchen",
+               "url":"/building_materials/Kitchen ranges or Modular kitchen",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Kitchen appliances and accessories",
+               "url":"sub/building_materials/Kitchen appliances and accessories",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Kitchen sinks and taps",
+               "url":"sub/building_materials/Kitchen sinks and taps",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Kitchen workshops",
+               "url":"/building_materials/Kitchen workshops",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            }
+         ]
+      },
+      "Timber/wood sheets & hardware":{  
+         "type":"category",
+         "title":"Timber/wood sheets & hardware",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":"Plywood sheets",
+               "url":"/building_materials/Plywood sheets",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Laminates & veneers",
+               "url":"sub/building_materials/Laminates & veneers",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Locks and handles",
+               "url":"sub/building_materials/Locks and handles",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Hardware accessories",
+               "url":"/building_materials/Hardware accessories",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Decking",
+               "url":"/building_materials/Decking",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Sawn Timber",
+               "url":"/building_materials/Sawn Timber",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Planed Timber",
+               "url":"sub/building_materials/Planed Timber",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Skirting board",
+               "url":"/building_materials/Skirting board",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Timber cladding",
+               "url":"/building_materials/Timber cladding",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"teak wood",
+               "url":"/building_materials/teak wood",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Special wood",
+               "url":"/building_materials/Special wood",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            }
+         ]
+      },
+      "Fixings & Adhesives":{  
+         "type":"category",
+         "title":"Fixings & Adhesives",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":"Adhesives",
+               "url":"/building_materials/Adhesives",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Screws",
+               "url":"sub/building_materials/Screws",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Nails",
+               "url":"sub/building_materials/Nails",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Sealouts",
+               "url":"/building_materials/Sealouts",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Nuts,Bolts and washers",
+               "url":"/building_materials/Nuts,Bolts and washers",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Wood care",
+               "url":"/building_materials/Wood care",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            }
+         ]
+      },
+      "Ceiling":{  
+         "type":"category",
+         "title":"Ceiling",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":"False ceiling and supplies",
+               "url":"/building_materials/False ceiling and supplies",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"wooden ceiling and supplies",
+               "url":"sub/building_materials/wooden ceiling and supplies",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            }
+         ]
+      },
+      "Ceiling":{  
+         "type":"category",
+         "title":"Ceiling",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":"Granite and Marbles",
+               "url":"/building_materials/Granite and Marbles",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Tiles",
+               "url":"sub/building_materials/Tiles",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Wooden flooring",
+               "url":"sub/building_materials/Wooden flooring",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Venyl flooring",
+               "url":"sub/building_materials/Venyl flooring",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            }
+         ]
+      },
+      "Paint":{  
+         "type":"category",
+         "title":"Paint",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":"Exterior and Masonary paints",
+               "url":"/building_materials/Exterior and Masonary paints",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Emulsion paints",
+               "url":"sub/building_materials/Emulsion paints",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Glom paints",
+               "url":"sub/building_materials/Glom paints",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Wood and metal paints",
+               "url":"sub/building_materials/Wood and metal paints",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic1.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Undercoat and primers",
+               "url":"sub/building_materials/Undercoat and primers",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            },
+            {  
+               "title":"Specialist paints",
+               "url":"sub/building_materials/Specialist paints",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"Floor paint",
+               "url":"sub/building_materials/Floor paint",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            }
+         ]
+      },
+      "Wallpapers & accessories":{  
+         "type":"category",
+         "title":"Wallpapers & accessories",
+         "url":"/building_materials",
+         "bg-image":"img/pic.jpg",
+         "sub_category":[  
+            {  
+               "title":"wallpapers",
+               "url":"/building_materials/wallpapers",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic2.jpg"
+               }
+            },
+            {  
+               "title":"accessories and fixtures",
+               "url":"sub/building_materials/accessories and fixtures",
+               "type":"sub_category",
+               "images":{  
+                  "image_1":"img/menu-pic2.jpg",
+                  "image_2":"img/menu-pic1.jpg"
+               }
+            }
+         ]
+      }
+   }
+}

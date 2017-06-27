@@ -1,0 +1,13 @@
+{
+  "deals": [
+	{
+		"imgurl": "img/prd1.jpg",
+		"title": "Water Tap",
+		"price": "999",
+		"descript": "Water Tap is a common use full product. Bigger in size. Easy to install. Suitable for both kitchen and bathroom",
+		"vendor": "Vendor Name",
+		"location": "Hyderabad",
+		"button": "Add to Cart"
+	}
+  ]
+}

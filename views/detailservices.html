@@ -1,0 +1,253 @@
+<div class="wrap" >
+<!-- Static navbar -->
+<section class="top" id="top-header">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
+         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span></a></div>
+      </div>
+   </div>
+</section>
+<header class="header">
+   <nav class="navbar navbar-default">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12 ">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                  <a class="navbar-brand" href="#/"></a>
+                  <figure> </figure>
+                  </a>
+               </div>
+               <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                     <li><a href="#/todaydeals">Today's Deals</a></li>
+                     <li><a href="#">Buy/Sell</a></li>
+                     <li><a href="#services">Services</a></li>
+                     <li><a href="#">About Us</a></li>
+                     <li class="store"><a href="#">Our Store</a></li>
+                     <li><a href="#">My Account</a></li>
+                     <li>
+                        <div class="search">
+                           <div class="input">
+                              <input type="text" placeholder="Search">
+                           </div>
+                        </div>
+                     </li>
+                     <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
+                  </ul>
+               </div>
+               <!--.nav-collapse -->
+            </div>
+         </div>
+      </div>
+      <!--/.container-fluid -->
+   </nav>
+</header>
+<div class="container">
+   <div class="category-menu" style="display: ;">
+      <ul>
+         <li>
+            <a href="#">Categories</a>
+            <ul class="dropdown bgcover" ng-style="set_bg()">
+               <li  ng-repeat="x in menuitem" >
+                  <a href="#" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                  <ul class="dropdown">
+                     <li  ng-repeat="sub in x.subCategory">
+                        <a href="{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>	                           
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+   <section class="services-list title" >
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12  ">
+               <h2 class="sec-title"><strong>Plumbers</strong></h2>
+               <p class="sub-tag">From an idea to an unforgetable and measurable digital experience.
+                  Choose from an wide variety of services we offer.
+               </p>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="services-list   ">
+      <div class="container">
+         <div class=" head ">
+            <div class=" row ">
+               <div class="col-xs-12 col-lg-4   ">
+                  <strong>Showing all Plumbers</strong>
+               </div>
+               <div class="col-xs-12  col-lg-8 text-right ">
+                  <div class="sort">
+                     <label>Sort By</label>
+                     <div class="selectbox">
+                        <select>
+                           <option value="">Name</option>
+                        </select>
+                     </div>
+                     <div class="selectbox">
+                        <select>
+                           <option value="">Area</option>
+                        </select>
+                     </div>
+                     <div class="selectbox">
+                        <select>
+                           <option value="">Distance</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3  ">
+               <div class="todaydeal-sorting">
+               <div ng-repeat="x in menuitem">
+                  <input id="box" type="checkbox" /><label for="box">{{ x.title }}</label>
+               </div>
+            </div>
+               <div class="todaydeals rp">
+                  <div class="rp-block">
+                     <h2 class="sec-title2"><strong>Recommended Products </strong></h2>
+                     <slick settings="slickrecommendedprocutsConfig" ng-if="RecomendLoaded">
+                        <li class="block" ng-repeat="image in recommend">
+                           <A HREF="">
+                              <figure>
+                           <a href="#"><img data-lazy="{{image.imgurl}}"></a>
+                           <span class="dis">{{image.discount}}</span>
+                           </figure>
+                           <h3> {{image.description}}</h3>
+                           <h4>Rs.{{image.price}}</h4>
+                           <a href="#" class="va">View Details</a>
+                           </A>
+                        </li>
+                     </slick>
+                  </div>
+               </div>
+			   <div class="pagination">
+                  <ul>
+                     <li><a href="#">1</a></li>
+                     <li class="active"><a href="#">2</a></li>
+                     <li><a href="#">3</a></li>
+                     <li><a href="#">4</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="list-view col-xs-12 col-sm-9 col-md-9 col-lg-9">
+               <ul>
+                  <li ng-repeat="detailsevice in servicedetails">
+                     <figure><a href="#"><img ng-src="{{detailsevice.imgUrl}}"></a></figure>
+                     <h3> {{detailsevice.title}}</h3>
+                     <h4> {{detailsevice.location}}<br>{{detailsevice.address}} <br>
+                        Phone: +91 {{detailsevice.mobile}}
+                     </h4>
+                     <span class="rating line sm">
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star disabled" aria-hidden="true"></i> 
+                     <span>{{detailsevice.votes}}</span>
+                     </span>
+                     <div class="push-right">
+                        <button class="like">Like</button>
+                        <button class="booknow">Book Now</button>
+                     </div>
+                  </li>
+               </ul>
+			   <div class="pagination">
+                  <ul>
+                     <li class="prev"><a href="#">Prev</a></li>
+                     <li><a href="#">1</a></li>
+                     <li class="active"><a href="#">2</a></li>
+                     <li><a href="#">3</a></li>
+                     <li class="dots"><a href="#">...</a></li>
+                     <li class="last"><a href="#">8</a></li>
+                     <li class="nxt"><a href="#">Next</a></li>
+                  </ul>
+               </div>
+               
+            </div>
+			
+         </div>
+      </div>
+   </section>
+   <section class="services-slide">
+	<div class="container">
+	 <div class="row">
+	 <h2 class="sec-title"><strong>Recommended Vendors</strong></h2>
+	   <ul>
+		 <slick settings="slickrecommendedvendorsConfig" ng-if="RecommendvendorLoaded">
+		  <li ng-repeat="vendor in vendorrecommended">
+			<figure>
+				<a href="#"><img ng-src="{{vendor.imgUrl}}"></a>
+				<a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a>
+			</figure>
+				<h4>{{vendor.title}}</h4>
+				<p>{{vendor.location}}{{vendor.address}}</p>
+		  </li>
+		 </slick>
+	   </ul>
+	 
+	 </div>
+	</div>
+	</section>
+</div>
+<!--==== Updated Footer ====--->
+<!--<footer class="footer inner">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-9">
+         <div class="copy"> &copy; Copights 2017  ONE SEVEN HOME </div>
+         <div class="links" ><a href="#">TERMS AND CONDITIONS</a> <a href="#">PRIVACY POLICY</a> / YOUR CALIFORNIA PRIVACY RIGHTS</div>
+       </div>
+       <div class="col-md-3">
+         <div class="social-links"><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a> <a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> </div>
+       </div>
+     </div>
+   </div>
+   </footer>-->
+<!--==== Old Footer ====-->
+<footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-md-6 col-lg-3 ">
+            <h2>Buying Assurance</h2>
+            <p><a href="#">See authorised Dealers</a><br>
+               <a href="#">Certification</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Info &amp; News</h2>
+            <p><a href="#">About Us</a><br>
+               <a href="#">Contact Us</a><br>
+               <a href="#">Press Releases</a><br>
+               <a href="#">Product Support</a><br>
+               <a href="#">Carrers</a><br>
+               <a href="#">FAQ’s </a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Locations</h2>
+            <p><a href="#">Hyderabad</a><br>
+               <a href="#">Warangal</a><br>
+               <a href="#">Vijayawada</a><br>
+               <a href="#">Guntur</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Stay Updated </h2>
+            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a> | <a href="#"> <i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
+            <div class="newsletter">
+               <input placeholder="Sign up for updates">
+               <button>Register</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="copy">   &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
+</footer>

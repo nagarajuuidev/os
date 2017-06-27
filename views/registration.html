@@ -1,0 +1,95 @@
+<form name="regForm" novalidate>
+<div>
+<h2>User Registration</h2>
+</div>
+
+<div class="form-group" ng-class="{'has-error':regForm.firstName.$invalid && (regForm.firstName.$dirty || submitted)}">
+<label><b>Firstname </b></label>
+<input type="text" name="firstName" class="form-control" placeholder="Firstname" ng-model="user.firstName" ng-required="true">
+<p ng-show="regForm.firstName.$error.required && (regForm.firstName.$dirty || submitted)" class="help-block">Firstname is required.</p>
+</div>
+
+
+<div class="form-group" ng-class="{'has-error':regForm.lastName.$invalid && (regForm.lastName.$dirty || submitted)}">
+<label><b>Lastname </b></label>
+<input type="text" name="lastName" class="form-control" placeholder="Lastname" ng-model="user.lastName" ng-required="true">
+<p ng-show="regForm.lastName.$error.required && (regForm.lastName.$dirty || submitted)" class="help-block">Lastname is required.</p>
+</div>
+
+
+<div class="form-group" ng-class="">
+<label><b>Gender </b></label>
+<select ng-model="user.gender" ng-required="true">
+   <option value="">Select Gender</option>
+   <option value="">Male</option>
+   <option value="">Female</option>
+</select>
+<!--<p style="color:red;" ng-show="regForm.gender.$error.required && (regForm.gender.$invalid || submitted)" class="help-block">Gender is required.</p></br></br>-->
+</div>
+
+
+<div class="form-group" ng-class="{'has-error':regForm.companyName.$invalid && (regForm.companyName.$dirty || submitted)}">
+<label><b>Company Name </b></label>
+<input type="text" name="companyName" class="form-control" placeholder="Company Name" ng-model="user.companyName" ng-required="true">
+<p ng-show="regForm.companyName.$error.required && (regForm.companyName.$dirty || submitted)" class="help-block">Comapny Name is required.</p>
+</div>
+
+
+<div class="form-group" ng-class="{'has-error':regForm.mobileNumber.$invalid && (regForm.mobileNumber.$dirty || submitted)}">
+<label><b>Mobile Number </b></label>
+<input type="number" name="mobileNumber" class="form-control" placeholder="Mobile Number" ng-model="user.mobileNumber" ng-minlength="10" ng-maxlength="10" ng-pattern="/^[0-9]\d{9}$/" ng-required="true">
+<p ng-show="regForm.mobileNumber.$error.required && (regForm.mobileNumber.$dirty || submitted)" class="help-block">Mobile Number is required.</p>
+</div>
+
+<div class="form-group" ng-class="{'has-error':regForm.email.$invalid && (regForm.email.$dirty || submitted)}">
+<label><b>Email </b></label>
+<input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Your Email Address" ng-required="true">
+<p ng-show="regForm.email.$error.required && (regForm.email.$dirty || submitted)" class="help-block">Email is required.</p>
+<p ng-show="regForm.email.$error.email && (regForm.email.$dirty || submitted)" class="help-block">Enter a valid email.</p>
+</div>
+<div class="form-group" ng-class="{ 'has-error' : regForm.password.$invalid && (regForm.password.$dirty || submitted)}">
+<label><b>Password</b></label>
+<input type="password" name="password" id="pass" class="form-control" ng-model="user.password" placeholder="Your Username" ng-minlength="4" ng-maxlength="15" ng-required="true">
+<p ng-show="regForm.password.$error.required && (regForm.password.$dirty || submitted)" class="help-block">Password is required.</p>
+<p ng-show="regForm.password.$error.minlength && (regForm.password.$dirty || submitted)" class="help-block">Password is too short.</p>
+<p ng-show="regForm.password.$error.maxlength && (regForm.password.$dirty || submitted)" class="help-block">Password is too long.</p>
+</div>
+
+<div class="form-group" ng-class="{'has-error':regForm.repeatPassword.$invalid && (regForm.repeatPassword.$dirty || submitted)}">
+<label><b>Repeat Password : </b></label>
+<input type="password" name="repeatPassword" id="repeatPassword" class="form-control" placeholder="Repeat Password" ng-required="true">
+<p ng-show="regForm.repeatPassword.$error.required && (regForm.repeatPassword.$dirty || submitted)" class="help-block">Confirm password is required.</p>
+<p ng-show="regForm.repeatPassword.$error.compare  && (regForm.repeatPassword.$dirty || submitted)" class="help-block">Confirm password doesnot match.</p>
+</div>
+
+
+<div class="form-group" ng-class="">
+<label><b>Country : </b></label>
+<select ng-model="user.country" ng-required="true">
+   <option value="">Select Country</option>
+   <option value="">India</option>
+   <option value="">USA</option>
+   <option value="">Aus</option>
+</select>
+</div>
+
+
+<div class="form-group" ng-class="{'has-error':regForm.address.$invalid && (regForm.address.$dirty || submitted)}">
+<label><b> Address : </b></label>
+<input type="text" name="address" class="form-control" placeholder="Address" ng-model="session.address" ng-required="true">
+<p ng-show="regForm.address.$error.required && ( regForm.address.$dirty || submitted)" class="help-block">Address is required.</p>
+</div>
+
+
+<div class="form-group" ng-class="{ 'has-error' : regForm.terms.$invalid && (regForm.terms.$dirty || submitted)}">
+<input type="checkbox" value="" name="terms" ng-model="user.terms" ng-required="true" />
+<label> I accept Terms & Conditions</label>
+<p ng-show="regForm.terms.$error.required && (regForm.terms.$dirty || submitted)" class="help-block">Accept terms & conditions.</p>
+</div>
+<div class="form-group">
+<button type="submit" class="btn btn-primary" ng-submit="redirect(user)" ng-disabled="!regForm.$invalid">Register</button>
+<!--
+<div class="form-group" ng-class="{ 'has-error':">
+<button type="submit" class="btn btn-primary" ng-submit="redirect(user)" ng-disabled="!regForm.$invalid">Register</button>
+</div>-->
+</form>

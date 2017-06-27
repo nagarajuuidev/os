@@ -1,0 +1,317 @@
+<div class="wrap">
+<!-- Static navbar -->
+<section class="top" id="top-header">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
+         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> </a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a></div>
+      </div>
+   </div>
+</section>
+<header class="header">
+   <nav class="navbar navbar-default">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12 ">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                  <a class="navbar-brand" href="#/"></a>
+                  <figure> </figure>
+                  </a>
+               </div>
+               <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                     <li><a href="#/todaydeals">Today's Deals</a></li>
+                     <li><a href="#">Buy/Sell</a></li>
+                     <li><a href="#services">Services</a></li>
+                     <li><a href="#">About Us</a></li>
+                     <li class="store"><a href="#">Our Store</a></li>
+                     <li><a href="#">My Account</a></li>
+                     <li>
+                        <div class="search">
+                           <div class="input">
+                              <input type="text" placeholder="Search">
+                           </div>
+                        </div>
+                     </li>
+                     <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
+                  </ul>
+               </div>
+               <!--.nav-collapse -->
+            </div>
+         </div>
+      </div>
+      <!--/.container-fluid -->
+   </nav>
+</header>
+<div class="container">
+   <div class="category-menu" style="display: ;">
+      <ul>
+         <li>
+            <a href="#">Categories</a>
+            <ul class="dropdown bgcover" ng-style="set_bg()">
+               <li  ng-repeat="x in menuitem" >
+                  <a href="#" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                  <ul class="dropdown">
+                     <li  ng-repeat="sub in x.subCategory">
+                        <a href="{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>	                           
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+   <div class="breadcrumbs"><A HREF="">Home</A>    >    <A HREF="">Kitchen Taps</A>   > EClearwater Elara Single Lever Kitchen Mixer</div>
+</div>
+<div class="prd">
+<section class="prd-detail  ">
+   <div class="container">
+      <div class="row" ng-repeat="pp in ppage">
+         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="prd-tb" >
+               <a href="#"><img ng-src="{{pp.image1}}"></a>
+               <a href="#"><img ng-src="{{pp.image2}}"></a>
+            </div>
+            <div class="prd-lg" >
+               <a href="#"><img ng-src="{{pp.image3}}"></a>
+            </div>
+         </div>
+         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6  ">
+            <h2>{{pp.title}}</h2>
+            <p>{{pp.description}}</p>
+            <div class="price">{{pp.dprice}}</div>
+            <div class="price-off"> <span>{{pp.oprice}} </span> {{pp.discount}} </div>
+            <div class="selectbox">
+               <select>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+               </select>
+            </div>
+            <button class="addtocart">Add to Cart</button> <small> *Please select a vendor</small>
+            <div class="rating">
+               <i class="fa fa-star" aria-hidden="true"></i>
+               <i class="fa fa-star" aria-hidden="true"></i>
+               <i class="fa fa-star" aria-hidden="true"></i>
+               <i class="fa fa-star" aria-hidden="true"></i>
+               <i class="fa fa-star disabled" aria-hidden="true"></i> 
+               <div> 4/5 (5 Reviews)</div>
+            </div>
+            <div class="prd-dlvry">
+               <img src="img/prddelivery-icon.jpg">
+               <div >Estimated delivery in 3-7 working days
+                  <span><A HREF="">
+                  Too long to wait?</A> View similar products <a href="#">with</a> Next Day <A HREF="">availability</A></span>
+               </div>
+            </div>
+            <div class="prd-dlvry">
+               <img src="img/prddelivery-icon.jpg">
+               <div >Standard Delivery charges applicable <a href="#" class="qtn">?</a> 
+                  <span><A HREF="">Check your location for product availability</A></span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+	<section class="prd-select-list  "> 
+		<div class="container">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tdm-block">
+		<div class="head">
+		<h3>Select a Vendor</h3>
+			<div class="todaydeals-sort">
+			<ul>
+			<li><span>Sory By</span></li>
+			<li class="sec-block"><select>
+				<option value="">Area</option>
+				<option value="">Area</option>
+			</select></li>
+			<li class="sec-block"><select>
+				<option value="">Distance</option>
+				<option value="">Distance</option>
+			</select></li>
+			</ul>
+			</div>
+		</div>
+		<div class="prds" ng-repeat="v in ven">
+		<ul>
+			<li> <figure> <a href="#"><img ng-src="{{v.imgurl}}"></a> <a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a></figure>				<h4><b>{{v.title}}</b></h4> 				<p>{{v.address}} </p>
+ 			</li> 
+			
+			</ul> 
+			</div>
+		<div class="pagination">
+			<ul>
+				<li><a href="#">1</a></li>
+				<li class="active"><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+			</ul>
+		</div>
+		
+		</div> 
+		</div>
+	</section>
+	<section class="prd-mid">
+	<div class="container">
+	<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left">
+		<h4>Description</h4>
+		<p>Express your vision of comfortable living with brick. Brick walks, patios and driveways add character, charm and color permanence no other paving material can match. Brick are also easy to install, whether you hire a contractor or do it yourself. Regardless of the application, a highly stable and durable paving project requires proper installation.</p>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 right">
+		<h4>Quality Promise</h4>
+		<p>We ensure the best quality products are provided to our customers by meticulously selecting the vendors and continuously evaluating them to ensure minimal defects. Our team of industry experts and domain specialist ensure the products delivered are of best in class quality. Prior mystery visits are made to vendor sites and delivery locations to ensure superior quality.</p>
+	</div>
+	</div>
+	</div>
+	</section>
+<section class="prd-mid btm">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left">
+            <h3>Reviews</h3>
+            <div class="prd-rvw">
+               <h5>Kevin Staff</h5>
+               <div class="rating">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star disabled" aria-hidden="true"></i> 
+               </div>
+               <p>The tap is just as i ordered. I don’t yet know how it works but it has not yet been installed.</p>
+               <h6>5 January 2017</h6>
+            </div>
+            <div class="prd-rvw">
+               <h5>Rob Alex</h5>
+               <div class="rating">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star disabled" aria-hidden="true"></i> 
+               </div>
+               <p>The tap is just as i ordered. I don’t yet know how it works but it has not yet been installed. The item is cheap and is of very good quality, this is a fantastic tap that would look great in any kitchen. I love this tap.</p>
+               <h6>24 December 2016</h6>
+            </div>
+            <div class="prd-rvw">
+               <h5>Rob Alex</h5>
+               <div class="rating">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star disabled" aria-hidden="true"></i> 
+               </div>
+               <p>The tap is just as i ordered. I don’t yet know how it works but it has not yet been installed. The item is cheap and is of very good quality, this is a fantastic tap that would look great in any kitchen. I love this tap.</p>
+               <h6>24 December 2016</h6>
+            </div>
+            <p class="prd-more"><a href="#">See More...</a></p>
+         </div>
+         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 right">
+            <h3>Add a Review</h3>
+            <div class="rating">
+               <h4>Rating <span class="red">*</span></h4>
+               <i class="fa fa-star disabled" aria-hidden="true"></i>
+               <i class="fa fa-star disabled" aria-hidden="true"></i>
+               <i class="fa fa-star disabled" aria-hidden="true"></i>
+               <i class="fa fa-star disabled" aria-hidden="true"></i>
+               <i class="fa fa-star disabled" aria-hidden="true"></i> 
+            </div>
+            <form class="prd-form">
+               <div class="form-group">
+                  <input type="text" class="form-control" id="name" placeholder="Name *" name="name">
+               </div>
+               <div class="form-group">
+                  <textarea name="review" placeholder="Review *"></textarea>
+               </div>
+               <div class="form-group">
+                  <button type="submit" class="btn btn-default">Submit</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</section>
+<h2 class="sec-title3"><strong>Recommended Products </strong></h2>
+<section  id="fp">
+   <div class="container">
+      <div class="row">
+         <slick settings="slickrecommendedprocutsConfig" ng-if="RecomendLoaded">
+            <li class="block" ng-repeat="image in recommend">
+               <A HREF="">
+                  <figure>
+               <a href="#"><img data-lazy="{{image.imgurl}}"></a>
+               </figure>
+               <h3> {{image.description}}</h3>
+               <h4>Rs.{{image.price}}</h4>
+               <a href="#" class="va">View Details</a>
+               </A>
+            </li>
+         </slick>
+      </div>
+   </div>
+</section>
+<section class="todaydeals rview" >
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12">
+            <h2 class="sec-title"><strong>Recently Brought</strong></h2>
+            <ul class="all">
+               <slick settings="slickrecentbroughtConfig" ng-if="RecentlyLoaded">
+                  <li ng-repeat="brought in recently">
+                     <figure>
+                        <a href="#"><img data-lazy="{{brought.imgurl}}"></a>
+                        <span class="dis">{{brought.discount}}</span>
+                     </figure>
+                     <h3>{{brought.description}}</h3>
+                     <h4> Rs.{{brought.price}}</h4>
+                     <a href="#" class="va">View Details</a>
+                  </li>
+               </slick>
+            </ul>
+         </div>
+      </div>
+   </div>
+</section>
+<footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-md-6 col-lg-3 ">
+            <h2>Buying Assurance</h2>
+            <p><a href="#">See authorised Dealers</a><br>
+               <a href="#">Certification</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Info &amp; News</h2>
+            <p><a href="#">About Us</a><br>
+               <a href="#">Contact Us</a><br>
+               <a href="#">Press Releases</a><br>
+               <a href="#">Product Support</a><br>
+               <a href="#">Carrers</a><br>
+               <a href="#">FAQ’s </a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Locations</h2>
+            <p><a href="#">Hyderabad</a><br>
+               <a href="#">Warangal</a><br>
+               <a href="#">Vijayawada</a><br>
+               <a href="#">Guntur</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Stay Updated </h2>
+            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a></p>
+            <div class="newsletter">
+               <input placeholder="Sign up for updates">
+               <button>Register</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="copy"> &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
+</footer>
