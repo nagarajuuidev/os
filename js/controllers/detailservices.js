@@ -1,18 +1,18 @@
-angular.module('newapp') 
+angular.module('newapp')
   .controller('DetailservicesCtrl', function ($scope,$http,$routeParams) {   
-	$http.get("http://45.113.136.146:7070/shop/getCategories").then(function(resp) {
-	  console.log(resp);
-		$scope.menuitem=resp.data.categoryData;
-	  });
-	$scope.mouseOver=function(param){			
-		$scope.set_bg = function(){				
-			$scope.bgimg=(param.title).replace(/ /g,"_");
-			  //console.log($scope.bgimg);
-        return {			
-			"background-image":"url(/img/"+$scope.bgimg+".jpg)"			
-			};
-			}			
-		}
+  $scope.selectedtype=$routeParams.sid;
+	$http.get("http://45.113.136.146:7070/shop/getAllCategories").then(function(resp) {
+            console.log(resp);
+            $scope.menuitem = resp.data.categoryData;
+        });
+        $scope.mouseOver = function(param) {
+            $scope.set_bg = function() {
+                $scope.bgimg = param.imageURL;
+                return {
+                    "background-image": "url(/clients/oneseven_home_v2/img/" + $scope.bgimg + ".jpg)"
+                };
+            }
+        }
 /*
 $scope.gridOptions = {
 enableSorting: true,
@@ -25,18 +25,22 @@ columnDefs: [
 ]
 };
 
-
-  $http.get("http://45.113.136.146:7070/shop/services/"+$routeParams.sid+"/workers").then(function(resp) {
-	   console.log(resp);
+	$http.get("http://45.113.136.146:7070/shop/services/"+$routeParams.sid+"/workers").then(function(resp) {
+		console.log(resp);
 		$scope.gridOptions.data=resp.data.workers;
     });
 */
-	$http.get("/js/controllers/detailservices.json").then(function(resp) {
+	$http.get("http://45.113.136.146:7070/shop/services").then(function(resp) {
+		console.log(resp);
+		$scope.workers = resp.data.services;
+	});
+	
+	$http.get("http://45.113.136.146:7070/shop/services/"+$routeParams.sid+"/workers").then(function(resp) {
             console.log(resp);
-            $scope.servicedetails = resp.data.services;
+            $scope.servicedetails = resp.data.serviceCompanies;
         });
 	
-	$http.get("/js/controllers/recomended.json").then(function(resp) {
+	$http.get("/clients/oneseven_home_v2/js/controllers/recomended.json").then(function(resp) {
             console.log(resp);
             $scope.recommend = resp.data.recomended;
             $scope.RecomendLoaded = true;
@@ -49,7 +53,7 @@ columnDefs: [
         };
     });
 	
-	$http.get("/js/controllers/recommendedvendors.json").then(function(resp) {
+	$http.get("/clients/oneseven_home_v2/js/controllers/recommendedvendors.json").then(function(resp) {
             console.log(resp);
             $scope.vendorrecommended= resp.data.recommendedvendor;
             $scope.RecommendvendorLoaded = true;
@@ -62,3 +66,4 @@ columnDefs: [
         };
     });
  });
+ 

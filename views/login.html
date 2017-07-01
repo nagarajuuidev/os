@@ -4,7 +4,7 @@
       <div class="row">
 
             <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
-            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="">Login / Signup</a> </a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>(<span class="cart-value">0</span>)</a></div>
+            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a class="activelink" href="#/login">Login / Signup</a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="cart-value"> 0</span></a></div>
          
       </div>
     </div>
@@ -29,7 +29,7 @@
 				<li><a href="#services">Services</a></li>
 				<li><a href="#">About Us</a></li>
                 <li class="store"><a href="#">Our Store</a></li>
-				<li><a href="#">My Account</a></li>
+				<li><a href="#/myaccount">My Account</a></li>
 				<li>
                   <div class="search">
                     <div class="input">
@@ -47,18 +47,17 @@
          </div>
          <!--/.container-fluid -->
       </nav>
-   </header>
-   <div class="container">
-      <div class="category-menu" style="display: ;">
-        <ul>
-          <li>
-             <a href="#">Categories</a>
+	  <div class="container">
+   <div class="category-menu" style="display: ;">
+         <ul>
+            <li>
+               <a href="#">Categories</a>
                <ul class="dropdown bgcover" ng-style="set_bg()">
                   <li  ng-repeat="x in menuitem" >
-                     <a href="#" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
                      <ul class="dropdown">
                         <li  ng-repeat="sub in x.subCategory">
-                           <a href="{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>	                           
+                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
                         </li>
                      </ul>
                   </li>
@@ -66,6 +65,9 @@
             </li>
          </ul>
       </div>
+      </div>
+   </header>
+   <div class="container">
    
 
 
@@ -79,12 +81,8 @@
 			<a href="#">Vendor</a>
 		  </div>
 		  <div class="login-inner">
-			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left">
-				<h4>Connect with your social account</h4>
-				<h5 class="fb"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> Sign in with facebook</a></h5>
-				<h5 class="gle"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i> Sign in with google</a></h5>
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 right">
+			
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 right">
 				<h4>Sign In to your account</h4>
 				 <form class="form-horizontal">
 				 <form name="loginForm">
@@ -92,12 +90,15 @@
 					<i class="fa fa-user" aria-hidden="true"></i>
 					
 					
-					<div class="form-group" ng-class="{ 'has-error' : loginForm.email.$invalid && (loginForm.email.$dirty || submitted)}">
+	<div class="form-group" ng-class="{ 'has-error' : loginForm.email.$invalid && (loginForm.email.$dirty || submitted)}">
  
  <input type="email" name="email" class="form-control" ng-model="session.email" placeholder="User name or Email*" ng-required="true" width="4px">
  <p ng-show="loginForm.email.$error.required && (loginForm.email.$dirty || submitted)" class="help-block">Email is required.</p>
 <p ng-show="loginForm.email.$error.email && (loginForm.email.$dirty || submitted)" class="help-block">Enter a valid email.</p>
      </div>
+	
+	 
+	 
 					</div>
 					<div class="form-group">
 					<i class="fa fa-lock" aria-hidden="true"></i>
@@ -109,16 +110,17 @@
  </div>
 					</div>
 					<div class="form-group">
-					<input type="checkbox" name="remember" id="rem" value=""><label for="rem">Remember me</label>
+					<input type="checkbox" name="remember" id="rem" value=""><label class="rem" for="rem">Remember me</label>
+					<p class="fpwd"><a href="#">Forgot your password?</a></p>
 					</div>
-					<div class="form-group">
+					<div class="form-group btn-sign">
 					
 					<button type="button" class="btn btn-primary"  value="Login" title="Login" ng-disabled="loginForm.$valid" ng-click="redirect(session)">
 <span>Login</span> </button>
 
 					</div>
 				
-					<a href=""><p>Forgot your password?</p></a>
+					
 				  </div>
 				</form> 
 				</form> 
@@ -136,25 +138,19 @@
 		<h4>Personal Information</h4>
 		<form class="form-horizontal">
 		
-					<!--<div class="form-group">
-					<input type="text" class="form-control" id="name" placeholder="First name" name="name">
-					</div>-->
+				
 		<div class="form-group" ng-class="{'has-error':regForm.firstName.$invalid && (regForm.firstName.$dirty || submitted)}">
 
               <input type="text" name="firstName" class="form-control" placeholder="First name" ng-model="user.firstName" ng-required="true">
               <p ng-show="regForm.firstName.$error.required && (regForm.firstName.$dirty || submitted)" class="help-block">Firstname is required.</p>
       </div>
-					<!--<div class="form-group">
-					<input type="text" class="form-control" id="name" placeholder="Last name" name="name">
-					</div>-->
+					
   	   <div class="form-group" ng-class="{'has-error':regForm.lastName.$invalid && (regForm.lastName.$dirty || submitted)}">
 
                <input type="text" name="lastName" class="form-control" placeholder="Last name" ng-model="user.lastName" ng-required="true">
                <p ng-show="regForm.lastName.$error.required && (regForm.lastName.$dirty || submitted)" class="help-block">Lastname is required.</p>
       </div>
-					<!--<div class="form-group">
-					<input type="text" class="form-control" id="dob" placeholder="(DOB) DD-MM-YY" name="dob">
-					</div>-->
+					
    	<div class="form-group" ng-class="{'has-error':regForm.dob.$invalid && (regForm.dob.$dirty || submitted)}">
 
               <input type="text" name="dob" class="form-control" placeholder="(DOB) DD-MM-YY" ng-model="user.dob" ng-required="true">
@@ -164,17 +160,16 @@
 					Gender
 					  <input type="radio" name="gender" value="male" > <label for="male">Male</label>
 					  <input type="radio" name="gender" value="female" > <label for="female">Female</label>
-					</div><br><br>
+					</div>
+					<!--
 					<h4>Account Information</h4>
 					
-					<!--<div class="form-group">
-					<input type="text" class="form-control" id="name" placeholder="Company Name" name="name">
-					</div>-->
+					
 	<div class="form-group" ng-class="{'has-error':regForm.companyName.$invalid && (regForm.companyName.$dirty || submitted)}">
 
                   <input type="text" name="companyName" class="form-control" placeholder="Company Name" ng-model="user.companyName" ng-required="true">
                   <p ng-show="regForm.companyName.$error.required && (regForm.companyName.$dirty || submitted)" class="help-block">Comapny Name is required.</p>
-    </div>
+    </div>-->
 					<div class="form-group">
 					<input type="text" class="form-control" id="num" placeholder="Mobile No." name="num">
 					</div>
@@ -188,16 +183,7 @@
                    <p ng-show="regForm.email.$error.required && (regForm.email.$dirty || submitted)" class="help-block">Email is required.</p>
                     <p ng-show="regForm.email.$error.email && (regForm.email.$dirty || submitted)" class="help-block">Enter a valid email.</p>
     </div>
-					<!--<div class="form-group">
-					<input type="password" class="form-control" id="pwd" placeholder="Password" name="pwd">
-					</div>-->
-	<!--<div class="form-group" ng-class="{ 'has-error' : regForm.password.$invalid && (regForm.password.$dirty || submitted)}">
-
-                <input type="password" name="password" id="pass" class="form-control" ng-model="user.password" placeholder="password" ng-minlength="4" ng-maxlength="15" ng-required="true">
-                     <p ng-show="regForm.password.$error.required && (regForm.password.$dirty || submitted)" class="help-block">Password is required.</p>
-                     <p ng-show="regForm.password.$error.minlength && (regForm.password.$dirty || submitted)" class="help-block">Password is too short.</p>
-                    <p ng-show="regForm.password.$error.maxlength && (regForm.password.$dirty || submitted)" class="help-block">Password is too long.</p>
-    </div>-->
+					
 	<label for="newPassword"></label>
 	<div class="form-group">
 <input type="password" name="Password"  id="pass" class="form-control" placeholder="password" ng-model="user.password" required=""/>
@@ -206,9 +192,7 @@
         <div ng-message="required" class="message slide-left">You did not enter a field name</div>
       </div>
     </div>
-					<!--<div class="form-group">
-					<input type="password" class="form-control" id="cpwd" placeholder="Confirm Password" name="cpwd">
-					</div>-->
+					
 	<label for="confirmPassword"></label>
     <div class="form-group">
              <input type="password" name="confirmPassword" ng-model="password.confirm" id="conformPassword" class="form-control" placeholder="conform Password"match-password="newPassword" required=""/>
@@ -242,16 +226,7 @@
 		
 		
 				
-				<!--<div class="form-group">
-				<div class="sec-block">
-				<select>
-					  <option value="">Select State</option>
-					  <option value=""></option>
-					  <option value=""></option>
-					  <option value=""></option>
-				</select>
-				</div>
-				</div>-->
+				
 				<div class="form-group" ng-class="">
 <div class="sec-block">
 <select ng-model="user.State" ng-required="true">
@@ -261,16 +236,7 @@
    <option value="">T.N</option>
 </select>
 </div>
-	</div>			<!--<div class="form-group">
-				<div class="sec-block">
-				<select>
-					  <option value="">Select City</option>
-					  <option value=""></option>
-					  <option value=""></option>
-					  <option value=""></option>
-				</select>
-				</div>
-				</div>-->
+	</div>			
 				<div class="form-group" ng-class="">
 				<div class="sec-block">
 <select ng-model="user.City" ng-required="true">
@@ -281,16 +247,7 @@
 </select>
 </div>
 </div>
-				<!--<div class="form-group">
-				<div class="sec-block">
-				<select>
-					  <option value="">Select Area</option>
-					  <option value=""></option>
-					  <option value=""></option>
-					  <option value=""></option>
-				</select>
-				</div>
-				</div>-->
+				
 			<div class="form-group" ng-class="">
 				<div class="sec-block">
 <select ng-model="user.Area" ng-required="true">
@@ -317,17 +274,42 @@
 
 </div>
 
-<footer class="footer inner">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <div class="copy"> &copy; Copights 2017  ONE SEVEN HOME </div>
-        <div class="links" ><a href="#">TERMS AND CONDITIONS</a> <a href="#">PRIVACY POLICY</a> / YOUR CALIFORNIA PRIVACY RIGHTS</div>
+<footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-md-6 col-lg-3 ">
+            <h2>Buying Assurance</h2>
+            <p><a href="#">See authorised Dealers</a><br>
+               <a href="#">Certification</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Info &amp; News</h2>
+            <p><a href="#">About Us</a><br>
+               <a href="#">Contact Us</a><br>
+               <a href="#">Press Releases</a><br>
+               <a href="#">Product Support</a><br>
+               <a href="#">Carrers</a><br>
+               <a href="#">FAQ’s </a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Locations</h2>
+            <p><a href="#">Hyderabad</a><br>
+               <a href="#">Warangal</a><br>
+               <a href="#">Vijayawada</a><br>
+               <a href="#">Guntur</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Stay Updated </h2>
+            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a> | <a href="#"> <i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
+            <div class="newsletter">
+               <input placeholder="Sign up for updates">
+               <button>Register</button>
+            </div>
+         </div>
       </div>
-      <div class="col-md-3">
-        <div class="social-links"><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a> <a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> </div>
-      </div>
-    </div>
-  </div>
+   </div>
+   <div class="copy"> &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
 </footer>
-</div>

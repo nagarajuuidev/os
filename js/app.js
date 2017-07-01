@@ -38,6 +38,19 @@ newapp.config(['$routeProvider',function($routeProvider){
 		templateUrl: 'views/productpage.html',
 		controller: 'ProductpageCtrl'
 	  })
+	  .when('/categories/:cid', {
+		templateUrl: 'views/productlist.html',
+		controller: 'ProductlistCtrl'
+	  })
+	  
+	  .when('/sub_category/:cid/categories/:sid', {
+		templateUrl: 'views/productlist.html',
+		controller: 'ProductlistCtrl'
+	  })
+	  .when('/myaccount', {
+  templateUrl: 'views/myaccount.html',
+  controller: 'myaccountCtrl'
+   })
 	  .otherwise({
         redirectTo: '/'
       });

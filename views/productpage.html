@@ -4,7 +4,7 @@
    <div class="container">
       <div class="row">
          <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
-         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> </a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a></div>
+         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> </a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span></a></div>
       </div>
    </div>
 </section>
@@ -26,7 +26,7 @@
                      <li><a href="#services">Services</a></li>
                      <li><a href="#">About Us</a></li>
                      <li class="store"><a href="#">Our Store</a></li>
-                     <li><a href="#">My Account</a></li>
+                     <li><a href="#/myaccount">My Account</a></li>
                      <li>
                         <div class="search">
                            <div class="input">
@@ -43,45 +43,50 @@
       </div>
       <!--/.container-fluid -->
    </nav>
+   <div class="container">
+   <div class="category-menu" style="display: ;">
+         <ul>
+            <li>
+               <a href="#">Categories</a>
+               <ul class="dropdown bgcover" ng-style="set_bg()">
+                  <li  ng-repeat="x in menuitem" >
+                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                     <ul class="dropdown">
+                        <li  ng-repeat="sub in x.subCategory">
+                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+      </div>
 </header>
 <div class="container">
-   <div class="category-menu" style="display: ;">
-      <ul>
-         <li>
-            <a href="#">Categories</a>
-            <ul class="dropdown bgcover" ng-style="set_bg()">
-               <li  ng-repeat="x in menuitem" >
-                  <a href="#" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
-                  <ul class="dropdown">
-                     <li  ng-repeat="sub in x.subCategory">
-                        <a href="{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>	                           
-                     </li>
-                  </ul>
-               </li>
-            </ul>
-         </li>
-      </ul>
-   </div>
+  
    <div class="breadcrumbs"><A HREF="">Home</A>    >    <A HREF="">Kitchen Taps</A>   > EClearwater Elara Single Lever Kitchen Mixer</div>
 </div>
 <div class="prd">
 <section class="prd-detail  ">
    <div class="container">
-      <div class="row" ng-repeat="pp in ppage">
+      <div class="row">
          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <div class="prd-tb" >
-               <a href="#"><img ng-src="{{pp.image1}}"></a>
-               <a href="#"><img ng-src="{{pp.image2}}"></a>
+            <div class="prd-tb">
+               <a href="#"><img ng-src="{{ppage.productImages[0]}}"></a>
+               <a href="#"><img ng-src="{{ppage.productImages[1]}}"></a>
+               <a href="#"><img ng-src="{{ppage.productImages[2]}}"></a>
+               <a href="#"><img ng-src="{{ppage.productImages[3]}}"></a>
             </div>
             <div class="prd-lg" >
-               <a href="#"><img ng-src="{{pp.image3}}"></a>
+               <a href="#"><img ng-src="{{ppage.defaultImage}}"></a>
             </div>
          </div>
          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6  ">
-            <h2>{{pp.title}}</h2>
-            <p>{{pp.description}}</p>
-            <div class="price">{{pp.dprice}}</div>
-            <div class="price-off"> <span>{{pp.oprice}} </span> {{pp.discount}} </div>
+            <h2>{{ppage.productTitle}}</h2>
+            <p>{{ppage.productDescription}}</p>
+            <div class="price">Rs.{{ppage.productDiscountPrice}}</div>
+            <div class="price-off"> <span>Rs.{{ppage.productOriginalPrice}} </span> <b>{{ppage.discountPercentage}}% OFF</b> </div>
             <div class="selectbox">
                <select>
                   <option>1</option>
@@ -134,13 +139,30 @@
 			</ul>
 			</div>
 		</div>
-		<div class="prds" ng-repeat="v in ven">
+		<div class="prds">
 		<ul>
-			<li> <figure> <a href="#"><img ng-src="{{v.imgurl}}"></a> <a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a></figure>				<h4><b>{{v.title}}</b></h4> 				<p>{{v.address}} </p>
- 			</li> 
-			
+			<li> <figure> <a href="#"><img src="img/vdr1.jpg"></a> <a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a></figure>				<h4>S.k Plumbers & Sanitary Co..</h4> 				<p>9-8-466, Chota bazar, Golconda, 
+Hyd- 500008 (Map) </p> 			</li> 
+			<li> <figure> <a href="#"><img src="img/vdr2.jpg"></a> <a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a></figure>				<h4>Novella Plumbing Pvt.Ltd..</h4> 				<p>flat no:108 1st floor, sun city, qayeem
+appartment, Hyderabad</p> 			</li>
+			<li> <figure> <a href="#"><img src="img/vdr3.jpg"></a> </figure>				<h4>Kalpana Plumbing Services</h4> 				<p>flat no:108 1st floor, sun city, qayeem
+appartment, Hyderabad</p> 			</li>
+			<li> <figure> <a href="#"><img src="img/vdr4.jpg"></a> </figure>				<h4>AAA Plumbing Enge...</h4> 				<p>flat no:108 1st floor, sun city, qayeem
+appartment, Hyderabad</p> 			</li>
+			<li> <figure> <a href="#"><img src="img/vdr5.jpg"></a> </figure>				<h4>Taj Plumbing contractor</h4> 				<p>flat no:108 1st floor, sun city, qayeem
+appartment, Hyderabad</p> 			</li>
+			<li> <figure> <a href="#"><img src="img/vdr1.jpg"></a> </figure>				<h4>S.k Plumbers & Sanitary Co..</h4> 				<p>9-8-466, Chota bazar, Golconda, 
+Hyd- 500008 (Map) </p> 			</li>
+			<li> <figure> <a href="#"><img src="img/vdr2.jpg"></a> </figure>				<h4>Novella Plumbing Pvt.Ltd..</h4> 				<p>flat no:108 1st floor, sun city, qayeem
+appartment, Hyderabad</p> 			</li>
+			<li> <figure> <a href="#"><img src="img/vdr3.jpg"></a> </figure>				<h4>Kalpana Plumbing Services</h4> 				<p>flat no:108 1st floor, sun city, qayeem
+appartment, Hyderabad</p> 			</li>
+<li> <figure> <a href="#"><img src="img/vdr4.jpg"></a> </figure>				<h4>AAA Plumbing Enge...</h4> 				<p>flat no:108 1st floor, sun city, qayeem
+appartment, Hyderabad</p> 			</li>
+			<li> <figure> <a href="#"><img src="img/vdr5.jpg"></a> </figure>				<h4>Taj Plumbing contractor</h4> 				<p>flat no:108 1st floor, sun city, qayeem
+appartment, Hyderabad</p> 			</li>
 			</ul> 
-			</div>
+			</div> 
 		<div class="pagination">
 			<ul>
 				<li><a href="#">1</a></li>
@@ -235,6 +257,7 @@
       </div>
    </div>
 </section>
+<div class="container">
 <h2 class="sec-title3"><strong>Recommended Products </strong></h2>
 <section  id="fp">
    <div class="container">
@@ -254,6 +277,7 @@
       </div>
    </div>
 </section>
+</div>
 <section class="todaydeals rview" >
    <div class="container">
       <div class="row">
@@ -305,7 +329,7 @@
          </div>
          <div class="col-xs-12 col-md-6 col-lg-3   ">
             <h2>Stay Updated </h2>
-            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a></p>
+            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a> | <a href="#"> <i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
             <div class="newsletter">
                <input placeholder="Sign up for updates">
                <button>Register</button>

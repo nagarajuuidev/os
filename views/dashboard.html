@@ -1,21 +1,16 @@
 <div class="wrap">
-  <!-- Static navbar -->
-   
-    <section class="top" id="top-header">
-    <div class="container">
-      <div class="row">
-
+   <!-- Static navbar -->
+   <section class="top" id="top-header">
+      <div class="container">
+         <div class="row">
             <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
             <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> </a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a></div>
-         
+         </div>
       </div>
-    </div>
    </section>
-  
-    <header class="header">
+   <header class="header">
       <nav class="navbar navbar-default">
-        
-		   <div class="container">
+         <div class="container">
             <div class="row">
                <div class="col-xs-12 ">
                   <div class="navbar-header">
@@ -26,41 +21,40 @@
                   </div>
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                <li><a href="#/todaydeals">Today's Deals</a></li>
-				<li><a href="#">Buy/Sell</a></li>
-				<li><a href="#services">Services</a></li>
-				<li><a href="#">About Us</a></li>
-                <li class="store"><a href="#">Our Store</a></li>
-				<li><a href="#">My Account</a></li>
-				<li>
-                  <div class="search">
-                    <div class="input">
-                      <input type="text" placeholder="Search">
-                    </div>
-                  </div>
-                </li>
-                <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
-              </ul>
+                        <li><a href="#/todaydeals">Today's Deals</a></li>
+                        <li><a href="#">Buy/Sell</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li class="store"><a href="#">Our Store</a></li>
+                        <li><a href="#/myaccount">My Account</a></li>
+                        <li>
+                           <div class="search">
+                              <div class="input">
+                                 <input type="text" placeholder="Search">
+                              </div>
+                           </div>
+                        </li>
+                        <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
+                     </ul>
                   </div>
                   <!--.nav-collapse -->
                </div>
-               </div>
-           
+            </div>
          </div>
          <!--/.container-fluid -->
+		 
       </nav>
-   </header>
-   <div class="container">
-      <div class="category-menu" style="display: ;">
-        <ul>
-          <li>
-             <a href="#">Categories</a>
+	  <div class="container">
+   <div class="category-menu" style="display: ;">
+         <ul>
+            <li>
+               <a href="#">Categories</a>
                <ul class="dropdown bgcover" ng-style="set_bg()">
                   <li  ng-repeat="x in menuitem" >
-                     <a href="#" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
                      <ul class="dropdown">
                         <li  ng-repeat="sub in x.subCategory">
-                           <a href="{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>	                           
+                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
                         </li>
                      </ul>
                   </li>
@@ -68,108 +62,109 @@
             </li>
          </ul>
       </div>
-   
-   <section id="banner">
-      <slick settings="slicktopslideConfig" >
-         <div class="row" ng-repeat="image in topslides">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 banner-left">
-               <figure><a href=""><img data-lazy="{{image.img1}}"  class="img-responsive imgfullwidth"></a></figure>
+      </div>
+   </header>
+   <div class="container">
+     
+      <section id="banner">
+         <slick settings="slicktopslideConfig" >
+            <div class="row" ng-repeat="image in topslides">
+               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 banner-left">
+                  <figure><a href=""><img data-lazy="{{image.img1}}"  class="img-responsive imgfullwidth"></a></figure>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 banner-right">
+                  <figure><a href=""><img data-lazy="{{image.img2}}"  class="img-responsive  imgfullwidth banner-topimg"></a></figure>
+                  <figure><a href=""><img data-lazy="{{image.img3}}"  class="img-responsive  imgfullwidth banner-botimg"></a></figure>
+               </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 banner-right">
-               <figure><a href=""><img data-lazy="{{image.img2}}"  class="img-responsive  imgfullwidth banner-topimg"></a></figure>
-               <figure><a href=""><img data-lazy="{{image.img3}}"  class="img-responsive  imgfullwidth banner-botimg"></a></figure>
+         </slick>
+      </section>
+      <section id="deals" ng-repeat="doday in dealday">
+	  <a href="#productpage">
+		<figure>
+                  <img ng-src="{{doday.imageURL}}">
+               </figure>
+         <div class="bod">
+            <h2 class="sec-title"><strong>Deal of the Day </strong></h2>
+            <div class="deal-block">
+               
+               <h5>{{doday.productName}} </h5>
+               <h6>Rs.{{doday.productDiscountPrice}} ({{doday.discountPercentage}}% OFF) <br> <span> Rs.{{doday.productPrice}} </span>
+               </h6>
+               <ul id="timer">
+                  <p id="demo"></p>
+               </ul>
             </div>
          </div>
-      </slick>
-   </section>
-  <section id="deals">
- <div class="bod">
- <h2 class="sec-title"><strong>Deal of the Day </strong></h2>
- <div class="deal-block" ng-repeat="doday in dealday">
-  <h5>{{doday.descript}} </h5>
-  <h6>Rs.{{doday.discountprice}} ({{doday.discount}}) <br> <span> Rs.{{doday.price}} </span>
-  </h6>
-  <ul id="timer">
-  <li>
-    <span>18</span> Hours</li>
-   <li>
-    <span>12</span> Minutes</li>
-   <li>
-    <span>06</span> Sec</li>
-   
-</ul>
- </div>
- </div>
- </section>
-        
-         <div class="clearfix"></div>
-     
-
-<div class="row" id="pro">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <h2 class="sec-title2"><strong>New Products </strong></h2>
-      <section class="newprod" id="np">
-         <slick settings="slicknewproductsConfig" ng-if="NewproductsLoaded">
-            <li class="block" ng-repeat="image in products">
-                  <A HREF="#">
-                   <figure>
-                  <a href="#productpage"><img data-lazy="{{image.imgurl}}"></a>
-                  <span class="dis">{{image.discount}}</span>
-				  </figure>
-				  <h3>{{image.description}}</h3>
-                  <h4>Rs.{{image.price}}</h4>
-                  <a href="#productpage" class="va">View Details</a>
-                  </A>
-            </li>
-         </slick>
-         <div class="clearfix"> </div>
+		 </a>
       </section>
-   </div>
-   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <h2 class="sec-title2"><strong>Featured Products </strong></h2>
-      <section class="newprod" id="np">
-         <slick settings="slickfeatureproductsConfig" ng-if="FeaturedLoaded">
-            <li class="block" ng-repeat="image in feature">
-                  <A HREF="">
-                  <figure>
-                  <a href="#productpage"><img data-lazy="{{image.imgurl}}"></a>
-                  <span class="dis">{{image.discount}}</span>
-				  </figure>
-				  <h3>{{image.description}}</h3>
-                  <h4>Rs.{{image.price}}</h4>
-                  <a href="#productpage" class="va">View Details</a>
-                  </A>
-            </li>
-         </slick>
-         <div class="clearfix"> </div>
+      <div class="clearfix"></div>
+      <div class="row" id="pro">
+         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h2 class="sec-title2"><strong>New Products </strong></h2>
+            <section class="newprod" id="np">
+               <slick settings="slicknewproductsConfig" ng-if="NewproductsLoaded">
+                  <li class="block" ng-repeat="image in products">
+                     <A HREF="#productpage">
+                        <figure>
+                     <a href="#productpage"><img data-lazy="{{image.imgurl}}"></a>
+                     <span class="dis">{{image.discount}}</span>
+                     </figure>
+                     <h3>{{image.description}}</h3>
+                     <h4>Rs.{{image.price}}</h4>
+                     <a href="#productpage" class="va">View Details</a>
+                     </A>
+                  </li>
+               </slick>
+               <div class="clearfix"> </div>
+            </section>
+         </div>
+         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h2 class="sec-title2"><strong>Featured Products </strong></h2>
+            <section class="newprod" id="np">
+               <slick settings="slickfeatureproductsConfig" ng-if="FeaturedLoaded">
+                  <li class="block" ng-repeat="image in feature">
+                     <A HREF="">
+                        <figure>
+                     <a href="#productpage"><img data-lazy="{{image.imgurl}}"></a>
+                     <span class="dis">{{image.discount}}</span>
+                     </figure>
+                     <h3>{{image.description}}</h3>
+                     <h4>Rs.{{image.price}}</h4>
+                     <a href="#productpage" class="va">View Details</a>
+                     </A>
+                  </li>
+               </slick>
+               <div class="clearfix"> </div>
+            </section>
+         </div>
+      </div>
+      <section id="we-do">
+         <div class="bod">
+            <h2 class="sec-title"><strong>What We Do </strong></h2>
+            <div class="deal-block">
+               <h5>The Best Of Steel </h5>
+               <p>Innovative, practical, functional shower columns, conceived<br> to fit in with decorative styles of all kinds, making<br> showering an everyday luxury.</p>
+            </div>
+         </div>
       </section>
-   </div>
-</div>
-<section id="we-do">
-	<div class="bod">
-	<h2 class="sec-title"><strong>What We Do </strong></h2>
-	<div class="deal-block">
-		<h5>The Best Of Steel </h5>
-		<p>Innovative, practical, functional shower columns, conceived<br> to fit in with decorative styles of all kinds, making<br> showering an everyday luxury.</p>
-	</div>
-	</div>
-	</section>
-<h2 class="sec-title3"><strong>Recommended Products </strong></h2>
-<section  id="fp">
-   <slick settings="slickrecommendedprocutsConfig" ng-if="RecomendLoaded">
+      <h2 class="sec-title3"><strong>Recommended Products </strong></h2>
+      <section  id="fp">
+         <slick settings="slickrecommendedprocutsConfig" ng-if="RecomendLoaded">
             <li class="block" ng-repeat="image in recommend">
-                  <A HREF="">
+               
                   <figure>
-                  <a href="#productpage"><img data-lazy="{{image.imgurl}}"></a>
-				  </figure>
-				  <h3> {{image.description}}</h3>
-                  <h4>Rs.{{image.price}}</h4>
-                  <a href="#productpage" class="va">View Details</a>
-                  </A>
+               <a href="#productpage"><img data-lazy="{{image.imgurl}}"></a>
+			   <span class="hspace20"></span>
+               </figure>
+               <h3> {{image.description}}</h3>
+               <h4>Rs.{{image.price}}</h4>
+               <a href="#productpage" class="va">View Details</a>
+               </A>
             </li>
          </slick>
-</section>
-</div>
+      </section>
+   </div>
 </div>
 <section id="tst">
    <slick settings="slickreviewsectionConfig" ng-if="ReviewLoaded">
@@ -177,48 +172,47 @@
          <div class="txt">
             <h2>{{item.title}}</h2>
             <p>{{item.maindescript}}<br>{{item.subdescript}}</p>
-          
          </div>
       </div>
    </slick>
 </section>
 </div>
-
 <footer class="footer">
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-3 ">
-      <h2>Buying Assurance</h2>
-      <p><a href="#">See authorised Dealers</a><br>
-        <a href="#">Certification</a></p>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-3   ">
-      <h2>Info &amp; News</h2>
-      <p><a href="#">About Us</a><br>
-        <a href="#">Contact Us</a><br>
-        <a href="#">Press Releases</a><br>
-        <a href="#">Product Support</a><br>
-        <a href="#">Carrers</a><br>
-        <a href="#">FAQ’s </a></p>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-3   ">
-      <h2>Locations</h2>
-      <p><a href="#">Hyderabad</a><br>
-        <a href="#">Warangal</a><br>
-        <a href="#">Vijayawada</a><br>
-        <a href="#">Guntur</a></p>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-3   ">
-      <h2>Stay Updated </h2>
-      <p><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i> </a> | <a href="#"> <i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
-      <div class="newsletter">
-        <input placeholder="Sign up for updates">
-        <button>Register</button>
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-md-6 col-lg-3 ">
+            <h2>Buying Assurance</h2>
+            <p><a href="#">See authorised Dealers</a><br>
+               <a href="#">Certification</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Info &amp; News</h2>
+            <p><a href="#">About Us</a><br>
+               <a href="#">Contact Us</a><br>
+               <a href="#">Press Releases</a><br>
+               <a href="#">Product Support</a><br>
+               <a href="#">Carrers</a><br>
+               <a href="#">FAQ’s </a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Locations</h2>
+            <p><a href="#">Hyderabad</a><br>
+               <a href="#">Warangal</a><br>
+               <a href="#">Vijayawada</a><br>
+               <a href="#">Guntur</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Stay Updated </h2>
+            <p><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i> </a> | <a href="#"> <i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
+            <div class="newsletter">
+               <input placeholder="Sign up for updates">
+               <button>Register</button>
+            </div>
+         </div>
       </div>
-    </div>
-  </div>
-</div>
- 
-  <div class="copy">   &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
+   </div>
+   <div class="copy">   &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
 </footer>
-

@@ -1,10 +1,10 @@
-<div class="wrap" >
+<div class="wrap bg">
 <!-- Static navbar -->
 <section class="top" id="top-header">
    <div class="container">
       <div class="row">
          <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
-         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="">Login / Signup</a> </a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> (<span class="cart-value"> 0</span> )</a></div>
+         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> </a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="cart-value"> 0</span></a></div>
       </div>
    </div>
 </section>
@@ -26,7 +26,7 @@
                      <li class="active"><a href="#services">Services</a></li>
                      <li><a href="#">About Us</a></li>
                      <li class="store"><a href="#">Our Store</a></li>
-                     <li><a href="#">My Account</a></li>
+                     <li><a href="#/myaccount">My Account</a></li>
                      <li>
                         <div class="search">
                            <div class="input">
@@ -43,25 +43,28 @@
       </div>
       <!--/.container-fluid -->
    </nav>
+   <div class="container">
+   <div class="category-menu" style="display: ;">
+         <ul>
+            <li>
+               <a href="#">Categories</a>
+               <ul class="dropdown bgcover" ng-style="set_bg()">
+                  <li  ng-repeat="x in menuitem" >
+                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                     <ul class="dropdown">
+                        <li  ng-repeat="sub in x.subCategory">
+                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+      </div>
 </header>
 <div class="container">
-   <div class="category-menu" style="display: ;">
-      <ul>
-         <li>
-            <a href="#">Categories</a>
-            <ul class="dropdown bgcover" ng-style="set_bg()">
-               <li  ng-repeat="x in menuitem" >
-                  <a href="#" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
-                  <ul class="dropdown">
-                     <li  ng-repeat="sub in x.subCategory">
-                        <a href="{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>	                           
-                     </li>
-                  </ul>
-               </li>
-            </ul>
-         </li>
-      </ul>
-   </div>
+  
    <section class="services title" >
       <div class="row">
          <div class="col-xs-12">
@@ -69,17 +72,13 @@
             <p class="sub-tag" style="text-align:center" >From an idea to an unforgetable and measurable digital experience. <br>
                Choose from an wide variety of services we offer.
             </p>
-            <div class="search-inner" >
-               <input placeholder="Find experts - Plumbers, Electrician, Painters...">
-               <button>Search</button>
-            </div>
          </div>
       </div>
    </section>
    <section class="services " >
       <div class="row">
          <div class="col-xs-12">
-            <ul >
+            <ul>
                <li ng-repeat="y in deal">
                   <a href="#/detailservices/{{y.serviceType}}">
                      <div class="box">
@@ -94,11 +93,12 @@
                </li>
                <li>
             </ul>
-            <P style="text-align:right;"> <a href="">For Any Complaints : 040-223344 </a></P>
+			<P style="text-align:right;"> <a href="">For Any Complaints : 040-223344 </a></P>
          </div>
       </div>
    </section>
 </div>
+
 <!--==== Updated Footer ====--->
 <!--<footer class="footer inner">
    <div class="container">

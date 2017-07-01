@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
             <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
-            <div class="col-xs-12 col-sm-6 links"> <a class="activelink" href="#contact">Contact</a> <a href="">Login / Signup</a> </a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></a></div>
+            <div class="col-xs-12 col-sm-6 links"> <a class="activelink" href="#contact">Contact</a> <a href="#/login">Login / Signup</a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="cart-value"> 0</span></a></div>
       </div>
     </div>
    </section>
@@ -27,7 +27,7 @@
 				<li><a href="#services">Services</a></li>
 				<li><a href="#">About Us</a></li>
                 <li class="store"><a href="#">Our Store</a></li>
-				<li><a href="#">My Account</a></li>
+				<li><a href="#/myaccount">My Account</a></li>
 				<li>
                   <div class="search">
                     <div class="input">
@@ -45,18 +45,17 @@
          </div>
          <!--/.container-fluid -->
       </nav>
-   </header>
-   <div class="container">
-      <div class="category-menu" style="display: ;">
-        <ul>
-          <li>
-             <a href="#">Categories</a>
+	  <div class="container">
+   <div class="category-menu" style="display: ;">
+         <ul>
+            <li>
+               <a href="#">Categories</a>
                <ul class="dropdown bgcover" ng-style="set_bg()">
                   <li  ng-repeat="x in menuitem" >
-                     <a href="#" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
                      <ul class="dropdown">
                         <li  ng-repeat="sub in x.subCategory">
-                           <a href="{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>	                           
+                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
                         </li>
                      </ul>
                   </li>
@@ -64,7 +63,10 @@
             </li>
          </ul>
       </div>
-    
+      </div>
+   </header>
+   <div class="container">
+     
 
 <section class="contact-address" >
 <div class="container">
@@ -157,40 +159,42 @@ Directly speak to our customer support executive for any assistance.
 <br><br>
 <!--==== Old Footer ====-->
 <footer class="footer">
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-3 ">
-      <h2>Buying Assurance</h2>
-      <p><a href="#">See authorised Dealers</a><br>
-        <a href="#">Certification</a></p>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-3   ">
-      <h2>Info &amp; News</h2>
-      <p><a href="#">About Us</a><br>
-        <a href="#">Contact Us</a><br>
-        <a href="#">Press Releases</a><br>
-        <a href="#">Product Support</a><br>
-        <a href="#">Carrers</a><br>
-        <a href="#">FAQ’s </a></p>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-3   ">
-      <h2>Locations</h2>
-      <p><a href="#">Hyderabad</a><br>
-        <a href="#">Warangal</a><br>
-        <a href="#">Vijayawada</a><br>
-        <a href="#">Guntur</a></p>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-3   ">
-      <h2>Stay Updated </h2>
-      <p><a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Google+ </a></p>
-      <div class="newsletter">
-        <input placeholder="Sign up for updates">
-        <button>Register</button>
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-md-6 col-lg-3 ">
+            <h2>Buying Assurance</h2>
+            <p><a href="#">See authorised Dealers</a><br>
+               <a href="#">Certification</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Info &amp; News</h2>
+            <p><a href="#">About Us</a><br>
+               <a href="#">Contact Us</a><br>
+               <a href="#">Press Releases</a><br>
+               <a href="#">Product Support</a><br>
+               <a href="#">Carrers</a><br>
+               <a href="#">FAQ’s </a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Locations</h2>
+            <p><a href="#">Hyderabad</a><br>
+               <a href="#">Warangal</a><br>
+               <a href="#">Vijayawada</a><br>
+               <a href="#">Guntur</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Stay Updated </h2>
+            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a> | <a href="#"> <i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
+            <div class="newsletter">
+               <input placeholder="Sign up for updates">
+               <button>Register</button>
+            </div>
+         </div>
       </div>
-    </div>
-  </div>
-</div>
- 
-  <div class="copy">   &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
+   </div>
+   <div class="copy"> &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
 </footer>
 

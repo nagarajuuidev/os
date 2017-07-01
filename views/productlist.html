@@ -1,0 +1,168 @@
+<div class="wrap">
+   <!-- Static navbar -->
+   <section class="top" id="top-header">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
+            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="cart-value"> 0</span></a></div>
+         </div>
+      </div>
+   </section>
+   <header class="header">
+      <nav class="navbar navbar-default">
+         <div class="container">
+            <div class="row">
+               <div class="col-xs-12 ">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                     <a class="navbar-brand" href="#/"></a>
+                     <figure> </figure>
+                     </a>
+                  </div>
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li class="active"><a href="#/todaydeals">Today's Deals</a></li>
+                        <li><a href="#">Buy/Sell</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li class="store"><a href="#">Our Store</a></li>
+                        <li><a href="#/myaccount">My Account</a></li>
+                        <li>
+                           <div class="search">
+                              <div class="input">
+                                 <input type="text" placeholder="Search">
+                              </div>
+                           </div>
+                        </li>
+                        <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
+                     </ul>
+                  </div>
+                  <!--.nav-collapse -->
+               </div>
+            </div>
+         </div>
+         <!--/.container-fluid -->
+      </nav>
+	  <div class="container">
+   <div class="category-menu" style="display: ;">
+         <ul>
+            <li>
+               <a href="#">Categories</a>
+               <ul class="dropdown bgcover" ng-style="set_bg()">
+                  <li  ng-repeat="x in menuitem" >
+                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                     <ul class="dropdown">
+                        <li  ng-repeat="sub in x.subCategory">
+                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+      </div>
+   </header>
+   
+	<div class="breadcrumbs">
+	<a href="">Home</a>    &gt;    <a href="#/categories/{{categorytype}}">{{categorytype}}</a><span class="text-capitalize" ng-show="subcattype">    &gt;     {{subcategorytype}}</span>
+	</div>
+	
+	<section class="plist mid">
+	<div class="container">
+	<div class=" head ">
+	<div class=" row ">
+		<div class="col-xs-12 col-lg-6   ">
+		<strong>Showing <span ng-hide="subcattype">Categories ({{categorytype}})</span><span ng-show="subcattype">Sub Categories ({{subcategorytype}})</span></strong>
+		</div>
+		<div class="col-xs-12  col-lg-9 text-right ">
+		 <div class="sort">
+			<label>Sory By</label>
+		<div class="selectbox">
+		<select>
+				<option value="">Brand</option> 
+		</select>
+		</div>
+			<div class="selectbox"><select>
+				<option value="">Type</option> 
+			</select></div>
+			<div class="selectbox"><select>
+				<option value="">Grade</option> 
+			</select></div>
+			 
+			</div>
+		</div>
+		</div>
+		
+	</div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tdm-block" >
+			
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 todaydeal-block" ng-repeat="pl in plist">
+				<figure>
+					<a href="#"><img ng-src="{{pl.imgurl}}"></a>
+					<span class="dis">{{pl.discount}}</span>
+				</figure>
+				<h3> {{pl.description}}</h3>
+				<h4> Rs.{{pl.price}} </h4>
+				<a href="#" class="va">View Details</a>
+
+			</div>
+		</div>
+		<div class="pagination">
+		<ul>
+		  <li class="prev"><a href="#">Prev</a></li>
+		  <li><a href="#">1</a></li>
+		  <li class="active"><a href="#">2</a></li>
+		  <li><a href="#">3</a></li>
+		  <li class="dots"><a href="#">...</a></li>
+		  <li class="last"><a href="#">8</a></li>
+		  <li class="nxt"><a href="#">Next</a></li>
+		</ul>
+		</div>
+		
+		
+		</div>
+	</section>
+	
+	
+	<section class="todaydeals rview" >
+	<div class="container">
+      <div class="row">
+        <div class="col-xs-12  ">
+		<h2 class="sec-title"><strong>Recently Brought</strong></h2>
+          <ul class="all">
+               <slick settings="slickrecentbroughtConfig" ng-if="RecentlyLoaded">
+                 
+                     <li ng-repeat="brought in recently">
+                        <figure>
+                           <a href="#"><img data-lazy="{{brought.imgurl}}"></a>
+                           <span class="dis">{{brought.discount}}</span>
+                        </figure>
+                        <h3>{{brought.description}}</h3>
+                        <h4> Rs.{{brought.price}}</h4>
+                        <a href="#" class="va">View Details</a>
+                     </li>
+                 
+               </slick>
+			    </ul>
+        </div>
+      </div>
+	  </div>
+    </section>
+	
+</div>
+
+<footer class="footer inner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="copy"> &copy; Copights 2017  ONE SEVEN HOME </div>
+        <div class="links" ><a href="#">TERMS AND CONDITIONS</a> <a href="#">PRIVACY POLICY</a> / YOUR CALIFORNIA PRIVACY RIGHTS</div>
+      </div>
+      <div class="col-md-3">
+        <div class="social-links"><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a> <a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>

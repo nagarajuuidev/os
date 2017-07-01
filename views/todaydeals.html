@@ -4,7 +4,7 @@
       <div class="container">
          <div class="row">
             <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
-            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="">Login / Signup</a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> (<span class="cart-value"> 0</span> )</a></div>
+            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="cart-value"> 0</span></a></div>
          </div>
       </div>
    </section>
@@ -26,7 +26,7 @@
                         <li><a href="#services">Services</a></li>
                         <li><a href="#">About Us</a></li>
                         <li class="store"><a href="#">Our Store</a></li>
-                        <li><a href="#">My Account</a></li>
+                        <li><a href="#/myaccount">My Account</a></li>
                         <li>
                            <div class="search">
                               <div class="input">
@@ -43,18 +43,17 @@
          </div>
          <!--/.container-fluid -->
       </nav>
-   </header>
-   <div class="container">
-      <div class="category-menu" >
-        <ul>
-          <li>
-             <a href="#">Categories</a>
+	  <div class="container">
+   <div class="category-menu" style="display: ;">
+         <ul>
+            <li>
+               <a href="#">Categories</a>
                <ul class="dropdown bgcover" ng-style="set_bg()">
                   <li  ng-repeat="x in menuitem" >
-                     <a href="#" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
                      <ul class="dropdown">
                         <li  ng-repeat="sub in x.subCategory">
-                           <a href="{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>	                           
+                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
                         </li>
                      </ul>
                   </li>
@@ -62,6 +61,10 @@
             </li>
          </ul>
       </div>
+      </div>
+   </header>
+   <div class="container">
+      
       <section class="todaydeals title" >
          <div class="row">
             <div class="col-xs-12  ">
@@ -82,7 +85,7 @@
             <div class="todaydeal-sorting">
                <p>Showing 1-21of 99 Results</p>
                <div ng-repeat="x in menuitem">
-                  <input id="box" type="checkbox" /><label for="box">{{ x.title }}</label>
+                  <input id="{{ x.title }}" type="checkbox" /><label for="{{ x.title }}">{{ x.title }}</label>
                </div>
             </div>
             <div class="todaydeals rp">
@@ -93,12 +96,12 @@
                         <li class="block" ng-repeat="image in recommend">
                            <A HREF="">
                               <figure>
-                           <a href="#productpage"><img data-lazy="{{image.imgurl}}"></a>
+                           <a href="#"><img data-lazy="{{image.imgurl}}"></a>
                            <span class="dis">{{image.discount}}</span>
                            </figure>
                            <h3> {{image.description}}</h3>
                            <h4>Rs.{{image.price}}</h4>
-                           <a href="#productpage" class="va">View Details</a>
+                           <a href="#" class="va">View Details</a>
                            </A>
                         </li>
                      </slick>
@@ -117,7 +120,7 @@
          <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 tdm-block">
             <div class="todaydeals-sort">
                <ul>
-                  <li><span>Sory By</span></li>
+                  <li><span>Sort By</span></li>
                   <li class="sec-block">
                      <select>
                         <option value="">Brand</option>
@@ -141,16 +144,17 @@
                   </li>
                </ul>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 todaydeal-block" ng-repeat="y in deal">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 todaydeal-block" ng-repeat="todaydeal in deal">
                <figure>
-                  <a href="#productpage"><img ng-src="{{y.imgurl}}"></a>
-                  <span class="dis">{{y.discount}}</span>
+                  <a href="#"><img ng-src="{{todaydeal.imageURL}}"></a>
+                  <span class="dis">{{todaydeal.discountPercentage}}% OFF</span>
                </figure>
-               <h3>{{y.description}}</h3>
-               <h4>Rs.{{y.price}}</h4>
-               <a href="#productpage" class="va">View Details</a>
+               <h3>{{todaydeal.productName}}</h3>
+               <h4>Rs.{{todaydeal.productPrice}}</h4>
+               <a href="#" class="va">View Details</a>
             </div>
-            <div class="pagination">
+         </div>
+		 <div class="pagination">
                <ul>
                   <li class="prev"><a href="#">Prev</a></li>
                   <li><a href="#">1</a></li>
@@ -161,7 +165,6 @@
                   <li class="nxt"><a href="#">Next</a></li>
                </ul>
             </div>
-         </div>
       </section>
       <section class="todaydeals rview" >
          <div class="row">
@@ -172,12 +175,12 @@
                  
                      <li ng-repeat="brought in recently">
                         <figure>
-                           <a href="#productpage"><img data-lazy="{{brought.imgurl}}"></a>
+                           <a href="#"><img data-lazy="{{brought.imgurl}}"></a>
                            <span class="dis">{{brought.discount}}</span>
                         </figure>
                         <h3>{{brought.description}}</h3>
                         <h4> Rs.{{brought.price}}</h4>
-                        <a href="#productpage" class="va">View Details</a>
+                        <a href="#" class="va">View Details</a>
                      </li>
                  
                </slick>
@@ -216,7 +219,7 @@
          </div>
          <div class="col-xs-12 col-md-6 col-lg-3   ">
             <h2>Stay Updated </h2>
-            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a></p>
+            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a> | <a href="#"> <i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
             <div class="newsletter">
                <input placeholder="Sign up for updates">
                <button>Register</button>

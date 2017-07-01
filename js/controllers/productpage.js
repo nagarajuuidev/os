@@ -1,29 +1,23 @@
 angular.module('newapp') 
   .controller('ProductpageCtrl', function ($scope,$http) {   
-	$http.get("http://45.113.136.146:7070/shop/getCategories").then(function(resp) {
+	$http.get("http://45.113.136.146:7070/shop/getAllCategories").then(function(resp) {
+            console.log(resp);
+            $scope.menuitem = resp.data.categoryData;
+        });
+        $scope.mouseOver = function(param) {
+            $scope.set_bg = function() {
+                $scope.bgimg = param.imageURL;
+                return {
+                    "background-image": "url(/clients/oneseven_home_v2/img/" + $scope.bgimg + ".jpg)"
+                };
+            }
+        }
+	$http.get("http://45.113.136.146:7070/shop/products/100").then(function(resp) {
 	  console.log(resp);
-		$scope.menuitem=resp.data.categoryData;
-	  });
-	 $scope.mouseOver=function(param){			
-			 $scope.set_bg = function(){				
-				 $scope.bgimg=(param.title).replace(/ /g,"_");
-			//	  console.log($scope.bgimg);
-        return {			
-			"background-image":"url(/clients/onesevenhomev3/img/"+$scope.bgimg+".jpg)"			
-			};
-		}			
-	}
-	$http.get("js/controllers/productpage.json").then(function(resp) {
-	  console.log(resp);
-		$scope.ppage=resp.data.productpage;
-	  });
-	  
-	  	$http.get("/js/controllers/vendor.json").then(function(resp) {
-	  console.log(resp);
-		$scope.ven=resp.data.vendor;
+		$scope.ppage=resp.data;
 	  });
 	
-	$http.get("/js/controllers/recomended.json").then(function(resp) {
+	$http.get("/clients/oneseven_home_v2/js/controllers/recomended.json").then(function(resp) {
             console.log(resp);
             $scope.recommend = resp.data.recomended;
             $scope.RecomendLoaded = true;
@@ -36,7 +30,7 @@ angular.module('newapp')
             };
         });
 		
-	$http.get("/js/controllers/recentbrought.json").then(function(resp) {
+	$http.get("/clients/oneseven_home_v2/js/controllers/recentbrought.json").then(function(resp) {
 		console.log(resp);
 		$scope.recently=resp.data.brought;		
 	    $scope.RecentlyLoaded = true;

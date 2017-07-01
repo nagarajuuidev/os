@@ -1,5 +1,5 @@
-angular.module('newapp') 
-  .controller('ContactCtrl', function ($scope,$http) {   
+angular.module('newapp')
+  .controller('myaccountCtrl', function ($scope,$http,$routeParams) {   
 	$http.get("http://45.113.136.146:7070/shop/getAllCategories").then(function(resp) {
             console.log(resp);
             $scope.menuitem = resp.data.categoryData;
@@ -12,8 +12,8 @@ angular.module('newapp')
                 };
             }
         }
-		$http.get("http://45.113.136.146:7070/shop/getContactUS").then(function(resp){
-			console.log(resp);
-			$scope.contactdetails=resp.data;
-		});
-});
+		 $http.get("/clients/oneseven_home_v2/js/controllers/myaccount.json").then(function(resp) {
+            console.log(resp);
+            $scope.account = resp.data.myacc;
+        });
+  });

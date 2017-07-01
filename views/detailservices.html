@@ -1,18 +1,18 @@
-<div class="wrap" >
+<div class="wrap bg">
 <!-- Static navbar -->
 <section class="top" id="top-header">
    <div class="container">
-      <div class="row">
+	  <div class="row">
          <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
          <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span></a></div>
-      </div>
+	  </div>
    </div>
 </section>
 <header class="header">
    <nav class="navbar navbar-default">
       <div class="container">
          <div class="row">
-            <div class="col-xs-12 ">
+            <div class="col-xs-12">
                <div class="navbar-header">
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                   <a class="navbar-brand" href="#/"></a>
@@ -26,7 +26,7 @@
                      <li><a href="#services">Services</a></li>
                      <li><a href="#">About Us</a></li>
                      <li class="store"><a href="#">Our Store</a></li>
-                     <li><a href="#">My Account</a></li>
+                     <li><a href="#/myaccount">My Account</a></li>
                      <li>
                         <div class="search">
                            <div class="input">
@@ -43,30 +43,33 @@
       </div>
       <!--/.container-fluid -->
    </nav>
+   <div class="container">
+   <div class="category-menu" style="display: ;">
+         <ul>
+            <li>
+               <a href="#">Categories</a>
+               <ul class="dropdown bgcover" ng-style="set_bg()">
+                  <li  ng-repeat="x in menuitem" >
+                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                     <ul class="dropdown">
+                        <li  ng-repeat="sub in x.subCategory">
+                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+      </div>
 </header>
 <div class="container">
-   <div class="category-menu" style="display: ;">
-      <ul>
-         <li>
-            <a href="#">Categories</a>
-            <ul class="dropdown bgcover" ng-style="set_bg()">
-               <li  ng-repeat="x in menuitem" >
-                  <a href="#" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
-                  <ul class="dropdown">
-                     <li  ng-repeat="sub in x.subCategory">
-                        <a href="{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>	                           
-                     </li>
-                  </ul>
-               </li>
-            </ul>
-         </li>
-      </ul>
-   </div>
-   <section class="services-list title" >
+
+   <section class="services-list title">
       <div class="container">
          <div class="row">
             <div class="col-xs-12  ">
-               <h2 class="sec-title"><strong>Plumbers</strong></h2>
+               <h2 class="sec-title"><strong>{{selectedtype}}</strong></h2>
                <p class="sub-tag">From an idea to an unforgetable and measurable digital experience.
                   Choose from an wide variety of services we offer.
                </p>
@@ -74,14 +77,22 @@
          </div>
       </div>
    </section>
-   <section class="services-list   ">
+   <section class="services-list ">
       <div class="container">
          <div class=" head ">
             <div class=" row ">
-               <div class="col-xs-12 col-lg-4   ">
-                  <strong>Showing all Plumbers</strong>
-               </div>
-               <div class="col-xs-12  col-lg-8 text-right ">
+               <div class="col-xs-12 col-lg-3 ">
+		<strong>Showing all <span>{{selectedtype}}</span></strong>
+		</div>
+		<div class="col-xs-12  col-lg-9">
+		<div class="text-left service-location">
+			<form>
+				<div class="form-group">
+					<input type="text" class="svc-ltn" placeholder="Punjagutta (Enter a new location)"/>
+				</div>
+			</form>
+		</div>
+               <div class="text-right ">
                   <div class="sort">
                      <label>Sort By</label>
                      <div class="selectbox">
@@ -103,11 +114,12 @@
                </div>
             </div>
          </div>
+         </div>
          <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3  ">
                <div class="todaydeal-sorting">
-               <div ng-repeat="x in menuitem">
-                  <input id="box" type="checkbox" /><label for="box">{{ x.title }}</label>
+               <div ng-repeat="x in workers">
+                  <input id="{{ x.serviceType }}" type="checkbox" /><label for="{{ x.serviceType }}">{{ x.serviceType }}</label>
                </div>
             </div>
                <div class="todaydeals rp">
@@ -140,21 +152,30 @@
             <div class="list-view col-xs-12 col-sm-9 col-md-9 col-lg-9">
                <ul>
                   <li ng-repeat="detailsevice in servicedetails">
-                     <figure><a href="#"><img ng-src="{{detailsevice.imgUrl}}"></a></figure>
-                     <h3> {{detailsevice.title}}</h3>
-                     <h4> {{detailsevice.location}}<br>{{detailsevice.address}} <br>
-                        Phone: +91 {{detailsevice.mobile}}
+                     <figure><a href="#"><img ng-src="{{detailsevice.imageUrl}}"></a></figure>
+                     <h3> {{detailsevice.companyName}}</h3>
+                     <h4> {{detailsevice.houseNumber}},{{detailsevice.street}},{{detailsevice.area}}<br>{{detailsevice.city}},{{detailsevice.state}}-{{detailsevice.pinCode}}<br>
+                        Phone: +91 {{detailsevice.contactNumber}}
                      </h4>
                      <span class="rating line sm">
                      <i class="fa fa-star" aria-hidden="true"></i>
                      <i class="fa fa-star" aria-hidden="true"></i>
                      <i class="fa fa-star" aria-hidden="true"></i>
                      <i class="fa fa-star" aria-hidden="true"></i>
-                     <i class="fa fa-star disabled" aria-hidden="true"></i> 
-                     <span>{{detailsevice.votes}}</span>
+                     <i class="fa fa-star disabled" aria-hidden="true"></i> |
+                     <span>{{detailsevice.totalRating}} Votes</span> |
+				<span class="rate"> Rate
+				<span class="rating line sm srv-show">
+				<i class="fa fa-star" aria-hidden="true"></i>
+				<i class="fa fa-star" aria-hidden="true"></i>
+				<i class="fa fa-star" aria-hidden="true"></i>
+				<i class="fa fa-star" aria-hidden="true"></i>
+				<i class="fa fa-star disabled" aria-hidden="true"></i>
+				</span>
+				</span>
                      </span>
                      <div class="push-right">
-                        <button class="like">Like</button>
+                        <!--<button class="like">Like</button>-->
                         <button class="booknow">Book Now</button>
                      </div>
                   </li>
@@ -170,9 +191,7 @@
                      <li class="nxt"><a href="#">Next</a></li>
                   </ul>
                </div>
-               
             </div>
-			
          </div>
       </div>
    </section>
@@ -185,7 +204,7 @@
 		  <li ng-repeat="vendor in vendorrecommended">
 			<figure>
 				<a href="#"><img ng-src="{{vendor.imgUrl}}"></a>
-				<a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a>
+				<!--<a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a>-->
 			</figure>
 				<h4>{{vendor.title}}</h4>
 				<p>{{vendor.location}}{{vendor.address}}</p>
