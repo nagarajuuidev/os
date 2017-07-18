@@ -1,0 +1,361 @@
+<div class="wrap">
+   <!-- Static navbar -->
+   <section class="top" id="top-header">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
+            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <a href="#/login" ng-hide="userlogged">Login </a> / <a href="#/registration" ng-hide="userlogged"> Signup</a><span class="login-btn" ng-show="userlogged">{{loggedInUser}}</span> <a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a></div>
+         </div>
+      </div>
+   </section>
+   <header class="header">
+      <nav class="navbar navbar-default">
+         <div class="container">
+            <div class="row">
+               <div class="col-xs-12 ">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                     <a class="navbar-brand" href="#/"></a>
+                     <figure> </figure>
+                     </a>
+                  </div>
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a href="#/todaydeals">Today's Deals</a></li>
+                        <li><a href="#">Buy/Sell</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li class="store"><a href="#">Our Store</a></li>
+                        <li><a href="#/myaccount">My Account</a></li>
+                        <li>
+                           <div class="search">
+                              <div class="input">
+                                 <input type="text" placeholder="Search">
+                              </div>
+                           </div>
+                        </li>
+                        <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
+                     </ul>
+                  </div>
+                  <!--.nav-collapse -->
+               </div>
+            </div>
+         </div>
+         <!--/.container-fluid -->
+      </nav>
+	   <div class="container">
+   <div class="category-menu" style="display: ;">
+         <ul>
+            <li>
+               <a class="cat-link">All Categories</a>
+               <ul class="dropdown bgcover" ng-style="set_bg()">
+                  <li  ng-repeat="x in menuitem" >
+                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                     <ul class="dropdown">
+                        <li  ng-repeat="sub in x.subCategory">
+                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+      </div>
+   </header>
+   <div class="container">
+      
+	  <div class="breadcrumbs"><a href="">Home</a>    &gt;   My Account </div>
+	
+	<section class="myaccount">
+
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 left">
+			<div class="con-block">
+				<div class="fig">
+				<figure>
+					<img src="img/account-icon.png"/>
+				</figure>
+				</div>
+				<div class="text">
+				<h4>Activity</h4>
+				<p>How to manage your account and its features.</p>
+				</div>
+			</div>
+			<div class="con-block">
+				<div class="fig">
+				<figure id="acc-pic">
+					<img src="img/account-icon.png"/>
+				</figure>
+				</div>
+				<div class="text">
+				<h4>Orders</h4>
+				<p>How to manage your account and its features.</p>
+				</div>
+			</div>
+			<div class="con-block">
+				<div class="fig">
+				<figure>
+					<img src="img/account-icon.png"/>
+				</figure>
+				</div>
+				<div class="text">
+				<h4>Wishlist</h4>
+				<p>How to manage your account and its features.</p>
+				</div>
+			</div>
+			<div class="con-block">
+				<div class="fig">
+				<figure>
+					<img src="img/account-icon.png"/>
+				</figure>
+				</div>
+				<div class="text">
+				<h4>Basic Details</h4>
+				<p>How to manage your account and its features.</p>
+				</div>
+			</div>
+			<div class="con-block">
+				<div class="fig">
+				<figure>
+					<img src="img/account-icon.png"/>
+				</figure>
+				</div>
+				<div class="text">
+				<h4>Settings</h4>
+				<p>How to manage your account and its features.</p>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 right">
+			<div class="home">
+			<div class="text-left">
+				<ul class="links">
+					<li><a class="active" href="#">All Orders</a></li>
+					<li><a href="#">Open Orders</a></li>
+					<li><a href="#">Cancelled Orders</a></li>
+				</ul>
+			</div>
+			<div class="text-right">
+				<div class="sort">
+					<label>Sort By</label>
+					<div class="selectbox">
+					<select>
+						<option value="">Date</option> 
+					</select>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="acc-block">
+			<div class="table-responsive">
+			<table class="table">
+				<tr ng-repeat="my in account" >
+					<td>
+						<p>{{my.date}}</p>
+					</td>
+					<td>
+						<figure id="acc-pic">
+							<img src="img/np2.png"/>
+						</figure>
+					</td>
+					<td>
+						<h4>{{my.title}}</h4>
+						<span class="info">
+						<span>{{my.qty}}</span> | 
+						<span>{{my.size}}</span> |    
+						<span>{{my.type}}</span>
+						</span>
+						<h5>{{my.vendor}}</h5>
+					</td>
+					<td>
+						<h6>
+							<i class="fa fa-inr" aria-hidden="true"></i> {{my.discountprice}}<br>
+							<span><i class="fa fa-inr" aria-hidden="true"></i> {{my.origenalprice}}0</span>
+						</h6>
+					</td>
+					<td>
+						<p class="link"><a href="#">View Order</a></p>
+					</td>
+				</tr>
+			<!--<tr>
+					<td>
+						<p>20Nov,2016</p>
+					</td>
+					<td>
+						<h4>EClearwater Elara Single Kitchen Mixer</h4>
+						<span class="info">
+						<span>Qty: 01</span> | 
+						<span>Size:  Max</span> |    
+						<span>Type: Steel</span>
+						</span>
+						<h5>S.K Plumbers & Sanitary Company ( vendor )</h5>
+					</td>
+					<td>
+						<h6>
+							RS.699.00<br>
+							<span>RS.899.00</span>
+						</h6>
+					</td>
+					<td>
+						<p class="link"><a href="#">View Order</a></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>20Nov,2016</p>
+					</td>
+					<td>
+						<h4>EClearwater Elara Single Kitchen Mixer</h4>
+						<span class="info">
+						<span>Qty: 01</span> | 
+						<span>Size:  Max</span> |    
+						<span>Type: Steel</span>
+						</span>
+						<h5>S.K Plumbers & Sanitary Company ( vendor )</h5>
+					</td>
+					<td>
+						<h6>
+							RS.699.00<br>
+							<span>RS.899.00</span>
+						</h6>
+					</td>
+					<td>
+						<p class="link"><a href="#">View Order</a></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>20Nov,2016</p>
+					</td>
+					<td>
+						<h4>EClearwater Elara Single Kitchen Mixer</h4>
+						<span class="info">
+						<span>Qty: 01</span> | 
+						<span>Size:  Max</span> |    
+						<span>Type: Steel</span>
+						</span>
+						<h5>S.K Plumbers & Sanitary Company ( vendor )</h5>
+					</td>
+					<td>
+						<h6>
+							RS.699.00<br>
+							<span>RS.899.00</span>
+						</h6>
+					</td>
+					<td>
+						<p class="link"><a href="#">View Order</a></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>20Nov,2016</p>
+					</td>
+					<td>
+						<h4>EClearwater Elara Single Kitchen Mixer</h4>
+						<span class="info">
+						<span>Qty: 01</span> | 
+						<span>Size:  Max</span> |    
+						<span>Type: Steel</span>
+						</span>
+						<h5>S.K Plumbers & Sanitary Company ( vendor )</h5>
+					</td>
+					<td>
+						<h6>
+							RS.699.00<br>
+							<span>RS.899.00</span>
+						</h6>
+					</td>
+					<td>
+						<p class="link"><a href="#">View Order</a></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>20Nov,2016</p>
+					</td>
+					<td>
+						<h4>EClearwater Elara Single Kitchen Mixer</h4>
+						<span class="info">
+						<span>Qty: 01</span> | 
+						<span>Size:  Max</span> |    
+						<span>Type: Steel</span>
+						</span>
+						<h5>S.K Plumbers & Sanitary Company ( vendor )</h5>
+					</td>
+					<td>
+						<h6>
+							RS.699.00<br>
+							<span>RS.899.00</span>
+						</h6>
+					</td>
+					<td>
+						<p class="link"><a href="#">View Order</a></p>
+					</td>
+				</tr>-->
+			
+			</table>
+			</div>
+			
+			</div>
+			
+		</div>
+
+	</section>
+	
+</div>
+<footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-md-6 col-lg-3 ">
+            <h2>Buying Assurance</h2>
+            <p><a href="#">See authorised Dealers</a><br>
+               <a href="#">Certification</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Info &amp; News</h2>
+            <p><a href="#">About Us</a><br>
+               <a href="#">Contact Us</a><br>
+               <a href="#">Press Releases</a><br>
+               <a href="#">Product Support</a><br>
+               <a href="#">Careers</a><br>
+               <a href="#">FAQ’s </a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Locations</h2>
+            <p><a href="#">Hyderabad</a><br>
+               <a href="#">Warangal</a><br>
+               <a href="#">Vijayawada</a><br>
+               <a href="#">Guntur</a>
+            </p>
+         </div>
+         <div class="col-xs-12 col-md-6 col-lg-3   ">
+            <h2>Stay Updated </h2>
+            <p><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i> </a> | <a href="#"> <i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
+            <div class="newsletter">
+               <input placeholder="Sign up for updates">
+               <button>Register</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="copy">   &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
+</footer>
+</div>
+
+
+
+<script>
+$(".login-btn").click(function(){
+    $(".myprofile-block").toggle();
+});
+$(".cat-link").click(function(){
+    $(".category-menu ul li:hover > ul.dropdown").toggle();
+});
+$(".cat-link").click(function(){
+    $(".cat-link").toggleClass("active");
+});
+</script>

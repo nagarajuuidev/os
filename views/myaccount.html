@@ -3,8 +3,8 @@
    <section class="top" id="top-header">
       <div class="container">
          <div class="row">
-            <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
-            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> </a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a></div>
+            <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
+            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <a href="#/login" ng-hide="userlogged">Login </a> / <a href="#/registration" ng-hide="userlogged"> Signup</a><span class="login-btn" ng-show="userlogged">{{loggedInUser}}</span> <a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a></div>
          </div>
       </div>
    </section>
@@ -26,7 +26,7 @@
                         <li><a href="#services">Services</a></li>
                         <li><a href="#">About Us</a></li>
                         <li class="store"><a href="#">Our Store</a></li>
-                        <li><a href="#/myaccount">My Account</a></li>
+                        <li class="active"><a href="#/myaccount">My Account</a></li>
                         <li>
                            <div class="search">
                               <div class="input">
@@ -47,7 +47,7 @@
    <div class="category-menu" style="display: ;">
          <ul>
             <li>
-               <a href="#">Categories</a>
+               <a class="cat-link">All Categories</a>
                <ul class="dropdown bgcover" ng-style="set_bg()">
                   <li  ng-repeat="x in menuitem" >
                      <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
@@ -63,13 +63,14 @@
       </div>
       </div>
    </header>
-   <div class="container">
-      
-	  <div class="breadcrumbs"><a href="">Home</a>    &gt;   My Account </div>
+      <div class="container">
+  <!--<div class="breadcrumbs"><a href="">Home</a>    &gt;   My Account &gt; Add a new product </div>-->
 	
-	<section class="myaccount">
-	<div class="container">
-		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 left">
+	<section class="myaccount inner">
+		<div class="tabbable tabs-left left-tab-process">
+			<ul class="nav nav-tabs book-process-ltab">
+			<li class="active">
+			<a href=".a" data-toggle="tab">
 			<div class="con-block">
 				<div class="fig">
 				<figure>
@@ -81,17 +82,11 @@
 				<p>How to manage your account and its features.</p>
 				</div>
 			</div>
-			<div class="con-block">
-				<div class="fig">
-				<figure>
-					<img src="img/account-icon.png"/>
-				</figure>
-				</div>
-				<div class="text">
-				<h4>Orders</h4>
-				<p>How to manage your account and its features.</p>
-				</div>
-			</div>
+			</a>
+			</li>
+			
+			<li>
+			<a href=".b" data-toggle="tab">
 			<div class="con-block">
 				<div class="fig">
 				<figure>
@@ -103,6 +98,10 @@
 				<p>How to manage your account and its features.</p>
 				</div>
 			</div>
+			</a>
+			</li>
+			<li>
+			<a href=".c" data-toggle="tab">
 			<div class="con-block">
 				<div class="fig">
 				<figure>
@@ -110,10 +109,14 @@
 				</figure>
 				</div>
 				<div class="text">
-				<h4>Basic Details</h4>
+				<h4>Profile</h4>
 				<p>How to manage your account and its features.</p>
 				</div>
 			</div>
+			</a>
+			</li>
+			<li>
+			<a href=".d" data-toggle="tab">
 			<div class="con-block">
 				<div class="fig">
 				<figure>
@@ -121,174 +124,306 @@
 				</figure>
 				</div>
 				<div class="text">
-				<h4>Settings</h4>
+				<h4>Orders/Invoices</h4>
 				<p>How to manage your account and its features.</p>
 				</div>
 			</div>
-			
-		</div>
+			</a>
+			</li>
+			<li>
+			<a href=".e" data-toggle="tab">
+			<div class="con-block">
+				<div class="fig">
+				<figure>
+					<img src="img/account-icon.png"/>
+				</figure>
+				</div>
+				<div class="text">
+				<h4>Today Orders</h4>
+				<p>How to manage your account and its features.</p>
+				</div>
+			</div>
+			</a>
+			</li>
+			<li>
+			<a href=".f" data-toggle="tab">
+			<div class="con-block">
+				<div class="fig">
+				<figure>
+					<img src="img/account-icon.png"/>
+				</figure>
+				</div>
+				<div class="text">
+				<h4>Product List</h4>
+				<p>How to manage your account and its features.</p>
+				</div>
+			</div>
+			</a>
+			</li>
+			<li>
+			<a href=".g" data-toggle="tab">
+			<div class="con-block">
+				<div class="fig">
+				<figure>
+					<img src="img/account-icon.png"/>
+				</figure>
+				</div>
+				<div class="text">
+				<h4>Add a new product</h4>
+				<p>How to manage your account and its features.</p>
+				</div>
+			</div>
+			</a>
+			</li>
+			<li>
+			<a href=".h" data-toggle="tab">
+			<div class="con-block">
+				<div class="fig">
+				<figure>
+					<img src="img/account-icon.png"/>
+				</figure>
+				</div>
+				<div class="text">
+				<h4>Message inbox</h4>
+				<p>How to manage your account and its features.</p>
+				</div>
+			</div>
+			</a>
+			</li>
+			<li>
+			<a href=".i" data-toggle="tab">
+			<div class="con-block">
+				<div class="fig">
+				<figure>
+					<img src="img/account-icon.png"/>
+				</figure>
+				</div>
+				<div class="text">
+				<h4>Banking</h4>
+				<p>How to manage your account and its features.</p>
+				</div>
+			</div>
+			</a>
+			</li>
+			<li>
+			<a href=".j" data-toggle="tab">
+			<div class="con-block">
+				<div class="fig">
+				<figure>
+					<img src="img/account-icon.png"/>
+				</figure>
+				</div>
+				<div class="text">
+				<h4>Make a payment</h4>
+				<p>How to manage your account and its features.</p>
+				</div>
+			</div>
+			</a>
+			</li>
 		
-		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 right">
-			<div class="home">
-			<div class="text-left">
-				<ul class="links">
-					<li><a class="active" href="#">All Orders</a></li>
-					<li><a href="#">Open Orders</a></li>
-					<li><a href="#">Cancelled Orders</a></li>
-				</ul>
-			</div>
-			<div class="text-right">
-				<div class="sort">
-					<label>Sory By</label>
-					<div class="selectbox">
-					<select>
-						<option value="">Date</option> 
-					</select>
+			</ul>
+		
+			<div class="tab-content">
+				<div class="tab-pane active a">
+				<div class="breadcrumbs"><a href="">Home</a>    &gt; &nbsp;   My Account &nbsp; &gt; &nbsp; Activity </div>
+
+				</div>
+				
+				<div class="tab-pane b">
+				<div class="breadcrumbs"><a href="">Home</a>    &gt; &nbsp;   My Account &nbsp; &gt; &nbsp; Wish list </div>
+				<div class="my-acc-wishlist">
+					<div class="home-top">
+						<h5>Wish List</h5>
+						<h5 class="acc-del"><a href="#"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></h5>
+					</div>
+						<div class="wish-block">
+							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 block " ng-repeat="maccw in mwlist">
+							   <figure>
+								  <a href="#"><img ng-src="{{maccw.imgurl}}" ></a>
+								
+							   </figure>
+							   <h3>{{maccw.title}}</h3>
+							   <h4><i class="fa fa-inr" aria-hidden="true"></i> {{maccw.originalprice}}</h4>
+							   <label> <input type="checkbox" value="">  </label>
+							   <a class="w-edit" href="#" class="va">Add to Product List</a>
+							</div>
+							<div class="pagination">
+							  <ul>
+								<li class="prev"><a href="#">Prev</a></li>
+								<li><a href="#">1</a></li>
+								<li class="active"><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li class="dots"><a href="#">...</a></li>
+								<li class="last"><a href="#">8</a></li>
+								<li class="nxt"><a href="#">Next</a></li>
+							  </ul>
+							  </div>
+							
+							
+						</div>
+						
+						
 					</div>
 				</div>
-			</div>
-			</div>
+					<div class="tab-pane c">
+				<div class="breadcrumbs"><a href="">Home</a>    &gt; &nbsp;  My Account &nbsp; &gt; &nbsp; Profile </div>
+				<section class="login mid acc-profile">
+				<div class="home-top">
+					<h5>Edit Profile</h5>
+				</div>
+					<div class="login-mid-block">
+					<div class="edit-pro">
+						<a href="#"><figure>
+							<img src="img/edit-pic.png"/>
+						</figure>
+						<span>Edit Profile</span></a>
+					</div>
+					<form class="form-horizontal">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left">
+						
+							<div class="form-group">
+								<input type="email" name="email" class="form-control" ng-model="myprofile.emailAddress" placeholder="Email">
+							</div>
+							<div class="form-group">
+								<input type="text" name="Name" class="form-control" placeholder=" Name" ng-model="myprofile.name">  
+							</div>
+							<div class="form-group">        
+								<textarea name="message" class="form-control" placeholder="Office Address" ng-model="myprofile.officeAddress"></textarea>   
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="mnum" placeholder="Mobile Number" name="mnum"ng-model="myprofile.mobileNumber" >
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="tnum" placeholder="Telephone Number" name="tnum" ng-model="myprofile.telephoneNumber">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="fnum" placeholder="Fax No" name="fnum"  ng-model="myprofile.faxNo">
+							</div>
+							<div class="form-group">
+								<input type="password" name="Password"  id="pass" class="form-control" placeholder="Password" ng-model="myprofile.password">  
+							</div>
+							<div class="form-group">
+								<input type="password" name="confirmPassword" ng-model="myprofile.checkPassword" id="conformPassword" class="form-control" placeholder="Confirm Password" >
+							</div>	
+						</div>
+
+						
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 right">
+						<h4>Constitution of firm</h4>
+								<div class="form-group">         
+									<div class="sec-block">         
+										<select>			
+										<option value="">Manufacture</option> 
+										</select>        
+									</div>       
+								</div>
+								<h6>Nature of company</h6>
+								<div class="form-group">         
+								<div class="sec-block">         
+									<select>			
+									<option value="">Large Scale</option> 
+									</select>        
+								</div>       
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" id="regnum" placeholder="Reg No" name="regnum" ng-model="myprofile.regNo">
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" id="vatnum" placeholder="VAT Reg No" name="vatnum" ng-model="myprofile.vatRegNo">
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" id="pannum" placeholder="Income tax pan number" name="pannum" ng-model="myprofile.Incometaxpannumber">
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" id="labnum" placeholder="Labour license number" name="labnum" ng-model="myprofile.labourlicensenumber">
+								</div>
+								<h6>Valid authorization of dealership certificate for supply of specific products</h6>
+								<div class="form-group">
+									<input name="file" id="file-1" class="inputfile inputfile-2" type="file">
+									<label for="file-1"> <span> Upload</span></label>
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" id="exp" placeholder="Experience in the Industry" name="exp" ng-model="myprofile.experienceintheIndustry">
+								</div>
+								<div class="form-group">        
+									<textarea name="mclients" class="form-control" placeholder="Major Clients" ng-model="myprofile.MajorClients"></textarea>   
+								</div>
+								<div class="form-group">
+									<input type="checkbox" name="remember" id="agr" value=""><label for="agr">I agree to OneSevenHome Agreement</label>
+								</div>
+								
+						</div>
+						
+						<div class="form-group reg-btn">
+						 <button type="submit" class="btn btn-primary"  value="Update" title="Update" ng-click="Update(myprofile)"><span>Update</span> </button>    
+							</div>
+							</form>
+						</div>
+				</section>
+				
+				
+				</div>
+				<div class="tab-pane d">
+				<div class="breadcrumbs"><a href="">Home</a>    &gt; &nbsp;   My Account &nbsp; &gt; &nbsp; Orders </div>
+				<div class="right">
+				<div class="home-top">
+					<ul class="links">
+						<li><a class="active" href="#">Orders</a></li>
+						<li><a href="#">Invoices</a></li>
+					</ul>
+				</div>
+					<div class="home">
+						<div class="text-left">
+							<ul class="links">
+								<li><a class="active" href="#">All Orders</a></li>
+								<li><a href="#">Open Orders</a></li>
+								<li><a href="#">Cancelled Orders</a></li>
+								<li><a href="#">Refunded</a></li>
+							</ul>
+						</div>
+						<div class="text-right">
+							<div class="sort">
+								<label>Sort By</label>
+								<div class="selectbox">
+								<select>
+									<option value="">Date</option> 
+								</select>
+								</div>
+							</div>
+						</div>
+					</div>
 			<div class="acc-block">
 			<div class="table-responsive">
 			<table class="table">
-				<tr ng-repeat="my in account" >
+				<tr ng-repeat="mo in myorder">
 					<td>
-						<p>{{my.date}}</p>
+						<p>{{mo.date}}</p>
 					</td>
 					<td>
-						<h4>{{my.title}}</h4>
+						<figure id="acc-pic">
+						<img ng-src="{{mo.imgurl}}" >
+						</figure>
+					</td>
+					<td>
+						<h4>{{mo.title}}</h4>
 						<span class="info">
-						<span>{{my.qty}}</span> | 
-						<span>{{my.size}}</span> |    
-						<span>{{my.type}}</span>
+						<span>Qty:{{mo.qty}}</span> | 
+						<span>Size: {{mo.size}}</span> |    
+						<span>Type: {{mo.type}}</span>
 						</span>
-						<h5>{{my.vendor}}</h5>
+						<h5>{{mo.vendor}}</h5>
 					</td>
 					<td>
 						<h6>
-							RS.{{my.discountprice}}<br>
-							<span>RS.{{my.origenalprice}}0</span>
+							<i class="fa fa-inr" aria-hidden="true"></i> {{mo.discountprice}} <br>
+							<span><i class="fa fa-inr" aria-hidden="true"></i> {{mo.originalprice}}</span>
 						</h6>
 					</td>
 					<td>
 						<p class="link"><a href="#">View Order</a></p>
 					</td>
 				</tr>
-			<!--<tr>
-					<td>
-						<p>20Nov,2016</p>
-					</td>
-					<td>
-						<h4>EClearwater Elara Single Kitchen Mixer</h4>
-						<span class="info">
-						<span>Qty: 01</span> | 
-						<span>Size:  Max</span> |    
-						<span>Type: Steel</span>
-						</span>
-						<h5>S.K Plumbers & Sanitary Company ( vendor )</h5>
-					</td>
-					<td>
-						<h6>
-							RS.699.00<br>
-							<span>RS.899.00</span>
-						</h6>
-					</td>
-					<td>
-						<p class="link"><a href="#">View Order</a></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>20Nov,2016</p>
-					</td>
-					<td>
-						<h4>EClearwater Elara Single Kitchen Mixer</h4>
-						<span class="info">
-						<span>Qty: 01</span> | 
-						<span>Size:  Max</span> |    
-						<span>Type: Steel</span>
-						</span>
-						<h5>S.K Plumbers & Sanitary Company ( vendor )</h5>
-					</td>
-					<td>
-						<h6>
-							RS.699.00<br>
-							<span>RS.899.00</span>
-						</h6>
-					</td>
-					<td>
-						<p class="link"><a href="#">View Order</a></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>20Nov,2016</p>
-					</td>
-					<td>
-						<h4>EClearwater Elara Single Kitchen Mixer</h4>
-						<span class="info">
-						<span>Qty: 01</span> | 
-						<span>Size:  Max</span> |    
-						<span>Type: Steel</span>
-						</span>
-						<h5>S.K Plumbers & Sanitary Company ( vendor )</h5>
-					</td>
-					<td>
-						<h6>
-							RS.699.00<br>
-							<span>RS.899.00</span>
-						</h6>
-					</td>
-					<td>
-						<p class="link"><a href="#">View Order</a></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>20Nov,2016</p>
-					</td>
-					<td>
-						<h4>EClearwater Elara Single Kitchen Mixer</h4>
-						<span class="info">
-						<span>Qty: 01</span> | 
-						<span>Size:  Max</span> |    
-						<span>Type: Steel</span>
-						</span>
-						<h5>S.K Plumbers & Sanitary Company ( vendor )</h5>
-					</td>
-					<td>
-						<h6>
-							RS.699.00<br>
-							<span>RS.899.00</span>
-						</h6>
-					</td>
-					<td>
-						<p class="link"><a href="#">View Order</a></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>20Nov,2016</p>
-					</td>
-					<td>
-						<h4>EClearwater Elara Single Kitchen Mixer</h4>
-						<span class="info">
-						<span>Qty: 01</span> | 
-						<span>Size:  Max</span> |    
-						<span>Type: Steel</span>
-						</span>
-						<h5>S.K Plumbers & Sanitary Company ( vendor )</h5>
-					</td>
-					<td>
-						<h6>
-							RS.699.00<br>
-							<span>RS.899.00</span>
-						</h6>
-					</td>
-					<td>
-						<p class="link"><a href="#">View Order</a></p>
-					</td>
-				</tr>-->
+				
 			
 			</table>
 			</div>
@@ -296,9 +431,115 @@
 			</div>
 			
 		</div>
+				</div>
+				<div class="tab-pane e">
+				Sample
+				</div>
+				<div class="tab-pane f">
+				<div class="breadcrumbs"><a href="">Home</a>    &gt; &nbsp;   My Account &nbsp; &gt; &nbsp; product list </div>
+				<div class="my-acc-wishlist">
+					<div class="home-top">
+						<h5>Product List</h5>
+						<h5 class="acc-del"><a href="#"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></h5>
+					</div>
+						<div class="wish-block">
+							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 block " ng-repeat="macc in mplist">
+							   <figure>
+								  <a href="#"><img ng-src="{{macc.imgurl}}" ></a>
+								
+							   </figure>
+							   <h3>{{macc.title}}</h3>
+							   <h4><i class="fa fa-inr" aria-hidden="true"></i> {{macc.originalprice}}</h4>
+							   <label> <input type="checkbox" value="">  </label>
+							   <a class="w-edit" href="#" class="va">Edit</a>
+							</div>
+							<div class="pagination">
+							  <ul>
+								<li class="prev"><a href="#">Prev</a></li>
+								<li><a href="#">1</a></li>
+								<li class="active"><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li class="dots"><a href="#">...</a></li>
+								<li class="last"><a href="#">8</a></li>
+								<li class="nxt"><a href="#">Next</a></li>
+							  </ul>
+							  </div>
+							
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				<div class="tab-pane g">
+				<div class="breadcrumbs"><a href="">Home</a>    &gt; &nbsp;   My Account &nbsp; &gt; &nbsp; Add a new product </div>
+				<section class="services ">
+						  <ul >
+							<li ng-repeat="my in account"><a href="#">
+							  <div class="box">
+								<figure><img ng-src="{{my.imgurl1}}" ><img src="{{my.imgurl2}}" ></figure>
+								<h2>{{my.title}}</h2>
+							  </div>
+							  </a></li>
+							
+							  
+						  </ul>
+				</section>
+				</div>
+					<div class="tab-pane h">
+				<div class="breadcrumbs"><a href="">Home</a>    &gt; &nbsp;  My Account &nbsp; &gt; &nbsp; Message inbox </div>
+				<div class="msg-inbox">
+				   <div class="home-top">
+					<ul class="links">
+						<li><a class="active" href="#">Inbox(3)</a></li>
+						<li><a href="#">Sent</a></li>
+					</ul>
+					<h5 class="acc-del"><a href="#"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></h5>
+					</div>
+					<div class="table-responsive">
+						<table class="table">
+							<tbody>
+							  <tr class="unread" ng-repeat="ur in unreadmsg">
+								<td>
+								<form class="form-horizontal">
+									<input id="name" type="checkbox" value=""/>
+									<label for="name"></label>
+								</form>
+								</td>
+								<td>{{ur.name}}</td>
+								<td>{{ur.title}}</td>
+								<td>{{ur.time}}</td>
+							  </tr>
+							  <tr class="read"  ng-repeat="r in readmsg">
+								<td>
+								<form class="form-horizontal">
+									<input id="box2" type="checkbox" value=""/>
+									<label for="box2"></label>
+								</form>
+								</td>
+								<td>{{r.name}}</td>
+								<td>{{r.title}}</td>
+								<td>{{r.date}}</td>
+							  </tr>
+							  
+							  
+							</tbody>
+						</table>
+					</div>
+				</div>
+				</div>
+				<div class="tab-pane i">
+				Sample
+				</div>
+				<div class="tab-pane j">
+				Sample
+				</div>
+				
+			</div>
 		</div>
 	</section>
 	
+</div>
 </div>
 <footer class="footer">
    <div class="container">
@@ -315,7 +556,7 @@
                <a href="#">Contact Us</a><br>
                <a href="#">Press Releases</a><br>
                <a href="#">Product Support</a><br>
-               <a href="#">Carrers</a><br>
+               <a href="#">Careers</a><br>
                <a href="#">FAQ’s </a>
             </p>
          </div>
@@ -340,3 +581,19 @@
    <div class="copy">   &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
 </footer>
 </div>
+
+
+<script src="js/custom-file-input.js"></script>
+<script>
+$(".login-btn").click(function(){
+    $(".myprofile-block").toggle();
+});
+$(".cat-link").click(function(){
+    $(".category-menu ul li:hover > ul.dropdown").toggle();
+});
+$(".cat-link").click(function(){
+    $(".cat-link").toggleClass("active");
+});
+
+
+</script>

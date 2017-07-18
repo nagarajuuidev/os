@@ -1,5 +1,16 @@
 angular.module('newapp')
-    .controller('DashboardCtrl', function($scope, $http) {
+    .controller('DashboardCtrl', function($scope, $http,$location) {
+		
+		if(localStorage.loggedInUser !=undefined){
+			$scope.loggedInUser=localStorage.loggedInUser;
+			$scope.userlogged=true;
+		}else{
+			$scope.userlogged=false;
+		}
+		$scope.logout = function (){
+			localStorage.removeItem("loggedInUser");
+			$location.path('/login');
+		}
         $scope.topslides = [{
             "img1": "img/pic1.png",
             "img2": "img/pic2.png",
@@ -40,7 +51,11 @@ angular.module('newapp')
         $http.get("http://45.113.136.146:7070/shop/getDealOfDay").then(function(resp) {
             console.log(resp);
             $scope.dealday = resp.data;
-			var countDownDate = new Date(resp.data.dealOfDay.productPriceSpecialEndDate).getTime();
+			//var countDownDate = new Date(resp.data.dealOfDay.productPriceSpecialEndDate).getTime();
+			var dd=new Date();
+		dd.setDate(dd.getDate()+1);
+        var dateobj=(dd.getMonth() + 1) + '/' + dd.getDate() + '/' +  dd.getFullYear();	
+		var countDownDate = new Date(dateobj).getTime();
 			/*---=== DEAL OF THE DAY "TIMER" STARTS ===--- */
 		// Set the date we're counting down to
 		
@@ -62,19 +77,12 @@ angular.module('newapp')
     
 		// Output the result in an element with id="demo"
 		document.getElementById("demo").innerHTML =
-		"<li><span>"+days+"</span>" + " " + "Days" + "</li>" + " " +
-		"<li><span>"+hours+"</span>" + " " + "Hours" +"</li>"+ " " +
-		"<li><span>"+minutes+"</span>" + " " + "Minutes" + "</li>"+ " " +
-		"<li><span>"+seconds+"</span>" + " " + "Seconds" + "</li>";
+		"<li><span>"+hours+"</span>" + " " + "Hours" +"</li>"+ " " +"<li><span>"+minutes+"</span>" + " " + "Minutes" + "</li>"+ " " +"<li><span>"+seconds+"</span>" + " " + "Seconds" + "</li>";
     
 		// If the count down is over, write some text 
 			if (distance < 0) {
 			clearInterval(x);
-			document.getElementById("demo").innerHTML =  
-		"<li><span>"+00+"</span>" + " " + "Days" + "</li>" + " " +
-		"<li><span>"+00+"</span>" + " " + "Hours" +"</li>"+ " " +
-		"<li><span>"+00+"</span>" + " " + "Minutes" + "</li>"+ " " +
-		"<li><span>"+00+"</span>" + " " + "Seconds" + "</li>";
+			document.getElementById("demo").innerHTML ="<li><span>"+00+"</span>" + " " + "Hours" +"</li>"+ " " +"<li><span>"+00+"</span>" + " " + "Minutes" + "</li>"+ " " +"<li><span>"+00+"</span>" + " " + "Seconds" + "</li>";
 		  }
 		},
 	1000);

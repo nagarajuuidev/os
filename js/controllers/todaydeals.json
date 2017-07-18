@@ -1,19 +1,8 @@
 { "todaydeal":
-	[
-		{
-			"title": "Arichitects"
-			
-		},
-		{
-			"title": "Building Materilas"
-			
-		},
-		{
-			"title": "Doors/Windows & Joinery"
-			
-		},
-		{
-			"title": "Plumbing"
+	[		{			"title": "Arichitects"		},
+		{			"title": "Building Materilas"		},
+		{			"title": "Doors/Windows & Joinery"		},
+		{			"title": "Plumbing"
 		
 		},
 		{

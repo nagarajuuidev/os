@@ -1,5 +1,15 @@
 angular.module('newapp') 
-  .controller('ContactCtrl', function ($scope,$http) {   
+  .controller('ContactCtrl', function ($scope,$http, $location) {
+	  if(localStorage.loggedInUser !=undefined){
+		$scope.loggedInUser=localStorage.loggedInUser;
+		$scope.userlogged=true;
+	} else{
+		$scope.userlogged=false;
+	}
+	$scope.logout = function (){
+		localStorage.removeItem("loggedInUser");
+		$location.path('/login');
+	}
 	$http.get("http://45.113.136.146:7070/shop/getAllCategories").then(function(resp) {
             console.log(resp);
             $scope.menuitem = resp.data.categoryData;

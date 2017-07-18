@@ -2,10 +2,33 @@
 <!-- Static navbar -->
 <section class="top" id="top-header">
    <div class="container">
-	  <div class="row">
-         <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
-         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span></a></div>
-	  </div>
+      <div class="row">
+         <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
+         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUser}}</span>
+			
+			<!--=== LOGOUT SECTION ===-->
+			
+		<div class="myprofile-block">
+		<div class="mypro-brdr">
+			<div class="pro-top">
+				<!--<a href="#" class="pro-pic">
+					<img src="img/tst-pic.jpg"/>
+					<span>Change</span>
+				</a>-->
+				<div class="pro-txt">
+					<h3>{{}}</h3>
+					<h4>{{loggedInUser}}</h4>
+				</div>
+			</div>
+			<div class="pro-btm">
+				<span class="mypro-btn"><a href="#" ng-click="logout()">My profile</a></span>
+				<span class="mypro-logout" ng-click="logout()"><a>Log Out</a></span>
+			</div>
+		</div>
+		</div>
+		<a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a>
+		</div>
+      </div>
    </div>
 </section>
 <header class="header">
@@ -44,10 +67,10 @@
       <!--/.container-fluid -->
    </nav>
    <div class="container">
-   <div class="category-menu" style="display: ;">
+      <div class="category-menu" style="display: ;">
          <ul>
             <li>
-               <a href="#">Categories</a>
+              <a class="cat-link">All Categories</a>
                <ul class="dropdown bgcover" ng-style="set_bg()">
                   <li  ng-repeat="x in menuitem" >
                      <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
@@ -61,16 +84,15 @@
             </li>
          </ul>
       </div>
-      </div>
+   </div>
 </header>
 <div class="container">
-
    <section class="services-list title">
       <div class="container">
          <div class="row">
             <div class="col-xs-12  ">
                <h2 class="sec-title"><strong>{{selectedtype}}</strong></h2>
-               <p class="sub-tag">From an idea to an unforgetable and measurable digital experience.
+               <p class="sub-tag">From an idea to an unforgettable and measurable digital experience.
                   Choose from an wide variety of services we offer.
                </p>
             </div>
@@ -82,46 +104,38 @@
          <div class=" head ">
             <div class=" row ">
                <div class="col-xs-12 col-lg-3 ">
-		<strong>Showing all <span>{{selectedtype}}</span></strong>
-		</div>
-		<div class="col-xs-12  col-lg-9">
-		<div class="text-left service-location">
-			<form>
-				<div class="form-group">
-					<input type="text" class="svc-ltn" placeholder="Punjagutta (Enter a new location)"/>
-				</div>
-			</form>
-		</div>
-               <div class="text-right ">
-                  <div class="sort">
-                     <label>Sort By</label>
-                     <div class="selectbox">
-                        <select>
-                           <option value="">Name</option>
-                        </select>
-                     </div>
-                     <div class="selectbox">
-                        <select>
-                           <option value="">Area</option>
-                        </select>
-                     </div>
-                     <div class="selectbox">
-                        <select>
-                           <option value="">Distance</option>
-                        </select>
+                  <strong>Showing all <span>{{selectedtype}}</span></strong>
+               </div>
+               <div class="col-xs-12  col-lg-9">
+                  <div class="text-left service-location">
+                     <form>
+                        <div class="form-group">
+                          <input id="filterloc" type="text" class="svc-ltn" ng-model="searchlocation" ng-model-options="{updateOn : 'change'}" placeholder="Enter a new location"/>
+                        </div>
+                     </form>
+                  </div>
+				  <span ng-show="locvalue" class="filter-location pull-left"> Location Search for <b>{{fillocation}}</b> <i class="fa fa-remove" ng-click="removelocation()" aria-hidden="true"></i></span>
+                  <div class="text-right ">
+                     <div class="sort">
+                        <label>Sort By</label>
+                        <div class="selectbox">
+                           <select>
+							  <option value="">Popularity</option>
+							  <option value="">Distance</option>
+                           </select>
+                        </div>
                      </div>
                   </div>
                </div>
             </div>
          </div>
-         </div>
          <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3  ">
                <div class="todaydeal-sorting">
-               <div ng-repeat="x in workers">
-                  <input id="{{ x.serviceType }}" type="checkbox" /><label for="{{ x.serviceType }}">{{ x.serviceType }}</label>
+                  <div ng-repeat="x in workers">
+                     <input id="{{ x.serviceType }}" type="checkbox" /><label for="{{ x.serviceType }}">{{ x.serviceType }}</label>
+                  </div>
                </div>
-            </div>
                <div class="todaydeals rp">
                   <div class="rp-block">
                      <h2 class="sec-title2"><strong>Recommended Products </strong></h2>
@@ -133,25 +147,25 @@
                            <span class="dis">{{image.discount}}</span>
                            </figure>
                            <h3> {{image.description}}</h3>
-                           <h4>Rs.{{image.price}}</h4>
+                           <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.price}}</h4>
                            <a href="#" class="va">View Details</a>
                            </A>
                         </li>
                      </slick>
                   </div>
                </div>
-			   <div class="pagination">
+              <!-- <div class="pagination">
                   <ul>
                      <li><a href="#">1</a></li>
                      <li class="active"><a href="#">2</a></li>
                      <li><a href="#">3</a></li>
                      <li><a href="#">4</a></li>
                   </ul>
-               </div>
+               </div>-->
             </div>
             <div class="list-view col-xs-12 col-sm-9 col-md-9 col-lg-9">
                <ul>
-                  <li ng-repeat="detailsevice in servicedetails">
+                  <li ng-repeat="detailsevice in servicedetails | filter:filterlocation(searchlocation)">
                      <figure><a href="#"><img ng-src="{{detailsevice.imageUrl}}"></a></figure>
                      <h3> {{detailsevice.companyName}}</h3>
                      <h4> {{detailsevice.houseNumber}},{{detailsevice.street}},{{detailsevice.area}}<br>{{detailsevice.city}},{{detailsevice.state}}-{{detailsevice.pinCode}}<br>
@@ -164,15 +178,15 @@
                      <i class="fa fa-star" aria-hidden="true"></i>
                      <i class="fa fa-star disabled" aria-hidden="true"></i> |
                      <span>{{detailsevice.totalRating}} Votes</span> |
-				<span class="rate"> Rate
-				<span class="rating line sm srv-show">
-				<i class="fa fa-star" aria-hidden="true"></i>
-				<i class="fa fa-star" aria-hidden="true"></i>
-				<i class="fa fa-star" aria-hidden="true"></i>
-				<i class="fa fa-star" aria-hidden="true"></i>
-				<i class="fa fa-star disabled" aria-hidden="true"></i>
-				</span>
-				</span>
+                     <span class="rate"> Rate
+                     <span class="rating line sm srv-show">
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star disabled" aria-hidden="true"></i>
+                     </span>
+                     </span>
                      </span>
                      <div class="push-right">
                         <!--<button class="like">Like</button>-->
@@ -180,7 +194,7 @@
                      </div>
                   </li>
                </ul>
-			   <div class="pagination">
+               <!--<div class="pagination">
                   <ul>
                      <li class="prev"><a href="#">Prev</a></li>
                      <li><a href="#">1</a></li>
@@ -190,31 +204,30 @@
                      <li class="last"><a href="#">8</a></li>
                      <li class="nxt"><a href="#">Next</a></li>
                   </ul>
-               </div>
+               </div>-->
             </div>
          </div>
       </div>
    </section>
    <section class="services-slide">
-	<div class="container">
-	 <div class="row">
-	 <h2 class="sec-title"><strong>Recommended Vendors</strong></h2>
-	   <ul>
-		 <slick settings="slickrecommendedvendorsConfig" ng-if="RecommendvendorLoaded">
-		  <li ng-repeat="vendor in vendorrecommended">
-			<figure>
-				<a href="#"><img ng-src="{{vendor.imgUrl}}"></a>
-				<!--<a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a>-->
-			</figure>
-				<h4>{{vendor.title}}</h4>
-				<p>{{vendor.location}}{{vendor.address}}</p>
-		  </li>
-		 </slick>
-	   </ul>
-	 
-	 </div>
-	</div>
-	</section>
+      <div class="container">
+         <div class="row">
+            <h2 class="sec-title"><strong>Recommended Vendors</strong></h2>
+            <ul>
+               <slick settings="slickrecommendedvendorsConfig" ng-if="RecommendvendorLoaded">
+                  <li ng-repeat="vendor in vendorrecommended">
+                     <figure>
+                        <a href="#"><img ng-src="{{vendor.imgUrl}}"></a>
+                        <!--<a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a>-->
+                     </figure>
+                     <h4>{{vendor.title}}</h4>
+                     <p>{{vendor.location}}{{vendor.address}}</p>
+                  </li>
+               </slick>
+            </ul>
+         </div>
+      </div>
+   </section>
 </div>
 <!--==== Updated Footer ====--->
 <!--<footer class="footer inner">
@@ -231,6 +244,8 @@
    </div>
    </footer>-->
 <!--==== Old Footer ====-->
+
+<!--
 <footer class="footer">
    <div class="container">
       <div class="row">
@@ -246,7 +261,7 @@
                <a href="#">Contact Us</a><br>
                <a href="#">Press Releases</a><br>
                <a href="#">Product Support</a><br>
-               <a href="#">Carrers</a><br>
+               <a href="#">Careers</a><br>
                <a href="#">FAQ’s </a>
             </p>
          </div>
@@ -270,3 +285,17 @@
    </div>
    <div class="copy">   &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
 </footer>
+
+-->
+
+<script>
+$(".login-btn").click(function(){
+    $(".myprofile-block").toggle();
+});
+$(".cat-link").click(function(){
+    $(".category-menu ul li:hover > ul.dropdown").toggle();
+});
+$(".cat-link").click(function(){
+    $(".cat-link").toggleClass("active");
+});
+</script>

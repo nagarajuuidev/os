@@ -3,8 +3,30 @@
    <section class="top" id="top-header">
       <div class="container">
          <div class="row">
-            <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
-            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> </a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a></div>
+            <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
+            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUser}}</span>
+			
+			<!--=== LOGOUT SECTION ===-->
+			
+		<div class="myprofile-block">
+		<div class="mypro-brdr">
+			<div class="pro-top">
+				<!--<a href="#" class="pro-pic">
+					<img src="img/tst-pic.jpg"/>
+					<span>Change</span>
+				</a>-->
+				<div class="pro-txt">
+					<h3>{{}}</h3>
+					<h4>{{loggedInUser}}</h4>
+				</div>
+			</div>
+			<div class="pro-btm">
+				<span class="mypro-btn"><a href="#" ng-click="logout()">My profile</a></span>
+				<span class="mypro-logout" ng-click="logout()"><a>Log Out</a></span>
+			</div>
+		</div>
+		</div>
+			<a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a></div>
          </div>
       </div>
    </section>
@@ -42,30 +64,10 @@
             </div>
          </div>
          <!--/.container-fluid -->
-		 
       </nav>
-	  <div class="container">
-   <div class="category-menu" style="display: ;">
-         <ul>
-            <li>
-               <a href="#">Categories</a>
-               <ul class="dropdown bgcover" ng-style="set_bg()">
-                  <li  ng-repeat="x in menuitem" >
-                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
-                     <ul class="dropdown">
-                        <li  ng-repeat="sub in x.subCategory">
-                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
-                        </li>
-                     </ul>
-                  </li>
-               </ul>
-            </li>
-         </ul>
-      </div>
-      </div>
+      <category-Directive></category-Directive>
    </header>
    <div class="container">
-     
       <section id="banner">
          <slick settings="slicktopslideConfig" >
             <div class="row" ng-repeat="image in topslides">
@@ -80,16 +82,15 @@
          </slick>
       </section>
       <section id="deals" ng-repeat="doday in dealday">
-	  <a href="#productpage">
+	  <a href="#/productpage/{{doday.productId}}">
 		<figure>
-                  <img ng-src="{{doday.imageURL}}">
-               </figure>
+			<img ng-src="{{doday.imageURL}}">
+		</figure>
          <div class="bod">
             <h2 class="sec-title"><strong>Deal of the Day </strong></h2>
             <div class="deal-block">
-               
                <h5>{{doday.productName}} </h5>
-               <h6>Rs.{{doday.productDiscountPrice}} ({{doday.discountPercentage}}% OFF) <br> <span> Rs.{{doday.productPrice}} </span>
+               <h6><i class="fa fa-inr" aria-hidden="true"></i> {{doday.productDiscountPrice}} ({{doday.discountPercentage}}% OFF) <br> <span> <i class="fa fa-inr" aria-hidden="true"></i> {{doday.productPrice}} </span>
                </h6>
                <ul id="timer">
                   <p id="demo"></p>
@@ -105,14 +106,14 @@
             <section class="newprod" id="np">
                <slick settings="slicknewproductsConfig" ng-if="NewproductsLoaded">
                   <li class="block" ng-repeat="image in products">
-                     <A HREF="#productpage">
+                     <A HREF="#/productpage/{{image.productId}}">
                         <figure>
-                     <a href="#productpage"><img data-lazy="{{image.imgurl}}"></a>
+                     <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imgurl}}"></a>
                      <span class="dis">{{image.discount}}</span>
                      </figure>
                      <h3>{{image.description}}</h3>
-                     <h4>Rs.{{image.price}}</h4>
-                     <a href="#productpage" class="va">View Details</a>
+                     <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.price}}</h4>
+                     <a href="#/productpage/{{image.productId}}" class="va">View Details</a>
                      </A>
                   </li>
                </slick>
@@ -126,12 +127,12 @@
                   <li class="block" ng-repeat="image in feature">
                      <A HREF="">
                         <figure>
-                     <a href="#productpage"><img data-lazy="{{image.imgurl}}"></a>
+                     <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imgurl}}"></a>
                      <span class="dis">{{image.discount}}</span>
                      </figure>
                      <h3>{{image.description}}</h3>
-                     <h4>Rs.{{image.price}}</h4>
-                     <a href="#productpage" class="va">View Details</a>
+                     <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.price}}</h4>
+                     <a href="#/productpage/{{image.productId}}" class="va">View Details</a>
                      </A>
                   </li>
                </slick>
@@ -152,19 +153,40 @@
       <section  id="fp">
          <slick settings="slickrecommendedprocutsConfig" ng-if="RecomendLoaded">
             <li class="block" ng-repeat="image in recommend">
-               
-                  <figure>
-               <a href="#productpage"><img data-lazy="{{image.imgurl}}"></a>
-			   <span class="hspace20"></span>
+               <figure>
+                  <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imgurl}}"></a>
+                  <span class="hspace20"></span>
                </figure>
                <h3> {{image.description}}</h3>
-               <h4>Rs.{{image.price}}</h4>
-               <a href="#productpage" class="va">View Details</a>
+               <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.price}}</h4>
+               <a href="#/productpage/{{image.productId}}" class="va">View Details</a>
                </A>
             </li>
          </slick>
       </section>
    </div>
+   <div class="container">
+	<div class="secure-links home">
+		<ul>
+			<li>
+				<img src="img/secure.png"/>
+				100% Secure
+			</li>
+			<li>
+				<img src="img/assured.png"/>
+				Assured Quality
+			</li>
+			<li>
+				<img src="img/easy-returns.png"/>
+				Easy Returns
+			</li>
+		</ul>
+	</div>
+   
+   
+   </div>
+   
+   
 </div>
 <section id="tst">
    <slick settings="slickreviewsectionConfig" ng-if="ReviewLoaded">
@@ -192,7 +214,7 @@
                <a href="#">Contact Us</a><br>
                <a href="#">Press Releases</a><br>
                <a href="#">Product Support</a><br>
-               <a href="#">Carrers</a><br>
+               <a href="#">Careers</a><br>
                <a href="#">FAQ’s </a>
             </p>
          </div>
@@ -216,3 +238,9 @@
    </div>
    <div class="copy">   &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
 </footer>
+
+<script>
+$(".login-btn").click(function(){
+    $(".myprofile-block").toggle();
+});
+</script>

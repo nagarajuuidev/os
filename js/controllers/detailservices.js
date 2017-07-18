@@ -1,13 +1,51 @@
 angular.module('newapp')
-  .controller('DetailservicesCtrl', function ($scope,$http,$routeParams) {   
-  $scope.selectedtype=$routeParams.sid;
+  .controller('DetailservicesCtrl', function ($scope, $http, $routeParams, $location) {   
+  $scope.locvalue = false;
+  var initializing = true;
+  $scope.$watch('searchlocation', function() {
+	  angular.element('#filterloc').val("");
+      if (initializing) {
+          initializing = false;
+      } else {
+          $scope.fillocation = $scope.searchlocation;
+          if ($scope.fillocation != "") {
+              $scope.locvalue = true;
+              $scope.filterlocation = function(location) {
+                  return function(userloc) {
+                      return (userloc.street == location || userloc.area == location || userloc.city == location || userloc.state == location)
+                  }
+              }
+          } else {
+              $scope.locvalue = "";
+              $scope.filterlocation = function(location) {
+                  return function(userloc) {
+                      return true;
+                  }
+              }
+          }
+      }
+  });
+  $scope.removelocation = function() {
+      $scope.searchlocation = "";
+  }
+		if(localStorage.loggedInUser !=undefined){
+			$scope.loggedInUser=localStorage.loggedInUser;
+			$scope.userlogged=true;
+		}else{
+			$scope.userlogged=false;
+		}
+		$scope.logout = function (){
+			localStorage.removeItem("loggedInUser");
+			$location.path('/login');
+		}
+	$scope.selectedtype=$routeParams.sid;
 	$http.get("http://45.113.136.146:7070/shop/getAllCategories").then(function(resp) {
             console.log(resp);
             $scope.menuitem = resp.data.categoryData;
-        });
-        $scope.mouseOver = function(param) {
-            $scope.set_bg = function() {
-                $scope.bgimg = param.imageURL;
+		});
+		$scope.mouseOver = function(param) {
+			$scope.set_bg = function() {
+				$scope.bgimg = param.imageURL;
                 return {
                     "background-image": "url(/clients/oneseven_home_v2/img/" + $scope.bgimg + ".jpg)"
                 };
@@ -59,10 +97,12 @@ columnDefs: [
             $scope.RecommendvendorLoaded = true;
             $scope.slickrecommendedvendorsConfig = {
                 dots: false,
-                arrows: true,
+                arrows: false,
                 infinite: true,
                 slidesToShow: 5,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+				autoplay: true,
+				autoplayspeed: 500
         };
     });
  });

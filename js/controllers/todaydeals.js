@@ -1,5 +1,15 @@
 angular.module('newapp') 
-  .controller('TodaydealsCtrl', function ($scope,$http) {   
+  .controller('TodaydealsCtrl', function ($scope,$http,$location) {
+	if(localStorage.loggedInUser !=undefined){
+		$scope.loggedInUser=localStorage.loggedInUser;
+		$scope.userlogged=true;
+	} else{
+		$scope.userlogged=false;
+	}
+	$scope.logout = function (){
+		localStorage.removeItem("loggedInUser");
+		$location.path('/login');
+	}
 	$http.get("http://45.113.136.146:7070/shop/getAllCategories").then(function(resp) {
             console.log(resp);
             $scope.menuitem = resp.data.categoryData;
@@ -26,7 +36,7 @@ $http.get("/clients/oneseven_home_v2/js/controllers/todaydeals.json").then(funct
                 arrows: false,
                 infinite: true,
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1	
             };
         });
 	
@@ -41,10 +51,12 @@ $http.get("/clients/oneseven_home_v2/js/controllers/todaydeals.json").then(funct
 	    $scope.RecentlyLoaded = true;
 		$scope.slickrecentbroughtConfig = {
          dots: false,
-		arrows: true,
+		arrows: false,
         infinite: true,
         slidesToShow: 4,
-        slidesToScroll: 4 ,  
+        slidesToScroll: 1,
+		autoplay: true,
+		autoplayspeed: 500,
 	  responsive: [
 	 	 {
 		  breakpoint: 1024,

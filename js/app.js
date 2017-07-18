@@ -34,10 +34,10 @@ newapp.config(['$routeProvider',function($routeProvider){
 		templateUrl: 'views/todaydeals.html',
 		controller: 'TodaydealsCtrl'
 	  })
-	  .when('/productpage', {
+	  .when('/productpage/:prodid', {
 		templateUrl: 'views/productpage.html',
 		controller: 'ProductpageCtrl'
-	  })
+	})
 	  .when('/categories/:cid', {
 		templateUrl: 'views/productlist.html',
 		controller: 'ProductlistCtrl'
@@ -50,6 +50,18 @@ newapp.config(['$routeProvider',function($routeProvider){
 	  .when('/myaccount', {
   templateUrl: 'views/myaccount.html',
   controller: 'myaccountCtrl'
+   })
+    .when('/cart', {
+  templateUrl: 'views/cart.html',
+  controller: 'cartctrl'
+   })
+    .when('/delivery', {
+  templateUrl: 'views/delivery.html',
+  controller: 'deliveryctrl'
+   })
+    .when('/payment', {
+  templateUrl: 'views/payment.html',
+  controller: 'paymentctrl'
    })
 	  .otherwise({
         redirectTo: '/'

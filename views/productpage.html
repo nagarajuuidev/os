@@ -3,9 +3,32 @@
 <section class="top" id="top-header">
    <div class="container">
       <div class="row">
-         <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
-         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact</a> <a href="#/login">Login / Signup</a> </a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span></a></div>
-      </div>
+         <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
+         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUser}}</span>
+			
+			<!--=== LOGOUT SECTION ===-->
+			
+		<div class="myprofile-block">
+		<div class="mypro-brdr">
+			<div class="pro-top">
+				<!--<a href="#" class="pro-pic">
+					<img src="img/tst-pic.jpg"/>
+					<span>Change</span>
+				</a>-->
+				<div class="pro-txt">
+					<h3>{{}}</h3>
+					<h4>{{loggedInUser}}</h4>
+				</div>
+			</div>
+			<div class="pro-btm">
+				<span class="mypro-btn"><a href="#" ng-click="logout()">My profile</a></span>
+				<span class="mypro-logout" ng-click="logout()"><a>Log Out</a></span>
+			</div>
+		</div>
+		</div>
+		<a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a>
+		</div>
+	  </div>
    </div>
 </section>
 <header class="header">
@@ -47,7 +70,7 @@
    <div class="category-menu" style="display: ;">
          <ul>
             <li>
-               <a href="#">Categories</a>
+              <a class="cat-link">All Categories</a>
                <ul class="dropdown bgcover" ng-style="set_bg()">
                   <li  ng-repeat="x in menuitem" >
                      <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
@@ -64,7 +87,6 @@
       </div>
 </header>
 <div class="container">
-  
    <div class="breadcrumbs"><A HREF="">Home</A>    >    <A HREF="">Kitchen Taps</A>   > EClearwater Elara Single Lever Kitchen Mixer</div>
 </div>
 <div class="prd">
@@ -73,10 +95,10 @@
       <div class="row">
          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="prd-tb">
-               <a href="#"><img ng-src="{{ppage.productImages[0]}}"></a>
-               <a href="#"><img ng-src="{{ppage.productImages[1]}}"></a>
-               <a href="#"><img ng-src="{{ppage.productImages[2]}}"></a>
-               <a href="#"><img ng-src="{{ppage.productImages[3]}}"></a>
+               <img ng-src="{{ppage.productImages[0]}}" ng-click="setImage(img)">
+               <img ng-src="{{ppage.productImages[1]}}" ng-click="setImage(img)">
+               <img ng-src="{{ppage.productImages[2]}}" ng-click="setImage(img)">
+               <img ng-src="{{ppage.productImages[3]}}" ng-click="setImage(img)">
             </div>
             <div class="prd-lg" >
                <a href="#"><img ng-src="{{ppage.defaultImage}}"></a>
@@ -85,8 +107,8 @@
          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6  ">
             <h2>{{ppage.productTitle}}</h2>
             <p>{{ppage.productDescription}}</p>
-            <div class="price">Rs.{{ppage.productDiscountPrice}}</div>
-            <div class="price-off"> <span>Rs.{{ppage.productOriginalPrice}} </span> <b>{{ppage.discountPercentage}}% OFF</b> </div>
+           <div class="price"><i class="fa fa-inr" aria-hidden="true"></i>  {{ppage.productDiscountPrice}}</div>
+            <div class="price-off"> <span><i class="fa fa-inr" aria-hidden="true"></i> {{ppage.productOriginalPrice}} </span> <b>{{ppage.discountPercentage}}% OFF</b> </div>
             <div class="selectbox">
                <select>
                   <option>1</option>
@@ -101,18 +123,26 @@
                <i class="fa fa-star" aria-hidden="true"></i>
                <i class="fa fa-star" aria-hidden="true"></i>
                <i class="fa fa-star disabled" aria-hidden="true"></i> 
-               <div> 4/5 (5 Reviews)</div>
+               <div> {{averagereview}}/5 ({{totalreview}} Reviews)</div>
             </div>
             <div class="prd-dlvry">
                <img src="img/prddelivery-icon.jpg">
-               <div >Estimated delivery in 3-7 working days
+				<div class="estimate">Estimated delivery in 12 to 24 Hours
+				</div>
+               <!--<div >Estimated delivery in 12 to 24 Hours
                   <span><A HREF="">
                   Too long to wait?</A> View similar products <a href="#">with</a> Next Day <A HREF="">availability</A></span>
-               </div>
+               </div>-->
             </div>
             <div class="prd-dlvry">
                <img src="img/prddelivery-icon.jpg">
-               <div >Standard Delivery charges applicable <a href="#" class="qtn">?</a> 
+               <div >Standard Delivery charges applicable 
+			   <span class="popup"><b class="qtn">?</b>
+				  <div class="cart-terms popuptext">
+						<h6>Terms & Conditions</h6>
+						<p>This following sets out the terms and conditions on which you may use the content on bother digital publishing services www.osh.com owned by business standard content services.</p>
+				  </div>
+				</span>
                   <span><A HREF="">Check your location for product availability</A></span>
                </div>
             </div>
@@ -194,8 +224,8 @@ appartment, Hyderabad</p> 			</li>
       <div class="row">
          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left">
             <h3>Reviews</h3>
-            <div class="prd-rvw">
-               <h5>Kevin Staff</h5>
+            <div class="prd-rvw" ng-repeat="reviews in prod.productReviews">
+               <h5>{{reviews.nick}}</h5>
                <div class="rating">
                   <i class="fa fa-star" aria-hidden="true"></i>
                   <i class="fa fa-star" aria-hidden="true"></i>
@@ -203,32 +233,8 @@ appartment, Hyderabad</p> 			</li>
                   <i class="fa fa-star" aria-hidden="true"></i>
                   <i class="fa fa-star disabled" aria-hidden="true"></i> 
                </div>
-               <p>The tap is just as i ordered. I don’t yet know how it works but it has not yet been installed.</p>
-               <h6>5 January 2017</h6>
-            </div>
-            <div class="prd-rvw">
-               <h5>Rob Alex</h5>
-               <div class="rating">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star disabled" aria-hidden="true"></i> 
-               </div>
-               <p>The tap is just as i ordered. I don’t yet know how it works but it has not yet been installed. The item is cheap and is of very good quality, this is a fantastic tap that would look great in any kitchen. I love this tap.</p>
-               <h6>24 December 2016</h6>
-            </div>
-            <div class="prd-rvw">
-               <h5>Rob Alex</h5>
-               <div class="rating">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star disabled" aria-hidden="true"></i> 
-               </div>
-               <p>The tap is just as i ordered. I don’t yet know how it works but it has not yet been installed. The item is cheap and is of very good quality, this is a fantastic tap that would look great in any kitchen. I love this tap.</p>
-               <h6>24 December 2016</h6>
+               <p>{{reviews.description}}</p>
+               <h6>{{reviews.reviewDate | date:'dd-MMM-yyyy'}}</h6>
             </div>
             <p class="prd-more"><a href="#">See More...</a></p>
          </div>
@@ -243,9 +249,9 @@ appartment, Hyderabad</p> 			</li>
                <i class="fa fa-star disabled" aria-hidden="true"></i> 
             </div>
             <form class="prd-form">
-               <div class="form-group">
+               <!--<div class="form-group">
                   <input type="text" class="form-control" id="name" placeholder="Name *" name="name">
-               </div>
+               </div>-->
                <div class="form-group">
                   <textarea name="review" placeholder="Review *"></textarea>
                </div>
@@ -266,11 +272,11 @@ appartment, Hyderabad</p> 			</li>
             <li class="block" ng-repeat="image in recommend">
                <A HREF="">
                   <figure>
-               <a href="#"><img data-lazy="{{image.imgurl}}"></a>
+               <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imgurl}}"></a>
                </figure>
                <h3> {{image.description}}</h3>
-               <h4>Rs.{{image.price}}</h4>
-               <a href="#" class="va">View Details</a>
+               <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.price}}</h4>
+               <a href="#/productpage/{{image.productId}}" class="va">View Details</a>
                </A>
             </li>
          </slick>
@@ -282,17 +288,17 @@ appartment, Hyderabad</p> 			</li>
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
-            <h2 class="sec-title"><strong>Recently Brought</strong></h2>
+            <h2 class="sec-title"><strong>Recently Bought</strong></h2>
             <ul class="all">
                <slick settings="slickrecentbroughtConfig" ng-if="RecentlyLoaded">
                   <li ng-repeat="brought in recently">
                      <figure>
-                        <a href="#"><img data-lazy="{{brought.imgurl}}"></a>
+                        <a href="#/productpage/{{brought.productId}}"><img data-lazy="{{brought.imgurl}}"></a>
                         <span class="dis">{{brought.discount}}</span>
                      </figure>
                      <h3>{{brought.description}}</h3>
-                     <h4> Rs.{{brought.price}}</h4>
-                     <a href="#" class="va">View Details</a>
+                     <h4><i class="fa fa-inr" aria-hidden="true"></i> {{brought.price}}</h4>
+                     <a href="#/productpage/{{brought.productId}}" class="va">View Details</a>
                   </li>
                </slick>
             </ul>
@@ -300,6 +306,9 @@ appartment, Hyderabad</p> 			</li>
       </div>
    </div>
 </section>
+
+<!--
+
 <footer class="footer">
    <div class="container">
       <div class="row">
@@ -315,7 +324,7 @@ appartment, Hyderabad</p> 			</li>
                <a href="#">Contact Us</a><br>
                <a href="#">Press Releases</a><br>
                <a href="#">Product Support</a><br>
-               <a href="#">Carrers</a><br>
+               <a href="#">Careers</a><br>
                <a href="#">FAQ’s </a>
             </p>
          </div>
@@ -339,3 +348,23 @@ appartment, Hyderabad</p> 			</li>
    </div>
    <div class="copy"> &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
 </footer>
+
+-->
+
+<script>
+	jQuery(".popup .qtn").click(function(){
+    jQuery(".popuptext").toggle();
+	});
+ 
+ </script>
+ <script>
+$(".login-btn").click(function(){
+    $(".myprofile-block").toggle();
+});
+$(".cat-link").click(function(){
+    $(".category-menu ul li:hover > ul.dropdown").toggle();
+});
+$(".cat-link").click(function(){
+    $(".cat-link").toggleClass("active");
+});
+</script>

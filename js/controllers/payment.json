@@ -1,0 +1,19 @@
+{ "payment":
+	[
+		{
+			"ccord": "Creditcard",
+			"dcard": "Debititcard",
+			
+			"ncard": "Netbank",
+			"cod": "Cosh on Delivery",
+			"ppay": "Phone Pay",
+			"ptm"   :"Paytm",
+			"em": "Emi"
+			
+		}
+		
+	]
+}
+
+
+

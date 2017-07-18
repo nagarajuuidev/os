@@ -1,9 +1,19 @@
 angular.module('newapp') 
-  .controller('ProductpageCtrl', function ($scope,$http) {   
+  .controller('ProductpageCtrl', function ($scope,$http, $location, $routeParams) {   
+	if(localStorage.loggedInUser !=undefined){
+			$scope.loggedInUser=localStorage.loggedInUser;
+			$scope.userlogged=true;
+		}else{
+			$scope.userlogged=false;
+		}
+		$scope.logout = function (){
+			localStorage.removeItem("loggedInUser");
+			$location.path('/login');
+		}
 	$http.get("http://45.113.136.146:7070/shop/getAllCategories").then(function(resp) {
-            console.log(resp);
-            $scope.menuitem = resp.data.categoryData;
-        });
+        console.log(resp);
+        $scope.menuitem = resp.data.categoryData;
+    });
         $scope.mouseOver = function(param) {
             $scope.set_bg = function() {
                 $scope.bgimg = param.imageURL;
@@ -15,8 +25,16 @@ angular.module('newapp')
 	$http.get("http://45.113.136.146:7070/shop/products/100").then(function(resp) {
 	  console.log(resp);
 		$scope.ppage=resp.data;
-	  });
-	
+	});
+	$http.get("http://45.113.136.146:7070/shop/products/"+ $routeParams.prodid +"/reviews").then(function(resp) {
+		console.log(resp);
+		$scope.prod=resp.data;
+		$scope.averagereview=resp.data.avgReview;
+		$scope.totalreview=resp.data.totalRatingCount;		
+	});
+	$http.post("http://45.113.136.146:7070/shop/products/reviews/save").then(function(resp) {
+		console.log(resp);
+	});
 	$http.get("/clients/oneseven_home_v2/js/controllers/recomended.json").then(function(resp) {
             console.log(resp);
             $scope.recommend = resp.data.recomended;
@@ -36,10 +54,12 @@ angular.module('newapp')
 	    $scope.RecentlyLoaded = true;
 		$scope.slickrecentbroughtConfig = {
          dots: false,
-		arrows: true,
+		arrows: false,
         infinite: true,
         slidesToShow: 4,
-        slidesToScroll: 4 ,  
+        slidesToScroll: 4 , 
+		autoplay: true,
+		autoplayspeed: 500,		
 	  responsive: [
 	 	 {
 		  breakpoint: 1024,
