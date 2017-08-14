@@ -41,25 +41,7 @@
       </div>
       <!--/.container-fluid -->
    </nav>
-   <div class="container">
-      <div class="category-menu" style="display: ;">
-         <ul>
-            <li>
-               <a class="cat-link">All Categories</a>
-               <ul class="dropdown bgcover" ng-style="set_bg()">
-                  <li  ng-repeat="x in menuitem" >
-                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
-                     <ul class="dropdown">
-                        <li  ng-repeat="sub in x.subCategory">
-                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
-                        </li>
-                     </ul>
-                  </li>
-               </ul>
-            </li>
-         </ul>
-      </div>
-   </div>
+   <category-Directive></category-Directive>
 </header>
 <div class="container">
    <section class="login title" >
@@ -68,95 +50,45 @@
             <h2 class="main-title"><strong>Login</strong></h2>
             <h2 class="sec-title"><strong>New to OneSevenHome?  <a href="#registration">Signup</a></strong></h2>
             <div class="links"> 
-               <a href="#" class="active">User </a> 
-               <a href="#">Vendor</a>
+               <a href="#/login" class="active">User </a> 
+               <a href="#/vendorlogin">Vendor</a>
             </div>
             <div class="login-inner">
                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 right">
                   <h4>Sign in to your account</h4>
-                  <form class="form-horizontal">
-                  <form name="loginForm">
-                     <div class="form-group">
+                  <form class="form-horizontal" name="loginForm" novalidate>
+                     <div class="form-group" ng-class="{ 'has-error' : loginForm.userName.$invalid && !loginForm.userName.$pristine }">
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <div class="form-group">
-                           <input type="email" name="email" class="form-control" ng-model="session.userName" placeholder="Email"><i class="fa fa-star" aria-hidden="true"></i>
-                           </div>
+                        <input type="email" name="userName" id="userName" class="form-control" ng-model="session.userName" placeholder="Email (Your User Id)"  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                        <p class="help-block" ng-show="loginForm.userName.$touched && loginForm.userName.$error.required">Email is required</p>
+                        <p class="help-block" ng-show="loginForm.userName.$error.pattern">Invalid Email</p>
+                        <i class="fa fa-star" aria-hidden="true"></i>
                      </div>
                      <div class="form-group">
                         <i class="fa fa-lock" aria-hidden="true"></i>
-                        <div class="form-group">
-						<input type="Password" name="password" class="form-control" ng-model="session.password" placeholder=" Password"><i class="fa fa-star" aria-hidden="true"></i></div>
+                        <input type="password" name="password" class="form-control" ng-model="session.password" placeholder="Password" required>
+						<p ng-show="loginForm.password.$touched && loginForm.password.$error.required" class="help-block">Password is required</p>                        
+						
+						<i class="fa fa-star" aria-hidden="true"></i>
                      </div>
                      <div class="form-group">
-                        <input type="checkbox" name="remember" id="rem" value=""><label class="rem" for="rem">Remember me</label>
-                        <p class="fpwd"><a href="#">Forgot your password?</a></p>
+                        <input type="checkbox" name="remember" id="rem" value=""><label class="rem" for="rem">Remember Me</label>
+                        <p class="fpwd"><a href="#forgetpassword">Forgot your password?</a></p>
                      </div>
                      <div class="form-group btn-sign">
-                        <button type="button" class="btn btn-primary"  value="Login" title="Login" ng-disabled="loginForm.$valid" ng-click="redirect(session)">
+                        <button type="button" class="btn btn-primary"  value="Login" title="Login" ng-click="redirect(session)">
                         <span>Login</span> </button>
                      </div>
                </div>
                </form> 
-               </form> 
             </div>
+            <p class="errmessage">{{errmessage}}</p>
          </div>
       </div>
    </section>
-  
 </div>
-
-<!--
-
-<footer class="footer">
-   <div class="container">
-      <div class="row">
-         <div class="col-xs-12 col-md-6 col-lg-3 ">
-            <h2>Buying Assurance</h2>
-            <p><a href="#">See authorised Dealers</a><br>
-               <a href="#">Certification</a>
-            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Info &amp; News</h2>
-            <p><a href="#">About Us</a><br>
-               <a href="#">Contact Us</a><br>
-               <a href="#">Press Releases</a><br>
-               <a href="#">Product Support</a><br>
-               <a href="#">Careers</a><br>
-               <a href="#">FAQ’s </a>
-            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Locations</h2>
-            <p><a href="#">Hyderabad</a><br>
-               <a href="#">Warangal</a><br>
-               <a href="#">Vijayawada</a><br>
-               <a href="#">Guntur</a>
-            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Stay Updated </h2>
-            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a> | <a href="#"> <i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
-            <div class="newsletter">
-               <input placeholder="Sign up for updates">
-               <button>Register</button>
-            </div>
-         </div>
-      </div>
-   </div>
-   <div class="copy"> &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
-</footer>
-
--->
-
 <script>
-$(".login-btn").click(function(){
-    $(".myprofile-block").toggle();
-});
-$(".cat-link").click(function(){
-    $(".category-menu ul li:hover > ul.dropdown").toggle();
-});
-$(".cat-link").click(function(){
-    $(".cat-link").toggleClass("active");
-});
+   $(".login-btn").click(function(){
+       $(".myprofile-block").toggle();
+   });
 </script>

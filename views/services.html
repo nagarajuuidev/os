@@ -4,7 +4,7 @@
    <div class="container">
       <div class="row">
          <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
-         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUser}}</span>
+         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUserName}}</span>
 			
 			<!--=== LOGOUT SECTION ===-->
 			
@@ -16,7 +16,7 @@
 					<span>Change</span>
 				</a>-->
 				<div class="pro-txt">
-					<h3>{{}}</h3>
+					<h3>{{loggedInUserName}}</h3>
 					<h4>{{loggedInUser}}</h4>
 				</div>
 			</div>
@@ -26,7 +26,7 @@
 			</div>
 		</div>
 		</div>
-			<a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a></div></div></div>
+			<a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> {{lengthofcart}}</span> </a></div></div></div>
    </div>
 </section>
 <header class="header">
@@ -64,25 +64,7 @@
       </div>
       <!--/.container-fluid -->
    </nav>
-   <div class="container">
-   <div class="category-menu" style="display: ;">
-         <ul>
-            <li>
-               <a class="cat-link">All Categories</a>
-               <ul class="dropdown bgcover" ng-style="set_bg()">
-                  <li  ng-repeat="x in menuitem" >
-                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
-                     <ul class="dropdown">
-                        <li  ng-repeat="sub in x.subCategory">
-                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
-                        </li>
-                     </ul>
-                  </li>
-               </ul>
-            </li>
-         </ul>
-      </div>
-      </div>
+   <category-Directive></category-Directive>
 </header>
 <div class="container">
   
@@ -120,74 +102,8 @@
    </section>
 </div>
 
-<!--==== Updated Footer ====--->
-<!--<footer class="footer inner">
-   <div class="container">
-     <div class="row">
-       <div class="col-md-9">
-         <div class="copy"> &copy; Copights 2017  ONE SEVEN HOME </div>
-         <div class="links" ><a href="#">TERMS AND CONDITIONS</a> <a href="#">PRIVACY POLICY</a> / YOUR CALIFORNIA PRIVACY RIGHTS</div>
-       </div>
-       <div class="col-md-3">
-         <div class="social-links"><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a> <a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> </div>
-       </div>
-     </div>
-   </div>
-   </footer>-->
-<!--==== Old Footer ====-->
-
-<!--
-
-<footer class="footer">
-   <div class="container">
-      <div class="row">
-         <div class="col-xs-12 col-md-6 col-lg-3 ">
-            <h2>Buying Assurance</h2>
-            <p><a href="#">See authorised Dealers</a><br>
-               <a href="#">Certification</a>
-            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Info &amp; News</h2>
-            <p><a href="#">About Us</a><br>
-               <a href="#">Contact Us</a><br>
-               <a href="#">Press Releases</a><br>
-               <a href="#">Product Support</a><br>
-               <a href="#">Careers</a><br>
-               <a href="#">FAQ’s </a>
-            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Locations</h2>
-            <p><a href="#">Hyderabad</a><br>
-               <a href="#">Warangal</a><br>
-               <a href="#">Vijayawada</a><br>
-               <a href="#">Guntur</a>
-            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Stay Updated </h2>
-            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
-            <div class="newsletter">
-               <input placeholder="Sign up for updates">
-               <button>Register</button>
-            </div>
-         </div>
-      </div>
-   </div>
-   <div class="copy">   &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
-
--->
-
 <script>
 $(".login-btn").click(function(){
     $(".myprofile-block").toggle();
 });
-$(".cat-link").click(function(){
-    $(".category-menu ul li:hover > ul.dropdown").toggle();
-});
-$(".cat-link").click(function(){
-    $(".cat-link").toggleClass("active");
-});
 </script>
-</footer>

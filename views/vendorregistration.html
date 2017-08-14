@@ -1,0 +1,263 @@
+<div class="wrap">
+   <section class="top" id="top-header">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
+            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <a href="#/login" ng-hide="userlogged">Login </a> / <a class="activelink" href="#/registration" ng-hide="userlogged"> Signup</a> <a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="cart-value"> 0</span></a></div>
+         </div>
+      </div>
+   </section>
+   <header class="header">
+      <nav class="navbar navbar-default">
+         <div class="container">
+            <div class="row">
+               <div class="col-xs-12 ">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>                  <a class="navbar-brand" href="#/"></a>                  
+                     <figure> </figure>
+                  </div>
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a href="#/todaydeals">Today's Deals</a></li>
+                        <li><a href="#">Buy/Sell</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li class="store"><a href="#">Our Store</a></li>
+                        <li><a href="#/myaccount">My Account</a></li>
+                        <li>
+                           <div class="search">
+                              <div class="input">                              <input type="text" placeholder="Search">                           </div>
+                           </div>
+                        </li>
+                        <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
+                     </ul>
+                  </div>
+                  <!--.nav-collapse -->            
+               </div>
+            </div>
+         </div>
+         <!--/.container-fluid -->   
+      </nav>
+      <category-Directive></category-Directive>
+   </header>
+   <div class="container">
+      <section class="login mid vendor-reg" >
+         <div class="row">
+            <div class="col-xs-12  ">
+               <h2 class="sec-title"><strong>Signup</strong></h2>
+               <div class="links"> 
+                  <a href="#/registration">User</a> 
+                  <a href="" class="active">Vendor</a>
+               </div>
+               <div class="login-inner">
+                  <h2 class="veg-title"><strong>New Vendor</strong></h2>
+                  <form class="form-horizontal" name="vendorForm">
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left">
+                        <h4>Vendor Information</h4>
+                        <!--VENDOR NAME-->
+                        <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorName.$invalid && !vendorForm.vendorName.$pristine }">
+                           <input type="text" name="vendorName" class="form-control" ng-model="vendor.vendorName"placeholder="Vendor Name" required>
+                           <!--<p ng-show="vendorForm.vendorName.$invalid && !vendorForm.vendorName.$pristine" class="help-block">Vendor Name is required</p>-->
+                           <p ng-show="vendorForm.vendorName.$touched && vendorForm.vendorName.$invalid" class="help-block">Vendor Name  is required</p>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <!--VENDOR ADDRES-->
+                        <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorOfficeAddress.$invalid && !vendorForm.vendorOfficeAddress.$pristine }">
+                           <textarea name="vendorOfficeAddress" class="form-control" placeholder="Address" ng-model="vendor.vendorOfficeAddress" required></textarea>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <p ng-show="vendorForm.vendorOfficeAddress.$touched && vendorForm.vendorOfficeAddress.$invalid" class="help-block">Address is required</p>
+                        </div>
+                        <!-- MOBILE NUMBER-->
+                        <!--<div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorMobile.$invalid && !vendorForm.vendorMobile.$pristine }">
+                           <input type="text" name="vendorMobile" class="form-control" ng-model="vendor.vendorMobile" placeholder="Mobile Number" required>
+                           <p ng-show="vendorForm.vendorMobile.$invalid && !vendorForm.vendorMobile.$pristine" class="help-block">Mobile No is required</p>
+                           <p ng-show="vendorForm.vendorMobile.$touched && vendorForm.vendorMobile.$invalid" class="help-block">Mobile Number is required</p>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>-->
+						 <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorMobile.$invalid && !vendorForm.vendorMobile.$pristine }">
+					   <input type="number"  name="vendorMobile"class="form-control" ng-model="vendor.vendorMobile" placeholder="Mobile Number"  ng-pattern="/^[0-9]{1,10}$/" required>
+                       <span ng-show="vendorForm.vendorMobile.$error.pattern"class="help-block">Not a valid number!</span>
+	                     <p ng-show="vendorForm.vendorMobile.$touched && vendorForm.vendorMobile.$invalid" class="help-block">Mobile Number is required</p>
+					   <i class="fa fa-star" aria-hidden="true"></i>
+					</div>
+                        <!--TELEPHONE NUMBER-->
+                        <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorTelephone.$invalid && !vendorForm.vendorTelephone.$pristine }">
+                           <input type="text" name="vendorTelephone" class="form-control" ng-model="vendor.vendorTelephone" placeholder="Telephone Number" required>
+                           <!--<p ng-show="vendorForm.vendorTelephone.$invalid && !vendorForm.vendorTelephone.$pristine" class="help-block"> Telephone Number is required</p>-->
+                           <p ng-show="vendorForm.vendorTelephone.$touched && vendorForm.vendorTelephone.$invalid" class="help-block">Telephone Number is required</p>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <!--FAX NUMBER-->
+                        <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorFax.$invalid && !vendorForm.vendorFax.$pristine }">
+                           <input type="text" name="vendorFax" class="form-control" ng-model="vendor.vendorFax" placeholder="Fax Number " required>
+                           <!--<p ng-show="vendorForm.vendorFax.$invalid && !vendorForm.vendorFax.$pristine" class="help-block"> Fax Number is required</p>-->
+                           <p ng-show="vendorForm.vendorFax.$touched && vendorForm.vendorFax.$invalid" class="help-block">Fax Number is required</p>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <!--EMAIL-->
+                        <div class="form-group" ng-class="{ 'has-error' : vendorForm.email.$invalid && !vendorForm.email.$pristine }">
+                           <input type="email" name="email" id="email" class="form-control" ng-model="vendor.email" placeholder="Email (Your User Id)"  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                           <p class="help-block" ng-show="vendorForm.email.$touched && vendorForm.email.$error.required">Email is required</p>
+                           <p class="help-block" ng-show="vendorForm.email.$error.pattern">Invalid Email</p>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <!--PASSWORD -->
+                        <div class="form-group">
+                           <input type="password" class="form-control" id="password" placeholder="Password" name="password" ng-model="vendor.password" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,16}$/" required>
+                           <p ng-show="vendorForm.password.$touched && vendorForm.password.$error.required" class="help-block">Password is required</p>
+						   <p class="help-block" ng-show="vendorForm.password.$error.pattern">Length should be 8 to 15 (including upper, lower & special)</p>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <!--CONFIRM PASSWORD -->
+                        <div class="form-group">
+                           <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword" ng-model="vendor.confirmPassword" ng-pattern="{{vendor.password}}" required>
+                           <p ng-show="vendorForm.confirmPassword.$touched && vendorForm.confirmPassword.$error.required" class="help-block">Confirm Password is required</p>
+						   <p class="help-block" ng-show="vendorForm.confirmPassword.$error.pattern">Password not matched</p>    
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <p id="id1" class="help-block"></p>
+                        </div>
+                     </div>
+					
+		
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 right">
+                        <h4>Company Information</h4>
+                        <div class="form-group">
+                           <div class="sec-block">
+                              <select  id="ConstitutionofFirm" ng-model="vendor.vendorConstFirm">
+                                 <option value="">Select Constitution of Firm</option>
+                                
+                                 <option value="Manufacture">Manufacturer</option>
+                                 <option value="Distributor">Distributor</option>
+                              </select>
+                           </div>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <p id="id5" class="help-block"></p>
+                        </div>
+                        
+                        <div class="form-group">
+                           <div class="sec-block">
+                              <select  id="NatureofCompany" ng-model="vendor.vendorCompanyNature">
+                                 <option value="">Select Nature of Company</option>
+                                 <option value="Large Scale">Large Scale</option>
+                                 <option value="Small Scale">Small Scale</option>
+                              </select>
+                           </div>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <p id="id6" class="help-block"></p>
+                        </div>
+                        <!--Reg No-->
+                        <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorRegistrationNo.$invalid && !vendorForm.vendorRegistrationNo.$pristine }">
+                           <input type="text" name="vendorRegistrationNo" class="form-control" ng-model="vendor.vendorRegistrationNo" placeholder="Reg Number " required>
+                           <!--<p ng-show="vendorForm.vendorRegistrationNo.$invalid && !vendorForm.vendorRegistrationNo.$pristine" class="help-block"> Registration Number is required</p>-->
+                           <p ng-show="vendorForm.vendorRegistrationNo.$touched && vendorForm.vendorRegistrationNo.$invalid" class="help-block">Registration Number is required</p>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <!--Vat No-->
+                        <div class="form-group" ng-class="{ 'has-error' : vendorForm.vatRegNo.$invalid && !vendorForm.vatRegNo.$pristine }">
+                           <input type="text" name="vatRegNo" class="form-control" ng-model="vendor.vatRegNo" placeholder="VAT Number " required>
+                           <!--<p ng-show="vendorForm.vatRegNo.$invalid && !vendorForm.vatRegNo.$pristine" class="help-block"> Vat  Number is required</p>-->
+                           <p ng-show="vendorForm.vatRegNo.$touched && vendorForm.vatRegNo.$invalid" class="help-block">VAT  Number is required</p>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <!--Pan No-->
+                        <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorPAN.$invalid && !vendorForm.vendorPAN.$pristine }">
+                           <input type="text" name="vendorPAN" class="form-control" ng-model="vendor.vendorPAN" placeholder="PAN Number " required>
+                           <!-- <p ng-show="vendorForm.vendorPAN.$invalid && !vendorForm.vendorPAN.$pristine" class="help-block"> Pan Number is required</p>-->
+                           <p ng-show="vendorForm.vendorPAN.$touched && vendorForm.vendorPAN.$invalid" class="help-block">PAN Number is required</p>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <!--Labour license number-->   
+                        <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorLicense.$invalid && !vendorForm.vendorLicense.$pristine }">
+                           <input type="text" name="vendorLicense" class="form-control" ng-model="vendor.vendorLicense" placeholder="License Number " required>
+                           <!-- <p ng-show="vendorForm.vendorLicense.$invalid && !vendorForm.vendorLicense.$pristine" class="help-block"> License Number is required</p>-->
+                           <p ng-show="vendorForm.vendorLicense.$touched && vendorForm.vendorLicense.$invalid" class="help-block">License Number is required</p>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <!--Tin number-->
+                        <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorTIN.$invalid && !vendorForm.vendorTIN.$pristine }">
+                           <input type="text" name="vendorTIN" class="form-control" ng-model="vendor.vendorTIN" placeholder="TIN Number " required>
+                           <!--<p ng-show="vendorForm.vendorTIN.$invalid && !vendorForm.vendorTIN.$pristine" class="help-block"> Tin Number is required</p>-->
+                           <p ng-show="vendorForm.vendorTIN.$touched && vendorForm.vendorTIN.$invalid" class="help-block">TIN Number is required</p>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <h6>Valid authorization of dealership certificate for supply of products</h6>
+                        <div class="form-group">
+                           <input name="file" id="file-1" class="inputfile inputfile-2" type="file" ng-model="vendor.vendorAuthCert">
+                           <label for="file-1"> <span>Select Certificate</span></label>
+                        </div>
+                        <!--Experience in the Industry-->
+                        <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorExpLine.$invalid && !vendorForm.vendorExpLine.$pristine }">
+                           <input type="text" name="vendorExpLine" class="form-control" ng-model="vendor.vendorExpLine" placeholder="Experience in the Industry" required>
+                           <p ng-show="vendorForm.vendorExpLine.$touched && vendorForm.vendorExpLine.$invalid" class="help-block">Required</p>
+                           <!--<p ng-show="vendorForm.vendorExpLine.$invalid && !vendorForm.vendorExpLine.$pristine" class="help-block"> Required</p>-->
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <!--Major Clients-->
+                        <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorMajorCust.$invalid && !vendorForm.vendorMajorCust.$pristine }">
+                           <input type="text" name="vendorMajorCust" class="form-control" ng-model="vendor.vendorMajorCust" placeholder="Major Clients" required>
+                           <p ng-show="vendorForm.vendorMajorCust.$touched && vendorForm.vendorMajorCust.$invalid" class="help-block">Required</p>
+                           <!--<p ng-show="vendorForm.vendorMajorCust.$invalid && !vendorForm.vendorMajorCust.$pristine" class="help-block"> Required</p>-->
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                       
+						
+						 <div class="form-group">
+                        <input type="checkbox" name="remember" id="agr" value="" ng-model="user.agreeSign" required=""><label for="agr">I agree to OneSevenHome agreement</label>
+                     </div>
+					 <div ng-show="form.$submitted || form.agreeSign.$touched">
+     
+	   <p class="help-block">Please agree and sign.</p>
+    </div>
+						
+						
+                     </div>
+                     <div class="form-group btn-sign">
+                        <button type="submit" class="btn btn-primary" ng-disabled="vendorForm.$invalid" ng-click="regvendor(vendor)">SIGN UP</button>
+                     </div>
+					 <p class="help-block">{{errmessage}}</p>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </section>
+   </div>
+   <script>
+  
+$('#ConstitutionofFirm').on('change', function() {
+	var ConstitutionofFirm = $('#ConstitutionofFirm').val();
+	if(ConstitutionofFirm==""){
+	var error="Please select Constitution of Firm";
+		$("#id5").html(error);
+		$("#id5").show();
+	}
+	else{
+		$("#id5").hide();
+	}
+});
+$('#ConstitutionofFirm').bind('blur', function() {
+	var ConstitutionofFirm = $("#ConstitutionofFirm").val();
+	if(ConstitutionofFirm==""){
+	var error="Please select Constitution of Firm";
+		$("#id5").html(error);
+	}
+});
+$('#NatureofCompany').on('change', function() {
+	var NatureofCompany = $('#NatureofCompany').val();
+	if(NatureofCompany==""){
+	var error="Please select Nature of Company";        
+        $("#id6").html(error);
+        $("#id6").show();
+	}
+	else {
+		$("#id6").hide();
+	}
+});
+$('#NatureofCompany').bind('blur', function() {
+	var NatureofCompany = $("#NatureofCompany").val();
+	if(NatureofCompany==""){
+	var error="Please select Nature of Company";
+		$("#id6").html(error);
+	}
+}); 
+</script>
+</div>

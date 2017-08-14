@@ -4,7 +4,7 @@
       <div class="container">
          <div class="row">
             <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
-            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUser}}</span>
+            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUserName}}</span>
 			
 			<!--=== LOGOUT SECTION ===-->
 			
@@ -16,17 +16,17 @@
 					<span>Change</span>
 				</a>-->
 				<div class="pro-txt">
-					<h3>{{}}</h3>
+					<h3>{{loggedInUserName}}</h3>
 					<h4>{{loggedInUser}}</h4>
 				</div>
 			</div>
 			<div class="pro-btm">
-				<span class="mypro-btn"><a href="#" ng-click="logout()">My profile</a></span>
+				<span class="mypro-btn"><a href="" ng-click="logout()">My profile</a></span>
 				<span class="mypro-logout" ng-click="logout()"><a>Log Out</a></span>
 			</div>
 		</div>
 		</div>
-			<a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a></div>
+			<a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> {{lengthofcart}}</span> </a></div>
          </div>
       </div>
    </section>
@@ -39,7 +39,7 @@
                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                      <a class="navbar-brand" href="#/"></a>
                      <figure> </figure>
-                     </a>
+                     
                   </div>
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
@@ -106,15 +106,17 @@
             <section class="newprod" id="np">
                <slick settings="slicknewproductsConfig" ng-if="NewproductsLoaded">
                   <li class="block" ng-repeat="image in products">
+				  <div class="t-pro">
                      <A HREF="#/productpage/{{image.productId}}">
                         <figure>
-                     <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imgurl}}"></a>
-                     <span class="dis">{{image.discount}}</span>
+                     <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imageURL}}"></a>
+                     <span class="dis">{{image.discountPercentage}}% OFF</span>
                      </figure>
-                     <h3>{{image.description}}</h3>
-                     <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.price}}</h4>
+                     <h3>{{image.productName}}</h3>
+                     <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.productDiscountPrice}}</h4>
                      <a href="#/productpage/{{image.productId}}" class="va">View Details</a>
                      </A>
+				   </div>
                   </li>
                </slick>
                <div class="clearfix"> </div>
@@ -125,15 +127,17 @@
             <section class="newprod" id="np">
                <slick settings="slickfeatureproductsConfig" ng-if="FeaturedLoaded">
                   <li class="block" ng-repeat="image in feature">
+				  <div class="t-pro">
                      <A HREF="">
                         <figure>
-                     <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imgurl}}"></a>
-                     <span class="dis">{{image.discount}}</span>
+                     <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imageURL}}"></a>
+                     <span class="dis">{{image.discountPercentage}}% OFF</span>
                      </figure>
-                     <h3>{{image.description}}</h3>
-                     <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.price}}</h4>
+                     <h3>{{image.productName}}</h3>
+                     <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.productDiscountPrice}}</h4>
                      <a href="#/productpage/{{image.productId}}" class="va">View Details</a>
                      </A>
+				  </div>
                   </li>
                </slick>
                <div class="clearfix"> </div>
@@ -153,14 +157,15 @@
       <section  id="fp">
          <slick settings="slickrecommendedprocutsConfig" ng-if="RecomendLoaded">
             <li class="block" ng-repeat="image in recommend">
-               <figure>
-                  <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imgurl}}"></a>
+               <div class="t-pro">
+			   <figure>
+                  <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imageURL}}"></a>
                   <span class="hspace20"></span>
                </figure>
-               <h3> {{image.description}}</h3>
-               <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.price}}</h4>
+               <h3> {{image.productName}}</h3>
+               <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.productDiscountPrice}}</h4>
                <a href="#/productpage/{{image.productId}}" class="va">View Details</a>
-               </A>
+               </div>
             </li>
          </slick>
       </section>
@@ -236,7 +241,7 @@
          </div>
       </div>
    </div>
-   <div class="copy">   &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
+   <div class="copy">   &copy; Copyrights 2017   ONE SEVEN HOME  |  <a href="#">TERMS AND CONDITIONS</a>  |  <a href="#">PRIVACY POLICY </a> |  <a href="#">INDIA PRIVACY RIGHTS</a> </div>
 </footer>
 
 <script>

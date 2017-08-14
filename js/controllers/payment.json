@@ -1,17 +1,14 @@
 { "payment":
 	[
 		{
-			"ccord": "Creditcard",
-			"dcard": "Debititcard",
-			
-			"ncard": "Netbank",
-			"cod": "Cosh on Delivery",
+			"ccord": "Credit Card",
+			"dcard": "Debit Card",
+			"ncard": "Net Banking",
+			"cod": "Cash on Delivery",
 			"ppay": "Phone Pay",
 			"ptm"   :"Paytm",
-			"em": "Emi"
-			
+			"em": "EMI"
 		}
-		
 	]
 }
 

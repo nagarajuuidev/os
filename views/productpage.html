@@ -4,7 +4,7 @@
    <div class="container">
       <div class="row">
          <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
-         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUser}}</span>
+         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUserName}}</span>
 			
 			<!--=== LOGOUT SECTION ===-->
 			
@@ -16,7 +16,7 @@
 					<span>Change</span>
 				</a>-->
 				<div class="pro-txt">
-					<h3>{{}}</h3>
+					<h3>{{loggedInUserName}}</h3>
 					<h4>{{loggedInUser}}</h4>
 				</div>
 			</div>
@@ -26,7 +26,7 @@
 			</div>
 		</div>
 		</div>
-		<a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a>
+		<a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> {{cartvalue}}</span> </a>
 		</div>
 	  </div>
    </div>
@@ -40,7 +40,6 @@
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                   <a class="navbar-brand" href="#/"></a>
                   <figure> </figure>
-                  </a>
                </div>
                <div id="navbar" class="navbar-collapse collapse">
                   <ul class="nav navbar-nav">
@@ -66,28 +65,10 @@
       </div>
       <!--/.container-fluid -->
    </nav>
-   <div class="container">
-   <div class="category-menu" style="display: ;">
-         <ul>
-            <li>
-              <a class="cat-link">All Categories</a>
-               <ul class="dropdown bgcover" ng-style="set_bg()">
-                  <li  ng-repeat="x in menuitem" >
-                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
-                     <ul class="dropdown">
-                        <li  ng-repeat="sub in x.subCategory">
-                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
-                        </li>
-                     </ul>
-                  </li>
-               </ul>
-            </li>
-         </ul>
-      </div>
-      </div>
+   <category-Directive></category-Directive>
 </header>
 <div class="container">
-   <div class="breadcrumbs"><A HREF="">Home</A>    >    <A HREF="">Kitchen Taps</A>   > EClearwater Elara Single Lever Kitchen Mixer</div>
+   <div class="breadcrumbs"><a href="#/">Home</a>    >    <a href="">Kitchen Taps</a>   > EClearwater Elara Single Lever Kitchen Mixer</div>
 </div>
 <div class="prd">
 <section class="prd-detail  ">
@@ -116,7 +97,7 @@
                   <option>3</option>
                </select>
             </div>
-            <button class="addtocart">Add to Cart</button> <small> *Please select a vendor</small>
+            <button class="addtocart" ng-click="addcart(cartparam)">Add to Cart</button> <small> *Please select a vendor</small>
             <div class="rating">
                <i class="fa fa-star" aria-hidden="true"></i>
                <i class="fa fa-star" aria-hidden="true"></i>
@@ -143,7 +124,7 @@
 						<p>This following sets out the terms and conditions on which you may use the content on bother digital publishing services www.osh.com owned by business standard content services.</p>
 				  </div>
 				</span>
-                  <span><A HREF="">Check your location for product availability</A></span>
+                  <span><a href="">Check your location for product availability</a></span>
                </div>
             </div>
          </div>
@@ -171,39 +152,81 @@
 		</div>
 		<div class="prds">
 		<ul>
-			<li> <figure> <a href="#"><img src="img/vdr1.jpg"></a> <a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a></figure>				<h4>S.k Plumbers & Sanitary Co..</h4> 				<p>9-8-466, Chota bazar, Golconda, 
-Hyd- 500008 (Map) </p> 			</li> 
-			<li> <figure> <a href="#"><img src="img/vdr2.jpg"></a> <a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a></figure>				<h4>Novella Plumbing Pvt.Ltd..</h4> 				<p>flat no:108 1st floor, sun city, qayeem
-appartment, Hyderabad</p> 			</li>
-			<li> <figure> <a href="#"><img src="img/vdr3.jpg"></a> </figure>				<h4>Kalpana Plumbing Services</h4> 				<p>flat no:108 1st floor, sun city, qayeem
-appartment, Hyderabad</p> 			</li>
-			<li> <figure> <a href="#"><img src="img/vdr4.jpg"></a> </figure>				<h4>AAA Plumbing Enge...</h4> 				<p>flat no:108 1st floor, sun city, qayeem
-appartment, Hyderabad</p> 			</li>
-			<li> <figure> <a href="#"><img src="img/vdr5.jpg"></a> </figure>				<h4>Taj Plumbing contractor</h4> 				<p>flat no:108 1st floor, sun city, qayeem
-appartment, Hyderabad</p> 			</li>
-			<li> <figure> <a href="#"><img src="img/vdr1.jpg"></a> </figure>				<h4>S.k Plumbers & Sanitary Co..</h4> 				<p>9-8-466, Chota bazar, Golconda, 
-Hyd- 500008 (Map) </p> 			</li>
-			<li> <figure> <a href="#"><img src="img/vdr2.jpg"></a> </figure>				<h4>Novella Plumbing Pvt.Ltd..</h4> 				<p>flat no:108 1st floor, sun city, qayeem
-appartment, Hyderabad</p> 			</li>
-			<li> <figure> <a href="#"><img src="img/vdr3.jpg"></a> </figure>				<h4>Kalpana Plumbing Services</h4> 				<p>flat no:108 1st floor, sun city, qayeem
-appartment, Hyderabad</p> 			</li>
-<li> <figure> <a href="#"><img src="img/vdr4.jpg"></a> </figure>				<h4>AAA Plumbing Enge...</h4> 				<p>flat no:108 1st floor, sun city, qayeem
-appartment, Hyderabad</p> 			</li>
-			<li> <figure> <a href="#"><img src="img/vdr5.jpg"></a> </figure>				<h4>Taj Plumbing contractor</h4> 				<p>flat no:108 1st floor, sun city, qayeem
-appartment, Hyderabad</p> 			</li>
-			</ul> 
-			</div> 
-		<div class="pagination">
-			<ul>
-				<li><a href="#">1</a></li>
-				<li class="active"><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-			</ul>
-		</div>
-		
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr1.jpg"></a>
+				<a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a>
+			</figure>
+			<h4>S.K Plumbers & Sanitary Co..</h4>
+			<p>9-8-466, Chota bazar, Golconda, Hyd- 500008 (Map) </p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr2.jpg"></a>
+				<a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a>
+			</figure>
+			<h4>Novella Plumbing Pvt.Ltd..</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad</p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr3.jpg"></a>
+			</figure>
+			<h4>Kalpana Plumbing Services</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad</p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr4.jpg"></a>
+			</figure>
+			<h4>AAA Plumbing Enge..</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad</p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr5.jpg"></a>
+			</figure>
+			<h4>Taj Plumbing contractor</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad</p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr1.jpg"></a>
+			</figure>
+			<h4>S.K Plumbers & Sanitary Co..</h4>
+			<p>9-8-466, Chota bazar, Golconda, Hyd- 500008 (Map) </p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr2.jpg"></a>
+			</figure>
+			<h4>Novella Plumbing Pvt.Ltd..</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad </p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr3.jpg"></a>
+			</figure>
+			<h4>Kalpana Plumbing Services</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad </p> 			</li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr4.jpg"></a>
+			</figure>
+			<h4>AAA Plumbing Enge..</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad </p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr5.jpg"></a>
+			</figure>
+			<h4>Taj Plumbing Contractor</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad</p>
+		  </li>
+		</ul> 
 		</div> 
-		</div>
+	</div> 
+	</div>
 	</section>
 	<section class="prd-mid">
 	<div class="container">
@@ -219,8 +242,8 @@ appartment, Hyderabad</p> 			</li>
 	</div>
 	</div>
 	</section>
-<section class="prd-mid btm">
-   <div class="container">
+	<section class="prd-mid btm">
+	<div class="container">
       <div class="row">
          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left">
             <h3>Reviews</h3>
@@ -249,9 +272,6 @@ appartment, Hyderabad</p> 			</li>
                <i class="fa fa-star disabled" aria-hidden="true"></i> 
             </div>
             <form class="prd-form">
-               <!--<div class="form-group">
-                  <input type="text" class="form-control" id="name" placeholder="Name *" name="name">
-               </div>-->
                <div class="form-group">
                   <textarea name="review" placeholder="Review *"></textarea>
                </div>
@@ -261,110 +281,59 @@ appartment, Hyderabad</p> 			</li>
             </form>
          </div>
       </div>
-   </div>
-</section>
-<div class="container">
-<h2 class="sec-title3"><strong>Recommended Products </strong></h2>
-<section  id="fp">
-   <div class="container">
+	</div>
+	</section>
+	<div class="container">
+	<h2 class="sec-title3"><strong>Recommended Products </strong></h2>
+	<section  id="fp">
+	<div class="container">
       <div class="row">
          <slick settings="slickrecommendedprocutsConfig" ng-if="RecomendLoaded">
             <li class="block" ng-repeat="image in recommend">
-               <A HREF="">
+               <div class="t-pro">
                   <figure>
-               <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imgurl}}"></a>
+               <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imageURL}}"></a>
                </figure>
-               <h3> {{image.description}}</h3>
-               <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.price}}</h4>
+               <h3> {{image.productName}}</h3>
+               <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.productPrice}}</h4>
                <a href="#/productpage/{{image.productId}}" class="va">View Details</a>
-               </A>
+               </div>
             </li>
          </slick>
       </div>
-   </div>
-</section>
-</div>
-<section class="todaydeals rview" >
-   <div class="container">
+	</div>
+	</section>
+	</div>
+	<section class="todaydeals rview" >
+	<div class="container">
       <div class="row">
          <div class="col-xs-12">
             <h2 class="sec-title"><strong>Recently Bought</strong></h2>
             <ul class="all">
                <slick settings="slickrecentbroughtConfig" ng-if="RecentlyLoaded">
                   <li ng-repeat="brought in recently">
-                     <figure>
-                        <a href="#/productpage/{{brought.productId}}"><img data-lazy="{{brought.imgurl}}"></a>
-                        <span class="dis">{{brought.discount}}</span>
+                     <div class="t-pro">
+					 <figure>
+                        <a href="#/productpage/{{brought.productId}}"><img data-lazy="{{brought.imageURL}}"></a>
+                        <span class="dis">{{brought.discountPercentage}}% OFF</span>
                      </figure>
-                     <h3>{{brought.description}}</h3>
-                     <h4><i class="fa fa-inr" aria-hidden="true"></i> {{brought.price}}</h4>
+                     <h3>{{brought.productName}}</h3>
+                     <h4><i class="fa fa-inr" aria-hidden="true"></i> {{brought.productDiscountPrice}}</h4>
                      <a href="#/productpage/{{brought.productId}}" class="va">View Details</a>
+					 </div>
                   </li>
                </slick>
             </ul>
          </div>
       </div>
-   </div>
-</section>
-
-<!--
-
-<footer class="footer">
-   <div class="container">
-      <div class="row">
-         <div class="col-xs-12 col-md-6 col-lg-3 ">
-            <h2>Buying Assurance</h2>
-            <p><a href="#">See authorised Dealers</a><br>
-               <a href="#">Certification</a>
-            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Info &amp; News</h2>
-            <p><a href="#">About Us</a><br>
-               <a href="#">Contact Us</a><br>
-               <a href="#">Press Releases</a><br>
-               <a href="#">Product Support</a><br>
-               <a href="#">Careers</a><br>
-               <a href="#">FAQ’s </a>
-            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Locations</h2>
-            <p><a href="#">Hyderabad</a><br>
-               <a href="#">Warangal</a><br>
-               <a href="#">Vijayawada</a><br>
-               <a href="#">Guntur</a>
-            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Stay Updated </h2>
-            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a> | <a href="#"> <i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
-            <div class="newsletter">
-               <input placeholder="Sign up for updates">
-               <button>Register</button>
-            </div>
-         </div>
-      </div>
-   </div>
-   <div class="copy"> &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
-</footer>
-
--->
+	</div>
+	</section>
 
 <script>
 	jQuery(".popup .qtn").click(function(){
     jQuery(".popuptext").toggle();
 	});
- 
- </script>
- <script>
-$(".login-btn").click(function(){
-    $(".myprofile-block").toggle();
-});
-$(".cat-link").click(function(){
-    $(".category-menu ul li:hover > ul.dropdown").toggle();
-});
-$(".cat-link").click(function(){
-    $(".cat-link").toggleClass("active");
-});
+	$(".login-btn").click(function(){
+		$(".myprofile-block").toggle();
+	});
 </script>

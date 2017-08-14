@@ -14,11 +14,11 @@ angular.module('newapp')
             $scope.set_bg = function() {
                 $scope.bgimg = param.imageURL;
                 return {
-                    "background-image": "url(/clients/oneseven_home_v2/img/" + $scope.bgimg + ".jpg)"
+                    "background-image": "url(/clients/onesevenhome/img/" + $scope.bgimg + ".jpg)"
                 };
             }
         }
-		 $http.get("/clients/oneseven_home_v2/js/controllers/myaccount.json").then(function(resp) {
+		 $http.get("/clients/onesevenhome/js/controllers/myaccount.json").then(function(resp) {
             console.log(resp);
             $scope.account = resp.data.myacc;
         });

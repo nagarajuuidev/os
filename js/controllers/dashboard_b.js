@@ -18,7 +18,7 @@ angular.module('newapp')
 				 $scope.bgimg=(param.title).replace(/ /g,"_");
 			//	  console.log($scope.bgimg);
         return {			
-			"background-image":"url(/clients/oneseven_home_v2/img/"+$scope.bgimg+".jpg)"	
+			"background-image":"url(/clients/onesevenhome/img/"+$scope.bgimg+".jpg)"	
 
 			};
 			}			

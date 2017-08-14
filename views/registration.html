@@ -1,215 +1,269 @@
-<section class="top" id="top-header">
-   <div class="container">
-      <div class="row">
-         <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
-         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <a href="#/login" ng-hide="userlogged">Login </a> / <a class="activelink" href="#/registration" ng-hide="userlogged"> Signup</a> <a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="cart-value"> 0</span></a></div>
-      </div>
-   </div>
-</section>
-<header class="header">
-   <nav class="navbar navbar-default">
+<div class="wrap">
+   <!-- Static navbar -->
+   <section class="top" id="top-header">
       <div class="container">
          <div class="row">
-            <div class="col-xs-12 ">
-               <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>                  <a class="navbar-brand" href="#/"></a>                  
-                  <figure> </figure>
+            <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
+            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <a href="#/login" ng-hide="userlogged">Login </a> / <a class="activelink" href="#/registration" ng-hide="userlogged"> Signup</a> <a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="cart-value"> 0</span></a></div>
+         </div>
+      </div>
+   </section>
+   <header class="header">
+      <nav class="navbar navbar-default">
+         <div class="container">
+            <div class="row">
+               <div class="col-xs-12 ">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>                  <a class="navbar-brand" href="#/"></a>                  
+                     <figure> </figure>
+                  </div>
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a href="#/todaydeals">Today's Deals</a></li>
+                        <li><a href="#">Buy/Sell</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li class="store"><a href="#">Our Store</a></li>
+                        <li><a href="#/myaccount">My Account</a></li>
+                        <li>
+                           <div class="search">
+                              <div class="input">                              <input type="text" placeholder="Search">                           </div>
+                           </div>
+                        </li>
+                        <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
+                     </ul>
+                  </div>
+                  <!--.nav-collapse -->            
                </div>
-               <div id="navbar" class="navbar-collapse collapse">
-                  <ul class="nav navbar-nav">
-                     <li><a href="#/todaydeals">Today's Deals</a></li>
-                     <li><a href="#">Buy/Sell</a></li>
-                     <li><a href="#services">Services</a></li>
-                     <li><a href="#">About Us</a></li>
-                     <li class="store"><a href="#">Our Store</a></li>
-                     <li><a href="#/myaccount">My Account</a></li>
-                     <li>
-                        <div class="search">
-                           <div class="input">                              <input type="text" placeholder="Search">                           </div>
-                        </div>
-                     </li>
-                     <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
-                  </ul>
-               </div>
-               <!--.nav-collapse -->            
             </div>
          </div>
-      </div>
-      <!--/.container-fluid -->   
-   </nav>
+         <!--/.container-fluid -->   
+      </nav>
+      <category-Directive> </category-Directive>
+   </header>
    <div class="container">
-      <div class="category-menu" style="display: ;">
-         <ul>
-            <li>
-               <a class="cat-link">All Categories</a>               
-               <ul class="dropdown bgcover" ng-style="set_bg()">
-                  <li  ng-repeat="x in menuitem" >
-                     <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>                     
-                     <ul class="dropdown">
-                        <li  ng-repeat="sub in x.subCategory">                           <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                                                    </li>
-                     </ul>
-                  </li>
-               </ul>
-            </li>
-         </ul>
-      </div>
-   </div>
-</header>
-<div class="container">
-   <section class="login title" >
-      <div class="row">
-         <div class="col-xs-12  ">
-            <h2 class="main-title"><strong>Registration</strong></h2>
-            <div class="links">                <a href="#" class="active">User </a>                <a href="#">Vendor</a>            </div>
+      <section class="login title">
+         <div class="row">
+            <div class="col-xs-12">
+               <h2 class="main-title"><strong>Signup</strong></h2>
+               <div class="links">
+                  <a href="" class="active">User</a>
+                  <a href="#/vendorreg">Vendor</a>
+               </div>
+            </div>
          </div>
-      </div>
-      <section class="login mid registration">
-         <form name="regForm" novalidate>
-            <h2 class="sec-title"><strong>New Customer</strong></h2>
-            <div class="login-mid-block">
-               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left">
-                  <h4>Personal Information</h4>
-         <form class="form-horizontal">
-		 <div class="form-group">
-			<input type="email" name="email" class="form-control" ng-model="user.emailAddress" placeholder="Email">
-			<i class="fa fa-star" aria-hidden="true"></i>
-		</div>
-		<div class="form-group">
-			<input type="text" name="firstName" class="form-control" placeholder="First Name" ng-model="user.firstName">
-			<i class="fa fa-star" aria-hidden="true"></i>
-		</div>
-		<div class="form-group">
-			<input type="text" name="lastName" class="form-control" placeholder="Last Name" ng-model="user.lastName">
-			<i class="fa fa-star" aria-hidden="true"></i>
-		</div>
-		<div class="form-group">
-			<input type="text" name="dob" class="form-control" placeholder="(DOB) DD-MM-YYYY" ng-model="user.dob">
-			<i class="fa fa-star" aria-hidden="true"></i>
-		</div>
-		<div class="form-group gender">
-		Gender
-			<div class="radio-item">
-				<input type="radio" name="gender" value="" id="male" >
-				<label for="male">Male</label>
-			</div>
-			<div class="radio-item">
-				<input type="radio" name="gender" value="" id="female">
-				<label for="female">Female</label>
-			</div>
-		</div>
-		<div class="form-group">
-			<input type="text" class="form-control" id="num" placeholder="Mobile No." name="Number" ng-model="user.phone">
-			<i class="fa fa-star" aria-hidden="true"></i>
-		</div>
-			<label for="newPassword"></label>
-		<div class="form-group">
-			<input type="password" name="Password" id="pass" class="form-control" placeholder="Password" ng-model="user.password">
-			<i class="fa fa-star" aria-hidden="true"></i>
-		</div>
-			<label for="confirmPassword"></label>
-		<div class="form-group">
-			<input type="password" name="confirmPassword" ng-model="user.checkPassword" id="conformPassword" class="form-control" placeholder="Confirm Password" >
-			<i class="fa fa-star" aria-hidden="true"></i>
-		</div>
-		</form>
-		</div>
-		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 right">
-		<h4>Contact Information</h4>
-		<form class="form-horizontal">
-		<div class="form-group">
-			<textarea name="message" class="form-control" placeholder="Address" ng-model="user.address"></textarea>
-			<i class="fa fa-star" aria-hidden="true"></i>
-		</div>
-		<div class="form-group">
-			<input type="text" name="Postal Code" class="form-control" placeholder="Postal Code" ng-model="user.postalCode">
-			<i class="fa fa-star" aria-hidden="true"></i>
-		</div>
-		<div class="form-group">
-		<div class="sec-block">
-			<select ng-model="user.stateProvince">
-				<option value="">Select State</option>
-				<option value="">Andhra Pradesh</option>
-				<option value="">Telangana</option>
-				<option value="">Tamil Nadu</option>
-			</select>
-		</div>
-		<i class="fa fa-star" aria-hidden="true"></i>
-		</div>
-		<div class="form-group">
-		<div class="sec-block">
-			<select ng-model="user.city">
-				<option value="">Select City</option>
-				<option value="">Hyderabad</option>
-				<option value="">Banglore</option>
-				<option value="">Chennai</option>
-			</select>
-		</div>
-		<i class="fa fa-star" aria-hidden="true"></i>
-		</div>
-		<div class="form-group" ng-class="">
-		<div class="sec-block">
-			<select ng-model="user.area">
-				<option value="">Select Area</option>
-				<option value="">SR Nagar</option>
-				<option value="">Panjagutta</option>
-				<option value="">Uppal</option>
-			</select>
-		</div>
-		<i class="fa fa-star" aria-hidden="true"></i>
-		</div>
-		<div class="form-group">
-			<input type="checkbox" name="remember" id="agr" value=""><label for="agr">I agree to OneSevenHome Agreement</label>
-		</div>
-		<div class="form-group">
-		<button type="button" class="btn btn-primary" value="Register" title="Register" ng-click="register(user)">
-			<span>Register</span>
-		</button>
-		</div>
-	   </form>
-	  </div>
-	 </div>
-	</form>
-  </section>
- </section>
+         <section class="login mid registration">
+            <form name="regForm" novalidate>
+               <h2 class="sec-title"><strong>New Customer</strong></h2>
+               <div class="login-mid-block">
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left">
+                     <h4>Personal Information</h4>
+                     <!-- First Name-->
+                     <div class="form-group" ng-class="{ 'has-error' : regForm.firstName.$invalid && !regForm.firstName.$pristine }">
+                        <input type="text" name="firstName"  class="form-control" ng-model="user.firstName"placeholder="First Name" required>
+                        <p ng-show="regForm.firstName.$touched && regForm.firstName.$invalid" class="help-block">First name is required</p>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                     </div>
+                     <!-- Last Name-->
+                     <div class="form-group" ng-class="{ 'has-error' : regForm.firstName.$invalid && !regForm.firstName.$pristine }">
+                        <input type="text" name="lastName"  class="form-control" ng-model="user.lastName"placeholder="Last Name" required>
+                        <p ng-show="regForm.lastName.$touched && regForm.lastName.$invalid" class="help-block">Last name is required</p>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                     </div>
+                     <!-- DATE PICKER-->
+                     <div class="form-group reg-date">
+                        <div class="input-group date" data-provide="datepicker" data-date-end-date="0d">
+                           <input type="text" class="form-control" placeholder="DOB (DD/MM/YYYY)">                           
+                           <div class="input-group-addon">
+                              <span class="glyphicon glyphicon-th"></span>
+                           </div>
+                        </div>
+						<i class="fa fa-star" aria-hidden="true"></i>
+                     </div>
+                     <!-- MOBILE NUMBER-->
+                     <!--<div class="form-group" ng-class="{ 'has-error' : regForm.mobileNo.$invalid && !regForm.mobileNo.$pristine }">
+                        <input type="text" name="mobileNo" class="form-control" ng-model="user.mobileNo" placeholder="Mobile Number" required>
+                        <p ng-show="regForm.mobileNo.$touched && regForm.mobileNo.$invalid" class="help-block">Mobile Number is required</p>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                     </div>-->
+					 <div class="form-group" ng-class="{ 'has-error' : regForm.mobileNo.$invalid && !regForm.mobileNo.$pristine }">
+					   <input type="number" class="form-control" ng-model="user.mobileNo" placeholder="Mobile Number" name="mobileNo" ng-pattern="/^[0-9]{1,10}$/" required>
+                       <span ng-show="regForm.mobileNo.$error.pattern"class="help-block">Not a valid number!</span>
+	                     <p ng-show="regForm.mobileNo.$touched && regForm.mobileNo.$invalid" class="help-block">Mobile Number is required</p>
+					   <i class="fa fa-star" aria-hidden="true"></i>
+					</div>
+                     <!-- Gender-->
+                     <div class="form-group gender" ng-model="user.gender">
+                        Gender
+                        <div class="radio-item">
+                           <input type="radio" name="gender" value="" id="male" >
+                           <label for="male">Male</label>
+                        </div>
+                        <div class="radio-item">
+                           <input type="radio" name="gender" value="" id="female">
+                           <label for="female">Female</label>
+                        </div>
+                     </div>
+                     <!-- EMAIL-->
+                     <div class="form-group" ng-class="{ 'has-error' : regForm.email.$invalid && !regForm.email.$pristine }">
+                        <input type="email" name="email" id="email" class="form-control" ng-model="user.email" placeholder="Email (Your User Id)"  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                        <p class="help-block" ng-show="regForm.email.$touched && regForm.email.$error.required">Email is required</p>
+                        <p class="help-block" ng-show="regForm.email.$error.pattern">Invalid Email</p>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                     </div>
+                     <!--PASSWORD -->
+                     <div class="form-group" ng-class="{ 'has-error' : regForm.password.$invalid && !regForm.password.$pristine }">         
+                        <input type="password"  name="password" id="pass" class="form-control" placeholder="Password" ng-model="user.password" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,16}$/" required>
+                        <p ng-show="regForm.password.$touched && regForm.password.$error.required" class="help-block">Password is required</p>
+                        
+						<p class="help-block" ng-show="regForm.password.$error.pattern">Length should be 8 to 15 (including upper, lower & special)</p>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        
+                     </div>
+                     <!--CONFIRM PASSWORD -->                    
+                     <div class="form-group" ng-class="{ 'has-error' : regForm.confirmPassword.$invalid && !regForm.confirmPassword.$pristine }">
+                        <input type="password"  name="confirmPassword" ng-model="user.confirmPassword" ng-pattern="{{user.password}}" id="conformPassword" class="form-control" placeholder="Confirm Password" required>
+						<p ng-show="regForm.confirmPassword.$touched && regForm.confirmPassword.$error.required" class="help-block">Confirm Password is required</p>
+						<p class="help-block" ng-show="regForm.confirmPassword.$error.pattern">Password not matched</p>                       
+					   <i class="fa fa-star" aria-hidden="true"></i>                        
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 right">
+                     <h4>Contact Information</h4>
+                     <!--ADDRESS -->
+                     <div class="form-group" ng-class="{ 'has-error' : regForm.address.$invalid && !regForm.address.$pristine }">
+                        <textarea name="address" class="form-control" placeholder="Address" ng-model="user.address" required></textarea>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <!-- <p ng-show="regForm.address.$invalid && !regForm.address.$pristine" class="help-block">Address is required</p>-->
+                        <p ng-show="regForm.address.$touched && regForm.address.$invalid" class="help-block">Address is required</p>
+                     </div>
+                     <!--POSTAL CODE -->
+                     <div class="form-group" ng-class="{ 'has-error' : regForm.postalCode.$invalid && !regForm.postalCode.$pristine }">
+                        <input type="text" name="postalCode" class="form-control" ng-model="user.postalCode"placeholder="Postal Code" required>
+                        <p ng-show="regForm.postalCode.$touched && regForm.postalCode.$invalid" class="help-block">Postal Code is required</p>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                     </div>
+                     <div class="form-group">
+                        <div class="sec-block">
+                           <select id="state" ng-model="user.state" required>
+                              <option value="">Select State</option>
+                              <option value="AP">Andhra Pradesh</option>
+                              <option value="TS">Telangana</option>
+                              <option value="TN">Tamil Nadu</option>
+                           </select>
+                        </div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <p id="id2" class="help-block"></p>
+                     </div>
+                     <div class="form-group">
+                        <div class="sec-block">
+                           <select id="city" ng-model="user.city">
+                              <option value="">Select City</option>
+                              <option value="Hyderabad">Hyderabad</option>
+                              <option value="Banglore">Banglore</option>
+                              <option value="Chennai">Chennai</option>
+                           </select>
+                        </div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <p id="id3" class="help-block"></p>
+                     </div>
+                     <div class="form-group" ng-class="">
+                        <div class="sec-block">
+                           <select id="area" ng-model="user.area">
+                              <option value="">Select Area</option>
+                              <option value="SR Nagar">SR Nagar</option>
+                              <option value="Panjagutta">Panjagutta</option>
+                              <option value="Uppal">Uppal</option>
+                           </select>
+                        </div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <p id="id4" class="help-block"></p>
+                     </div>
+					 
+                     <div class="form-group">
+                        <input type="checkbox" name="remember" id="agr" value="" ng-model="user.agreeSign" required=""><label for="agr">I agree to OneSevenHome agreement</label>
+                     </div>
+					 <div ng-show="form.$submitted || form.agreeSign.$touched">
+     
+	   <p class="help-block">Please agree and sign.</p>
+    </div>
+                     <div class="form-group">
+                        <button type="submit" class="btn btn-primary" ng-disabled="regForm.$invalid" ng-click="register(user)">SIGN UP</button>
+                     </div>
+                     <p class="help-block">{{errmessage}}</p>
+                  </div>
+               </div>
+            </form>
+         </section>
+      </section>
+   </div>
+   <script>
+    
+       $('#state').on('change', function() {
+              var state = $('#state').val();
+      		 if(state==""){
+      		 var error="Please select state";
+        
+        
+        $("#id2").html(error);
+        $("#id2").show();
+      		 }
+      		 else{
+      		 $("#id2").hide();
+      		 }
+      });
+      $('#state').bind('blur', function() {
+        var state = $("#state").val();
+        if(state==""){
+        var error="Please select state";
+        $("#id2").html(error);
+        }
+      });
+      $('#city').on('change', function() {
+        var city = $('#city').val();
+      	if(city==""){
+      	var error="Please select city";
+		 $("#id3").html(error);
+			$("#id3").show();
+      	 }
+      	else{
+			$("#id3").hide();
+      	 }
+      });
+      $('#city').bind('blur', function() {
+        var city = $("#city").val();
+        if(city==""){
+        var error="Please select city";
+			$("#id3").html(error);
+        }
+       });
+       $('#area').on('change', function() {
+              var area = $('#area').val();
+      		 if(area==""){
+      		 var error="Please select area";
+       $("#id4").html(error);
+       $("#id4").show();
+			}
+		else{
+      		 $("#id4").hide();
+      		 }
+      });
+      $('#area').bind('blur', function() {
+        var area = $("#area").val();
+        if(area==""){
+        var error="Please select area";
+	$("#id4").html(error);
+       }
+      });
+      $(".login-btn").click(function(){
+          $(".myprofile-block").toggle();
+      });
+      $(document).ready(function () {
+		$('.date').datepicker({
+      	format: "dd/mm/yyyy" });
+      		$('.date').on('changeDate', function(ev){
+      		$(this).datepicker('hide');
+      	});
+      });
+   </script>
 </div>
-
-<!--
-
-<footer class="footer">
-   <div class="container">
-      <div class="row">
-         <div class="col-xs-12 col-md-6 col-lg-3 ">
-            <h2>Buying Assurance</h2>
-            <p><a href="#">See authorised Dealers</a><br>               <a href="#">Certification</a>            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Info &amp; News</h2>
-            <p><a href="#">About Us</a><br>               <a href="#">Contact Us</a><br>               <a href="#">Press Releases</a><br>               <a href="#">Product Support</a><br>               <a href="#">Careers</a><br>               <a href="#">FAQ’s </a>            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Locations</h2>
-            <p><a href="#">Hyderabad</a><br>               <a href="#">Warangal</a><br>               <a href="#">Vijayawada</a><br>               <a href="#">Guntur</a>            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Stay Updated </h2>
-            <p><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a> | <a href="#"> <i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
-            <div class="newsletter">               <input placeholder="Sign up for updates">               <button>Register</button>            </div>
-         </div>
-      </div>
-   </div>
-   <div class="copy"> &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
-</footer>
-
--->
-
-<script>
-$(".login-btn").click(function(){
-    $(".myprofile-block").toggle();
-});
-$(".cat-link").click(function(){
-    $(".category-menu ul li:hover > ul.dropdown").toggle();
-});
-$(".cat-link").click(function(){
-    $(".cat-link").toggleClass("active");
-});
-</script>

@@ -4,7 +4,7 @@
       <div class="container">
          <div class="row">
             <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
-            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUser}}</span>
+            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUserName}}</span>
 			
 			<!--=== LOGOUT SECTION ===-->
 			
@@ -16,7 +16,7 @@
 					<span>Change</span>
 				</a>-->
 				<div class="pro-txt">
-					<h3>{{}}</h3>
+					<h3>{{loggedInUserName}}</h3>
 					<h4>{{loggedInUser}}</h4>
 				</div>
 			</div>
@@ -26,9 +26,8 @@
 			</div>
 		</div>
 		</div>
-			<a href="#cart" class="cart activelink"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> 0</span> </a></div></div>
+			<a href="#cart" class="cart activelink"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> {{lengthofcart}}</span> </a></div></div>
          </div>
-      </div>
    </section>
    <header class="header">
       <nav class="navbar navbar-default">
@@ -38,7 +37,6 @@
                   <div class="navbar-header">
                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>                     <a class="navbar-brand" href="#/"></a>                     
                      <figure> </figure>
-                     </a>                  
                   </div>
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
@@ -62,23 +60,7 @@
          </div>
          <!--/.container-fluid -->      
       </nav>
-      <div class="container">
-         <div class="category-menu" style="display: ;">
-            <ul>
-               <li>
-                  <a class="cat-link">All Categories</a>                 
-                  <ul class="dropdown bgcover" ng-style="set_bg()">
-                     <li  ng-repeat="x in menuitem" >
-                        <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>                        
-                        <ul class="dropdown">
-                           <li  ng-repeat="sub in x.subCategory">                              <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                                                       </li>
-                        </ul>
-                     </li>
-                  </ul>
-               </li>
-            </ul>
-         </div>
-      </div>
+      <category-Directive></category-Directive>
    </header>
    <div class="breadcrumbs"><a href="">Home</a> &gt; &nbsp; Cart &nbsp;  &gt; &nbsp; Shipment </div>
    <section class="cart-top">
@@ -182,7 +164,7 @@
 		<p>This following sets out the terms and conditions on which you may use the content on bother digital publishing services www.osh.com owned by business standard content services.</p>
 		</div>
 	</div>
-   <div class="secure-links">
+	<div class="secure-links">
           <ul>
               <li><img src="img/secure.png"/>100% Secure	</li>
              <li><img src="img/assured.png"/>Assured Quality	</li>
@@ -192,44 +174,10 @@
       </div>
    </section>
 </div>
-
-<!--
-
-<footer class="footer">
-   <div class="container">
-      <div class="row">
-         <div class="col-xs-12 col-md-6 col-lg-3 ">
-            <h2>Buying Assurance</h2>
-            <p><a href="#">See authorised Dealers</a><br>               <a href="#">Certification</a>            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Info &amp; News</h2>
-            <p><a href="#">About Us</a><br>               <a href="#">Contact Us</a><br>               <a href="#">Press Releases</a><br>               <a href="#">Product Support</a><br>               <a href="#">Careers</a><br>               <a href="#">FAQ’s </a>            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Locations</h2>
-            <p><a href="#">Hyderabad</a><br>               <a href="#">Warangal</a><br>               <a href="#">Vijayawada</a><br>               <a href="#">Guntur</a>            </p>
-         </div>
-         <div class="col-xs-12 col-md-6 col-lg-3   ">
-            <h2>Stay Updated </h2>
-            <p><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a> | <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i> </a> | <a href="#"> <i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></p>
-            <div class="newsletter">               <input placeholder="Sign up for updates">               <button>Register</button>            </div>
-         </div>
-      </div>
-   </div>
-   <div class="copy">   &copy; Copights 2017   ONE SEVEN HOME  |  <A HREF="#">TERMS AND CONDITIONS</A>  |  <A HREF="#">PRIVACY POLICY </A> |  <A HREF="#">INDIA PRIVACY RIGHTS</A> </div>
-</footer>
-
--->
+</div>
 
 <script>
 $(".login-btn").click(function(){
     $(".myprofile-block").toggle();
-});
-$(".cat-link").click(function(){
-    $(".category-menu ul li:hover > ul.dropdown").toggle();
-});
-$(".cat-link").click(function(){
-    $(".cat-link").toggleClass("active");
 });
 </script>

@@ -1,14 +1,14 @@
 {
 	"myacc": [
 	{
-		"title": "Bricks",
+		"title": "Novels",
        "imgurl1": "img/bricks.png",
 	    "imgurl2": "img/bricks.png"
 
 
 	},
 	{
-		"title": "Adhesive",
+		"title": "Business",
        "imgurl1": "img/adhesive.png",
 	    "imgurl2": "img/adhesive.png"
 
@@ -16,154 +16,112 @@
 	},
 	
 	{
-		"title": "Cement",
+		"title": "Kitchen",
        "imgurl1": "img/cement.png",
 	    "imgurl2": "img/cement.png"
 
 
 	},
 	{
-		"title": "Faucets",
+		"title": "Architects",
        "imgurl1": "img/faucets.png",
 	    "imgurl2": "img/faucets.png"
 
 
 	},
 	{
-		"title": "Hardware",
+		"title": "Building Materials",
        "imgurl1": "img/hardware.png",
 	    "imgurl2": "img/hardware.png"
 
 
 	},
 	{
-		"title": "Jacuzzi bath",
+		"title": "Doors/Windows and Joinery",
        "imgurl1": "img/jacuzzibath.png",
 	    "imgurl2": "img/jacuzzibath.png"
 
 
 	},
 	{
-		"title": "Shower",
+		"title": "Plumbing",
        "imgurl1": "img/shower-w.png",
 	    "imgurl2": "img/shower-w.png"
 
 
 	},
 	{
-		"title": "Spray",
+		"title": "Electrical",
        "imgurl1": "img/spray.png",
 	    "imgurl2": "img/spray.png"
 
 
 	},
 	{
-		"title": "Spray",
+		"title": "Electronics",
        "imgurl1": "img/spray.png",
 	    "imgurl2": "img/spray.png"
 
 
 	},{
-		"title": "Bricks",
+		"title": "Bathroom & Sanitary",
        "imgurl1": "img/bricks.png",
 	    "imgurl2": "img/bricks.png"
 
 
 	},
 	{
-		"title": "Faucets",
+		"title": "Timber/wood sheets & hardware",
        "imgurl1": "img/faucets.png",
 	    "imgurl2": "img/faucets.png"
 
 
 	},
 	{
-		"title": "Hardware",
+		"title": "Fixings & Adhesives",
        "imgurl1": "img/hardware.png",
 	    "imgurl2": "img/hardware.png"
 
 
 	},
 	{
-		"title": "Bricks",
+		"title": "Ceiling",
        "imgurl1": "img/bricks.png",
 	    "imgurl2": "img/bricks.png"
 
 
 	},{
-		"title": "Adhesive",
+		"title": "paints",
        "imgurl1": "img/adhesive.png",
 	    "imgurl2": "img/adhesive.png"
 
 
 	},
 	{
-		"title": "Cement",
+		"title": "Wallpapers & accessories",
        "imgurl1": "img/adhesive.png",
 	    "imgurl2": "img/adhesive.png"
 
 
 	},
 	{
-		"title": "Faucets",
+		"title": "Glass & fittings",
        "imgurl1": "img/faucets.png",
 	    "imgurl2": "img/faucets.png"
 
 
 	},
 	{
-		"title": "Hardware",
+		"title": "Landscaping",
        "imgurl1": "img/hardware.png",
 	    "imgurl2": "img/hardware.png"
 
 
 	},
 	{
-		"title": "Jacuzzi bath",
+		"title": "Home Furniture",
        "imgurl1": "img/jacuzzibath.png",
 	    "imgurl2": "img/jacuzzibath.png"
-
-
-	},
-	{
-		"title": "Shower",
-       "imgurl1": "img/shower-w.png",
-	    "imgurl2": "img/shower-w.png"
-
-
-	},
-	{
-		"title": "Spray",
-       "imgurl1": "img/spray.png",
-	    "imgurl2": "img/spray.png"
-
-
-	},
-	{
-		"title": "Spray",
-       "imgurl1": "img/spray.png",
-	    "imgurl2": "img/spray.png"
-
-
-	},
-	{
-		"title": "Bricks",
-       "imgurl1": "img/bricks.png",
-	    "imgurl2": "img/bricks.png"
-
-
-	},
-	{
-		"title": "Faucets",
-       "imgurl1": "img/faucets.png",
-	    "imgurl2": "img/faucets.png"
-
-
-	},
-	{
-		"title": "Hardware",
-       "imgurl1": "img/hardware.png",
-	    "imgurl2": "img/hardware.png"
 
 
 	}

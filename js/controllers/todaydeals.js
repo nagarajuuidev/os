@@ -1,7 +1,8 @@
-angular.module('newapp') 
+ angular.module('newapp') 
   .controller('TodaydealsCtrl', function ($scope,$http,$location) {
 	if(localStorage.loggedInUser !=undefined){
 		$scope.loggedInUser=localStorage.loggedInUser;
+		$scope.loggedInUserName=localStorage.loggedInUserName;
 		$scope.userlogged=true;
 	} else{
 		$scope.userlogged=false;
@@ -10,26 +11,21 @@ angular.module('newapp')
 		localStorage.removeItem("loggedInUser");
 		$location.path('/login');
 	}
-	$http.get("http://45.113.136.146:7070/shop/getAllCategories").then(function(resp) {
-            console.log(resp);
-            $scope.menuitem = resp.data.categoryData;
-        });
+	$http.get("http://103.92.235.45/shop/getAllCategories").then(function(resp) {
+		console.log(resp);
+		$scope.menuitem = resp.data.categoryData;
+	});
         $scope.mouseOver = function(param) {
             $scope.set_bg = function() {
                 $scope.bgimg = param.imageURL;
                 return {
-                    "background-image": "url(/clients/oneseven_home_v2/img/" + $scope.bgimg + ".jpg)"
+                    "background-image": "url(/clients/onesevenhome/img/" + $scope.bgimg + ".jpg)"
                 };
             }
-        }
-$http.get("/clients/oneseven_home_v2/js/controllers/todaydeals.json").then(function(resp) {
-		console.log(resp);
-		$scope.menuitem=resp.data.todaydeal;
-    });
-	
-	$http.get("/clients/oneseven_home_v2/js/controllers/recomended.json").then(function(resp) {
+        }	
+	$http.get("http://103.92.235.45/shop/getRecommendedProduct").then(function(resp) {
             console.log(resp);
-            $scope.recommend = resp.data.recomended;
+            $scope.recommend = resp.data.recommendedProducts;
             $scope.RecomendLoaded = true;
             $scope.slickrecommendedprocutsConfig = {
                 dots: false,
@@ -39,15 +35,13 @@ $http.get("/clients/oneseven_home_v2/js/controllers/todaydeals.json").then(funct
                 slidesToScroll: 1	
             };
         });
-	
-	$http.get("http://45.113.136.146:7070/shop/getTodaysDeals").then(function(resp) {
+	$http.get("http://103.92.235.45/shop/getTodaysDeals").then(function(resp) {
 		console.log(resp);
 		$scope.deal=resp.data.todaysDealsData;
 	});
-	
-	$http.get("/clients/oneseven_home_v2/js/controllers/recentbrought.json").then(function(resp) {
+	$http.get("http://103.92.235.45/shop/getRecentBought").then(function(resp) {
 		console.log(resp);
-		$scope.recently=resp.data.brought;		
+		$scope.recently=resp.data.recentlyBought;		
 	    $scope.RecentlyLoaded = true;
 		$scope.slickrecentbroughtConfig = {
          dots: false,
@@ -63,9 +57,9 @@ $http.get("/clients/oneseven_home_v2/js/controllers/todaydeals.json").then(funct
 		  settings: {
 			arrows: false,
 			centerMode: true,
-			centerPadding: '40px',
+			centerPadding: '0px',
 			slidesToShow: 3,
-			slidesToScroll: 3 
+			slidesToScroll: 1
 		  }
 		},
 		{
@@ -73,9 +67,9 @@ $http.get("/clients/oneseven_home_v2/js/controllers/todaydeals.json").then(funct
 		  settings: {
 			arrows: false,
 			centerMode: true,
-			centerPadding: '40px',
+			centerPadding: '0px',
 			slidesToShow: 2,
-			slidesToScroll: 2 
+			slidesToScroll: 1
 		  }
 		},
 		{
@@ -83,7 +77,7 @@ $http.get("/clients/oneseven_home_v2/js/controllers/todaydeals.json").then(funct
 		  settings: {
 			arrows: false,
 			centerMode: true,
-			centerPadding: '40px',
+			centerPadding: '0px',
 			slidesToShow: 1,
 			slidesToScroll: 1 
 		  }
@@ -91,5 +85,13 @@ $http.get("/clients/oneseven_home_v2/js/controllers/todaydeals.json").then(funct
 	   ]
       };
 	});
+	$http.get("http://103.92.235.45/shop/cart/displayCart?userId="+localStorage.loggedInUserId).then(function(resp){
+		console.log(resp);
+		$scope.cartlist=resp.data;
+		console.log($scope.cartlist);
+		$scope.lengthofcart = resp.data.shoppingCartItems.length;
+		console.log($scope.lengthofcart);
+	});
+	$scope.lengthofcart = 0;
 });
  
