@@ -18,10 +18,14 @@ angular.module('newapp')
 			localStorage.setItem("loggedInuserId", resp.data.userId);
 	}
 	else {
+		$scope.errmsg=true;
 		$location.path('/vendorlogin');
 		$scope.errmessage = resp.data.errorMessage;
 	}
 	});
+	}
+	$scope.alerthide=function(){
+		$scope.errmsg=false;
 	}
 	$http.get("http://103.92.235.45/shop/getAllCategories").then(function(resp) {
 		console.log(resp);

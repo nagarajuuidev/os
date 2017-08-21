@@ -8,7 +8,7 @@
 		$scope.userlogged=false;
 	}
 	$scope.logout = function (){
-		localStorage.removeItem("loggedInUser");
+		localStorage.clear();
 		$location.path('/login');
 	}
 	$http.get("http://103.92.235.45/shop/getAllCategories").then(function(resp) {

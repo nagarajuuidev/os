@@ -1,5 +1,5 @@
-var newapp=angular.module('newapp',['ngRoute', 'slickCarousel', 'ui.grid','bw.paging']);
- newapp.config(['$routeProvider',function($routeProvider){
+var newapp=angular.module('newapp',['ngRoute', 'slickCarousel', 'ui.grid','bw.paging','ngScrollbars']);
+ newapp.config(['$routeProvider','ScrollBarsProvider',function($routeProvider,ScrollBarsProvider){
   $routeProvider
 	.when('/', {
 		templateUrl: 'views/dashboard.html',
@@ -96,4 +96,68 @@ var newapp=angular.module('newapp',['ngRoute', 'slickCarousel', 'ui.grid','bw.pa
 	.otherwise({
 		redirectTo: '/'
 	});
+	ScrollBarsProvider.defaults = {
+				 scrollButtons: {
+      scrollAmount: 'auto', // scroll amount when button pressed
+      enable: true //  scrolling buttons by default
+    },    
+ scrollInertia: 0,
+    axis: 'y'
+		 };
+}]).controller('categoryCtrl',['$scope', function($scope){
+	
+	$scope.scrollbarConfig = {
+			autoHideScrollbar: false,
+	theme: 'light-3',
+	 callbacks: {
+        onScroll: function() {
+            scrollIt(this);
+        }
+    },
+	advanced:{
+		updateOnContentResize: true
+	},		
+		scrollInertia: 0
+			}
+			$scope.topPosition=$(".cat-link").offset().top+55+"px";
+	
+	var scrollbarDnBtn=$(".mCSB_buttonDown");
+$("body").on("mouseover",".scroll-down",function(){
+   $( ".mCSB_buttonDown" ).triggerHandler( "mousedown" );
+}).on("mouseout",function(){
+
+   $( ".mCSB_buttonDown" ).triggerHandler("mouseup");
+});
+
+// Scroll up
+var scrollbarUpBtn=$(".mCSB_buttonUp");
+$("body").on("mouseover",".scroll-up",function(){
+    $( ".mCSB_buttonUp" ).triggerHandler("mousedown");
+}).on("mouseout",function(){
+    $(".mCSB_buttonUp").triggerHandler("mouseup");
+});	
 }]);
+
+
+angular.module('newapp')
+    .directive('loading',   ['$http' ,function ($http)
+    {
+        return {
+            restrict: 'A',
+            link: function (scope, elm, attrs)
+            {
+                scope.isLoading = function () {
+                    return $http.pendingRequests.length > 0;
+                };
+
+                scope.$watch(scope.isLoading, function (v)
+                {
+                    if(v){
+                        elm.show();
+                    }else{
+                        elm.hide();
+                    }
+                });
+            }
+        };
+    }]);

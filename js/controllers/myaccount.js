@@ -20,17 +20,14 @@ angular.module('newapp')
 		$scope.addproduct=true;
 		$scope.inbox=true;
 	}
-		
+	
 	} else {
 		$scope.userlogged=false;
 	}
 	
 	if ($scope.userlogged==true) {
 	$scope.logout = function (){
-		localStorage.removeItem("loggedInUser");
-		localStorage.removeItem("loggedInUserId");
-		localStorage.removeItem("loggedInUserType");
-		localStorage.removeItem("loggedInUserName");
+		localStorage.clear();
 		$location.path('/login');
 	}
 	$http.get("http://103.92.235.45/shop/getAllCategories").then(function(resp) {
@@ -85,5 +82,65 @@ angular.module('newapp')
 	else {
 		$location.path('/login')
 	}
+	$http.get("http://103.92.235.45/shop/getUser/"+localStorage.loggedInuserId).then(function(resp) {
+		console.log(resp);
+		if($scope.loggedInUserType=="CUSTOMER"){
+			$scope.userprofile = resp.data.customerDetails;
+			$scope.userprofile.address =resp.data.customerDetails.delivery.address;
+			$scope.userprofile.state =resp.data.customerDetails.delivery.stateProvince;
+			$scope.userprofile.city =resp.data.customerDetails.delivery.city;
+			$scope.userprofile.phone =resp.data.customerDetails.delivery.phone;
+			$scope.userprofile.postalCode =resp.data.customerDetails.delivery.postalCode;
+			console.log($scope.userprofile);
+		}
+		else {
+			$scope.vendorprofile = resp.data.vendorDetails;
+			console.log($scope.vendorprofile);
+		}
+	});
+	$scope.alerthide=function(){
+		$scope.errmsg=false;
+	}
+	//Profile Update
 	
+	if($scope.loggedInUserType=="CUSTOMER"){
+	$scope.Update = function(userprofile) {
+		console.log(userprofile);
+		delete userprofile.billing;
+		delete userprofile.delivery;
+		delete userprofile.activated;
+		delete userprofile.dob;
+		delete userprofile.password;
+	$http.post("http://103.92.235.45/shop/customer/update", userprofile).then(function(resp) {
+		
+		
+		if(resp.data.status == "true"){
+			$scope.errmsg=true;			
+			$scope.errmessage = resp.data.successMessage;
+		}
+		else {
+			$scope.errmsg=true;
+			
+			$scope.errmessage = resp.data.errorMessage;
+		}
+	});
+	};
+	}
+	else {
+		$scope.vendorUpdate = function(vendorprofile) {
+			console.log(vendorprofile);
+	$http.post("http://103.92.235.45/shop/vendor/update", vendorprofile).then(function(resp) {
+		
+		if(resp.data.status == "true"){
+			$scope.errmsg=true;			
+			$scope.errmessage = resp.data.successMessage;
+		}
+		else {
+			$scope.errmsg=true;
+			
+			$scope.errmessage = resp.data.errorMessage;
+		}
+	});
+	};
+	}
 });

@@ -15,12 +15,17 @@ angular.module('newapp')
 			$scope.userType = resp.data.type;
 			localStorage.setItem("loggedInUserType", $scope.userType);
 			//console.log(localStorage.getItem(loggedInUserType));
+			localStorage.setItem("loggedInuserId", resp.data.userId);
 	}
 	else {
-		$location.path('/login');
+		$scope.errmsg=true;
 		$scope.errmessage = resp.data.errorMessage;
+		$location.path('/login');		
 	}
 	});
+	}
+	$scope.alerthide=function(){
+		$scope.errmsg=false;
 	}
 	$http.get("http://103.92.235.45/shop/getAllCategories").then(function(resp) {
 		console.log(resp);

@@ -17,8 +17,10 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.6/slick-theme.css" rel="stylesheet"/>
 <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.min.css" type="text/css">
-<link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css"/>
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+
 
 
 <!-- ==== SCRIPTS ==== -->
@@ -35,6 +37,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-slick-carousel/3.1.7/angular-slick.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
 <script src="js/backtotop.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/scrollbars.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/directives/categorydirective.js"></script>
 <script src="js/directives/paging.js"></script>
@@ -75,15 +79,21 @@
 		}
 	}); 
 $(function(){
-$("body").on("mouseover",".bgcover > li > a",function(){
-$(".bgcover > li > a").removeClass('activemenu');
+$("body").on("mouseover",".mCSB_container > li > a",function(){
+$(".mCSB_container > li > a").removeClass('activemenu');
 $(this).addClass('activemenu');
 });
 $("body").on("click",".cat-link",function(){
 $(".cat-link").toggleClass("active");
 $(".category-menu ul li:hover > ul.dropdown").toggle();
-$(".bgcover > li > a").removeClass('activemenu');
+$(".mCSB_container > li > a").removeClass('activemenu');
+
 });
+
+
+
+
+
 
 });
 </script>
@@ -91,5 +101,6 @@ $(".bgcover > li > a").removeClass('activemenu');
 
 <body>
  <div  ng-view></div>
+ <div class="modal-backdrop fade in" data-loading ><div class="loadspinner" ><i class="fa fa-spinner fa-spin"></i> <span>Loading...</span></div></div>
 </body>
 </html>

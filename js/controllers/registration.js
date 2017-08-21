@@ -12,6 +12,9 @@ angular.module('newapp')
 			};
 		}
 	}
+	$scope.alerthide=function(){
+		$scope.errmsg=false;
+	}
 	$scope.register = function (user) {
 		user.activationURL="http://rainiersoft.com/clients/onesevenhome/#/activateuser";
 	$http.post("http://103.92.235.45/shop/customer/register", user).then(function(resp) {
@@ -19,6 +22,7 @@ angular.module('newapp')
 		$location.path('/conform');
 	}
 	else {
+		$scope.errmsg=true;
 		$location.path('/registration');
 		$scope.errmessage = resp.data.errorMessage;
 	}	

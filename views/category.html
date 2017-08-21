@@ -1,17 +1,22 @@
-  <div class="container">
+  <div class="container" ng-controller="categoryCtrl">
          <div class="category-menu" style="display: ;">
             <ul>
                <li>
                   <a class="cat-link">All Categories</a>
-                  <ul class="dropdown bgcover" ng-style="set_bg()">
+                  <ul class="dropdown bgcover " ng-style="set_bg()" >
+				 <li ><a class="scroll-up"><i class="fa fa-caret-up" aria-hidden="true"></i></a></li>
+				  <div class="category-scroll" ng-scrollbars ng-scrollbars-config="scrollbarConfig">
+				  
                      <li  ng-repeat="x in menuitem" >
                         <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
-                        <ul class="dropdown">
+                        <ul class="dropdown  subcategory-scroll" ng-attr-style="top: {{topPosition}}">
                            <li ng-repeat="sub in x.subCategory">
                               <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
                            </li>
                         </ul>
                      </li>
+					 </div>
+					<li ><a class="scroll-down"><i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
                   </ul>
                </li>
             </ul>

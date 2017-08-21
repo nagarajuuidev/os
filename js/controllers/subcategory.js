@@ -7,7 +7,7 @@ angular.module('newapp')
 		$scope.userlogged=false;
 	}
 	$scope.logout = function (){
-		localStorage.removeItem("loggedInUser");
+		localStorage.clear();
 		$location.path('/login');
 	}
 	$scope.categorytype = $routeParams.cid;

@@ -8,8 +8,7 @@ angular.module('newapp')
 		$scope.userlogged=false;
 	}
 	$scope.logout = function (){
-		localStorage.removeItem("loggedInUser");
-		localStorage.removeItem("loggedInUserId");
+		localStorage.clear();
 		$location.path('/login');
 	}
 	$scope.cartvalue=0;

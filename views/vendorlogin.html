@@ -78,7 +78,7 @@
                            </div>
                         </div>
                         <div class="form-group">
-                           <input type="checkbox" name="remember" id="rem" value=""><label class="rem" for="rem">Remember me</label>
+                           <input type="checkbox" name="remember" id="rem" value=""><label class="rem" for="rem">Remember Me</label>
                            <p class="fpwd"><a href="#forgetpassword">Forgot your password?</a></p>
                         </div>
                         <div class="form-group btn-sign">
@@ -88,7 +88,10 @@
                      </div>
                   </form>
                </div>
-               <p class="errmessage">{{errmessage}}</p>
+               
+			   <div class="alert alert-warning col-md-6 col-md-offset-3" ng-if="errmsg"> 
+			   <span class="close" data-dismiss="alert" aria-label="close" ng-click="alerthide()">&times;</span>
+			   <strong>Error! </strong>{{errmessage}}</div>
             </div>
          </div>
    </section>

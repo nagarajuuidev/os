@@ -1,5 +1,6 @@
 angular.module('newapp') 
-  .controller('conformCtrl', function ($scope,$http, $location) {
+  .controller('conformCtrl', function ($scope,$http, $location,$window) {
+	  $window.scrollTo(0, 0);
 	  if(localStorage.loggedInUser !=undefined){
 		$scope.loggedInUser=localStorage.loggedInUser;
 		$scope.userlogged=true;
@@ -7,10 +8,10 @@ angular.module('newapp')
 		$scope.userlogged=false;
 	}
 	$scope.logout = function (){
-		localStorage.removeItem("loggedInUser");
+		localStorage.clear();
 		$location.path('/login');
 	}
-	$http.get("http://localhost:8080/shop/getAllCategories").then(function(resp) {
+	$http.get("http://103.92.235.45/shop/getAllCategories").then(function(resp) {
 		console.log(resp);
 		$scope.menuitem = resp.data.categoryData;
 	});
@@ -22,11 +23,11 @@ angular.module('newapp')
                 };
             }
         }
-		$http.get("http://localhost:8080/shop/getContactUS").then(function(resp){
+		$http.get("http://103.92.235.45/shop/getContactUS").then(function(resp){
 			console.log(resp);
 			$scope.contactdetails=resp.data;
 		});
-	$http.get("http://localhost:8080/shop/cart/displayCart?userId="+localStorage.loggedInUserId).then(function(resp){
+	$http.get("http://103.92.235.45/shop/cart/displayCart?userId="+localStorage.loggedInUserId).then(function(resp){
 		console.log(resp);
 		$scope.cartlist=resp.data;
 		console.log($scope.cartlist);

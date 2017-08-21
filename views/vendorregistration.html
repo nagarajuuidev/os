@@ -67,29 +67,23 @@
                            <i class="fa fa-star" aria-hidden="true"></i>
                            <p ng-show="vendorForm.vendorOfficeAddress.$touched && vendorForm.vendorOfficeAddress.$invalid" class="help-block">Address is required</p>
                         </div>
-                        <!-- MOBILE NUMBER-->
-                        <!--<div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorMobile.$invalid && !vendorForm.vendorMobile.$pristine }">
-                           <input type="text" name="vendorMobile" class="form-control" ng-model="vendor.vendorMobile" placeholder="Mobile Number" required>
-                           <p ng-show="vendorForm.vendorMobile.$invalid && !vendorForm.vendorMobile.$pristine" class="help-block">Mobile No is required</p>
-                           <p ng-show="vendorForm.vendorMobile.$touched && vendorForm.vendorMobile.$invalid" class="help-block">Mobile Number is required</p>
-                           <i class="fa fa-star" aria-hidden="true"></i>
-                        </div>-->
+						<!--MOBILE NUMBER-->
 						 <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorMobile.$invalid && !vendorForm.vendorMobile.$pristine }">
-					   <input type="number"  name="vendorMobile"class="form-control" ng-model="vendor.vendorMobile" placeholder="Mobile Number"  ng-pattern="/^[0-9]{1,10}$/" required>
+					   <input type="text"  name="vendorMobile"class="form-control" ng-model="vendor.vendorMobile" id="vendormobile" placeholder="Mobile Number"  ng-pattern="/^[0-9]{1,10}$/" required>
                        <span ng-show="vendorForm.vendorMobile.$error.pattern"class="help-block">Not a valid number!</span>
 	                     <p ng-show="vendorForm.vendorMobile.$touched && vendorForm.vendorMobile.$invalid" class="help-block">Mobile Number is required</p>
 					   <i class="fa fa-star" aria-hidden="true"></i>
 					</div>
                         <!--TELEPHONE NUMBER-->
                         <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorTelephone.$invalid && !vendorForm.vendorTelephone.$pristine }">
-                           <input type="text" name="vendorTelephone" class="form-control" ng-model="vendor.vendorTelephone" placeholder="Telephone Number" required>
+                           <input type="text" id="D" name="vendorTelephone" class="form-control" ng-model="vendor.vendorTelephone" placeholder="Telephone Number" required>
                            <!--<p ng-show="vendorForm.vendorTelephone.$invalid && !vendorForm.vendorTelephone.$pristine" class="help-block"> Telephone Number is required</p>-->
                            <p ng-show="vendorForm.vendorTelephone.$touched && vendorForm.vendorTelephone.$invalid" class="help-block">Telephone Number is required</p>
                            <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
                         <!--FAX NUMBER-->
                         <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorFax.$invalid && !vendorForm.vendorFax.$pristine }">
-                           <input type="text" name="vendorFax" class="form-control" ng-model="vendor.vendorFax" placeholder="Fax Number " required>
+                           <input type="text" id="E" name="vendorFax" class="form-control" ng-model="vendor.vendorFax" placeholder="Fax Number " required>
                            <!--<p ng-show="vendorForm.vendorFax.$invalid && !vendorForm.vendorFax.$pristine" class="help-block"> Fax Number is required</p>-->
                            <p ng-show="vendorForm.vendorFax.$touched && vendorForm.vendorFax.$invalid" class="help-block">Fax Number is required</p>
                            <i class="fa fa-star" aria-hidden="true"></i>
@@ -147,28 +141,28 @@
                         </div>
                         <!--Reg No-->
                         <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorRegistrationNo.$invalid && !vendorForm.vendorRegistrationNo.$pristine }">
-                           <input type="text" name="vendorRegistrationNo" class="form-control" ng-model="vendor.vendorRegistrationNo" placeholder="Reg Number " required>
+                           <input type="text" id="F" name="vendorRegistrationNo" class="form-control" ng-model="vendor.vendorRegistrationNo" placeholder="Reg Number " required>
                            <!--<p ng-show="vendorForm.vendorRegistrationNo.$invalid && !vendorForm.vendorRegistrationNo.$pristine" class="help-block"> Registration Number is required</p>-->
                            <p ng-show="vendorForm.vendorRegistrationNo.$touched && vendorForm.vendorRegistrationNo.$invalid" class="help-block">Registration Number is required</p>
                            <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
                         <!--Vat No-->
                         <div class="form-group" ng-class="{ 'has-error' : vendorForm.vatRegNo.$invalid && !vendorForm.vatRegNo.$pristine }">
-                           <input type="text" name="vatRegNo" class="form-control" ng-model="vendor.vatRegNo" placeholder="VAT Number " required>
+                           <input type="text" id="G" name="vatRegNo" class="form-control" ng-model="vendor.vatRegNo" placeholder="VAT Number " required>
                            <!--<p ng-show="vendorForm.vatRegNo.$invalid && !vendorForm.vatRegNo.$pristine" class="help-block"> Vat  Number is required</p>-->
                            <p ng-show="vendorForm.vatRegNo.$touched && vendorForm.vatRegNo.$invalid" class="help-block">VAT  Number is required</p>
                            <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
                         <!--Pan No-->
                         <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorPAN.$invalid && !vendorForm.vendorPAN.$pristine }">
-                           <input type="text" name="vendorPAN" class="form-control" ng-model="vendor.vendorPAN" placeholder="PAN Number " required>
+                           <input type="text" id="H"  name="vendorPAN" class="form-control" ng-model="vendor.vendorPAN" placeholder="PAN Number " required>
                            <!-- <p ng-show="vendorForm.vendorPAN.$invalid && !vendorForm.vendorPAN.$pristine" class="help-block"> Pan Number is required</p>-->
                            <p ng-show="vendorForm.vendorPAN.$touched && vendorForm.vendorPAN.$invalid" class="help-block">PAN Number is required</p>
                            <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
                         <!--Labour license number-->   
                         <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorLicense.$invalid && !vendorForm.vendorLicense.$pristine }">
-                           <input type="text" name="vendorLicense" class="form-control" ng-model="vendor.vendorLicense" placeholder="License Number " required>
+                           <input type="text" id="I" name="vendorLicense" class="form-control" ng-model="vendor.vendorLicense" placeholder="License Number " required>
                            <!-- <p ng-show="vendorForm.vendorLicense.$invalid && !vendorForm.vendorLicense.$pristine" class="help-block"> License Number is required</p>-->
                            <p ng-show="vendorForm.vendorLicense.$touched && vendorForm.vendorLicense.$invalid" class="help-block">License Number is required</p>
                            <i class="fa fa-star" aria-hidden="true"></i>
@@ -176,18 +170,21 @@
                         <!--Tin number-->
                         <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorTIN.$invalid && !vendorForm.vendorTIN.$pristine }">
                            <input type="text" name="vendorTIN" class="form-control" ng-model="vendor.vendorTIN" placeholder="TIN Number " required>
-                           <!--<p ng-show="vendorForm.vendorTIN.$invalid && !vendorForm.vendorTIN.$pristine" class="help-block"> Tin Number is required</p>-->
+                           <p ng-show="vendorForm.vendorTIN.$invalid && !vendorForm.vendorTIN.$pristine" class="help-block"> Tin Number is required</p>
                            <p ng-show="vendorForm.vendorTIN.$touched && vendorForm.vendorTIN.$invalid" class="help-block">TIN Number is required</p>
                            <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
                         <h6>Valid authorization of dealership certificate for supply of products</h6>
                         <div class="form-group">
-                           <input name="file" id="file-1" class="inputfile inputfile-2" type="file" ng-model="vendor.vendorAuthCert">
+                           <input name="file" id="file-1" upload-files multiple class="inputfile inputfile-2" type="file" ng-model="vendor.vendorAuthCert">
                            <label for="file-1"> <span>Select Certificate</span></label>
+						    <ul>
+								<li ng-repeat="file in files">{{file.name}}</li>
+							</ul>
                         </div>
                         <!--Experience in the Industry-->
                         <div class="form-group" ng-class="{ 'has-error' : vendorForm.vendorExpLine.$invalid && !vendorForm.vendorExpLine.$pristine }">
-                           <input type="text" name="vendorExpLine" class="form-control" ng-model="vendor.vendorExpLine" placeholder="Experience in the Industry" required>
+                           <input type="text"   name="vendorExpLine" class="form-control" ng-model="vendor.vendorExpLine" placeholder="Experience in the Industry" required>
                            <p ng-show="vendorForm.vendorExpLine.$touched && vendorForm.vendorExpLine.$invalid" class="help-block">Required</p>
                            <!--<p ng-show="vendorForm.vendorExpLine.$invalid && !vendorForm.vendorExpLine.$pristine" class="help-block"> Required</p>-->
                            <i class="fa fa-star" aria-hidden="true"></i>
@@ -199,22 +196,19 @@
                            <!--<p ng-show="vendorForm.vendorMajorCust.$invalid && !vendorForm.vendorMajorCust.$pristine" class="help-block"> Required</p>-->
                            <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
-                       
-						
 						 <div class="form-group">
-                        <input type="checkbox" name="remember" id="agr" value="" ng-model="user.agreeSign" required=""><label for="agr">I agree to OneSevenHome agreement</label>
+                        <input type="checkbox" name="remember" id="agr" value="Agreed" ng-model="vendor.termsAndConditions" required=""><label for="agr">I agree to OneSevenHome agreement</label>
                      </div>
 					 <div ng-show="form.$submitted || form.agreeSign.$touched">
-     
-	   <p class="help-block">Please agree and sign.</p>
-    </div>
-						
-						
-                     </div>
-                     <div class="form-group btn-sign">
+						<p class="help-block">Please agree and sign.</p>
+					</div>
+					</div>
+					<div class="form-group btn-sign">
                         <button type="submit" class="btn btn-primary" ng-disabled="vendorForm.$invalid" ng-click="regvendor(vendor)">SIGN UP</button>
-                     </div>
-					 <p class="help-block">{{errmessage}}</p>
+					</div>
+					<div class="alert alert-warning " ng-if="errmsg"> 
+						<span class="close" data-dismiss="alert" aria-label="close" ng-click="alerthide()">&times;</span>
+						<strong>Error! </strong>{{errmessage}}</div>
                   </form>
                </div>
             </div>
@@ -222,7 +216,13 @@
       </section>
    </div>
    <script>
-  
+
+
+$("#vendormobile").keyup(function() {
+  var regex = /^[0-9]+$/;
+if (regex.test(this.value) !== true)
+  this.value = this.value.replace(/[^0-9]+/, '');
+});
 $('#ConstitutionofFirm').on('change', function() {
 	var ConstitutionofFirm = $('#ConstitutionofFirm').val();
 	if(ConstitutionofFirm==""){

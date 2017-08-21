@@ -60,47 +60,46 @@
                      <h4>Personal Information</h4>
                      <!-- First Name-->
                      <div class="form-group" ng-class="{ 'has-error' : regForm.firstName.$invalid && !regForm.firstName.$pristine }">
-                        <input type="text" name="firstName"  class="form-control" ng-model="user.firstName"placeholder="First Name" required>
+                        <input type="text" name="firstName"  class="form-control" id="e"ng-model="user.firstName"placeholder="First Name" required>
                         <p ng-show="regForm.firstName.$touched && regForm.firstName.$invalid" class="help-block">First name is required</p>
                         <i class="fa fa-star" aria-hidden="true"></i>
                      </div>
                      <!-- Last Name-->
                      <div class="form-group" ng-class="{ 'has-error' : regForm.firstName.$invalid && !regForm.firstName.$pristine }">
-                        <input type="text" name="lastName"  class="form-control" ng-model="user.lastName"placeholder="Last Name" required>
+                        <input type="text" name="lastName"  class="form-control" ng-model="user.lastName" id="f" placeholder="Last Name" required>
                         <p ng-show="regForm.lastName.$touched && regForm.lastName.$invalid" class="help-block">Last name is required</p>
                         <i class="fa fa-star" aria-hidden="true"></i>
                      </div>
                      <!-- DATE PICKER-->
-                     <div class="form-group reg-date">
+					    <div class="form-group" ng-class="{ 'has-error' : regForm.dob.$invalid && !regForm.dob.$pristine }">
+                     <div class="reg-date">
                         <div class="input-group date" data-provide="datepicker" data-date-end-date="0d">
-                           <input type="text" class="form-control" placeholder="DOB (DD/MM/YYYY)">                           
-                           <div class="input-group-addon">
+                           <input type="text" class="form-control" placeholder="DOB (DD/MM/YYYY)"id="g" ng-model="user.dob">                           
+                            <p ng-show="regForm.dob.$touched && regForm.dob.$invalid" class="help-block">DOB is required</p>
+						   <div class="input-group-addon">
                               <span class="glyphicon glyphicon-th"></span>
                            </div>
                         </div>
+                   
 						<i class="fa fa-star" aria-hidden="true"></i>
                      </div>
-                     <!-- MOBILE NUMBER-->
-                     <!--<div class="form-group" ng-class="{ 'has-error' : regForm.mobileNo.$invalid && !regForm.mobileNo.$pristine }">
-                        <input type="text" name="mobileNo" class="form-control" ng-model="user.mobileNo" placeholder="Mobile Number" required>
-                        <p ng-show="regForm.mobileNo.$touched && regForm.mobileNo.$invalid" class="help-block">Mobile Number is required</p>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                     </div>-->
-					 <div class="form-group" ng-class="{ 'has-error' : regForm.mobileNo.$invalid && !regForm.mobileNo.$pristine }">
-					   <input type="number" class="form-control" ng-model="user.mobileNo" placeholder="Mobile Number" name="mobileNo" ng-pattern="/^[0-9]{1,10}$/" required>
-                       <span ng-show="regForm.mobileNo.$error.pattern"class="help-block">Not a valid number!</span>
-	                     <p ng-show="regForm.mobileNo.$touched && regForm.mobileNo.$invalid" class="help-block">Mobile Number is required</p>
+                     </div>
+                     
+					  <div class="form-group" ng-class="{ 'has-error' : regForm.phone.$invalid && !regForm.phone.$pristine }">
+					   <input type="text" class="form-control" ng-model="user.phone" placeholder="Mobile Number" id="j" name="phone" ng-pattern="/^[0-9]{1,10}$/" required>
+                       <span ng-show="regForm.phone.$error.pattern"class="help-block">Not a valid number!</span>
+	                     <p ng-show="regForm.phone.$touched && regForm.phone.$invalid" class="help-block">Mobile Number is required</p>
 					   <i class="fa fa-star" aria-hidden="true"></i>
 					</div>
                      <!-- Gender-->
-                     <div class="form-group gender" ng-model="user.gender">
+                     <div class="form-group gender">
                         Gender
                         <div class="radio-item">
-                           <input type="radio" name="gender" value="" id="male" >
+                           <input type="radio" name="gender" ng-model="user.gender" value="M" id="male" >
                            <label for="male">Male</label>
                         </div>
                         <div class="radio-item">
-                           <input type="radio" name="gender" value="" id="female">
+                           <input type="radio" name="gender" ng-model="user.gender" value="F" id="female">
                            <label for="female">Female</label>
                         </div>
                      </div>
@@ -139,7 +138,7 @@
                      </div>
                      <!--POSTAL CODE -->
                      <div class="form-group" ng-class="{ 'has-error' : regForm.postalCode.$invalid && !regForm.postalCode.$pristine }">
-                        <input type="text" name="postalCode" class="form-control" ng-model="user.postalCode"placeholder="Postal Code" required>
+                        <input type="text" name="postalCode" class="form-control" ng-model="user.postalCode"placeholder="Postal Code" id="m" required>
                         <p ng-show="regForm.postalCode.$touched && regForm.postalCode.$invalid" class="help-block">Postal Code is required</p>
                         <i class="fa fa-star" aria-hidden="true"></i>
                      </div>
@@ -184,21 +183,33 @@
                         <input type="checkbox" name="remember" id="agr" value="" ng-model="user.agreeSign" required=""><label for="agr">I agree to OneSevenHome agreement</label>
                      </div>
 					 <div ng-show="form.$submitted || form.agreeSign.$touched">
-     
-	   <p class="help-block">Please agree and sign.</p>
-    </div>
-                     <div class="form-group">
+					   <p class="help-block">Please agree and sign.</p>
+					</div>
+					<div class="form-group">
                         <button type="submit" class="btn btn-primary" ng-disabled="regForm.$invalid" ng-click="register(user)">SIGN UP</button>
-                     </div>
-                     <p class="help-block">{{errmessage}}</p>
-                  </div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				  <div class="alert alert-warning " ng-if="errmsg"> 
+				  <span class="close" data-dismiss="alert" aria-label="close" ng-click="alerthide()">&times;</span><strong>Error! </strong>{{errmessage}}</div>
+               
+				  
                </div>
             </form>
          </section>
       </section>
    </div>
    <script>
-    
+    function validate(regForm)
+{
+    var gender=regForm.gender_male;
+    var gender=regForm.gender_female;
+
+    if(genderM.checked==false && genderF.checked==false ) {
+        alert("You must select male or female");
+        return false;
+    }   
+}
        $('#state').on('change', function() {
               var state = $('#state').val();
       		 if(state==""){
@@ -265,5 +276,30 @@
       		$(this).datepicker('hide');
       	});
       });
+	  $("#e").keyup(function() {
+  var regex = /^[a-zA-Z]+$/;
+if (regex.test(this.value) !== true)
+  this.value = this.value.replace(/[^a-zA-Z]+/, '');
+});
+ $("#f").keyup(function() {
+  var regex = /^[a-zA-Z]+$/;
+if (regex.test(this.value) !== true)
+  this.value = this.value.replace(/[^a-zA-Z]+/, '');
+});
+ $("#g").keyup(function() {
+  var regex = /^[0-9]+$/;
+if (regex.test(this.value) !== true)
+  this.value = this.value.replace(/[^0-9]+/, '');
+});
+$("#j").keyup(function() {
+  var regex = /^[0-9]+$/;
+if (regex.test(this.value) !== true)
+  this.value = this.value.replace(/[^0-9]+/, '');
+});
+$("#m").keyup(function() {
+  var regex = /^[0-9]+$/;
+if (regex.test(this.value) !== true)
+  this.value = this.value.replace(/[^0-9]+/, '');
+});
    </script>
 </div>

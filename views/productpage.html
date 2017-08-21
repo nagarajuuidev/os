@@ -90,13 +90,7 @@
             <p>{{ppage.productDescription}}</p>
            <div class="price"><i class="fa fa-inr" aria-hidden="true"></i>  {{ppage.productDiscountPrice}}</div>
             <div class="price-off"> <span><i class="fa fa-inr" aria-hidden="true"></i> {{ppage.productOriginalPrice}} </span> <b>{{ppage.discountPercentage}}% OFF</b> </div>
-            <div class="selectbox">
-               <select>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-               </select>
-            </div>
+            <input class="select-number" placeholder="001" type="number">
             <button class="addtocart" ng-click="addcart(cartparam)">Add to Cart</button> <small> *Please select a vendor</small>
             <div class="rating">
                <i class="fa fa-star" aria-hidden="true"></i>

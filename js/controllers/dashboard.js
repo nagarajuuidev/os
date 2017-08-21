@@ -1,5 +1,5 @@
 angular.module('newapp')
-  .controller('DashboardCtrl', function($scope, $http, $location) {
+  .controller('DashboardCtrl', function($scope, $http, $location, $interval) {
 	if(localStorage.loggedInUser !=undefined){
 		$scope.loggedInUser=localStorage.loggedInUser;
 		$scope.loggedInUserName=localStorage.loggedInUserName;
@@ -8,8 +8,7 @@ angular.module('newapp')
 		$scope.userlogged=false;
 	}
 	$scope.logout = function (){
-		localStorage.removeItem("loggedInUser");
-		localStorage.removeItem("loggedInUserId");
+		localStorage.clear();
 		$location.path('/login');
 	}
 	$scope.topslides = [{
@@ -55,35 +54,21 @@ angular.module('newapp')
         var dateobj=(dd.getMonth() + 1) + '/' + dd.getDate() + '/' +  dd.getFullYear();	
 		var countDownDate = new Date(dateobj).getTime();
 			/*---=== DEAL OF THE DAY "TIMER" STARTS ===--- */
-		// Set the date we're counting down to
-		
-		// Update the count down every 1 second
-		var x = setInterval(function() {
-	
-		// Get todays date and time
-		var now = new Date().getTime();
-		
-		// Find the distance between now an the count down date
-		var distance = countDownDate - now;
-    
-		// Time calculations for days, hours, minutes and seconds
-		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-		// Output the result in an element with id="demo"
-		document.getElementById("demo").innerHTML =
-		"<li><span>"+hours+"</span>" + " " + "Hours" +"</li>"+ " " +"<li><span>"+minutes+"</span>" + " " + "Minutes" + "</li>"+ " " +"<li><span>"+seconds+"</span>" + " " + "Seconds" + "</li>";
-    
-		// If the count down is over, write some text 
-			if (distance < 0) {
-			clearInterval(x);
-			document.getElementById("demo").innerHTML ="<li><span>"+00+"</span>" + " " + "Hours" +"</li>"+ " " +"<li><span>"+00+"</span>" + " " + "Minutes" + "</li>"+ " " +"<li><span>"+00+"</span>" + " " + "Seconds" + "</li>";
-		  }
-		},
-	1000);
-	/*---=== DEAL OF THE DAY "TIMER" ENDS ===--- */
+            // Update the count down every 1 second
+            $interval(function() {
+                    // Get todays date and time
+                    var now = new Date().getTime();
+                    // Find the distance between now an the count down date
+                    var distance = countDownDate - now;
+                    // Time calculations for days, hours, minutes and seconds
+                    //var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    $scope.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    $scope.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    $scope.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                },
+                1000);
+            /*---=== DEAL OF THE DAY "TIMER" ENDS ===--- */
 	});
 	$http.get("http://103.92.235.45/shop/getNewProduct").then(function(resp) {
 		console.log(resp);
