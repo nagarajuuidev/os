@@ -1,0 +1,68 @@
+<div class="body-bg">
+<div class="container-fluid-full">
+    <div class="row-fluid">
+      <div class="content-box add-product">             
+		<h2 class="main-title"><span>Add Products</span></h2>
+                  <form class="prof form-login" method="post">
+                     <fieldset>
+			<div class="input" title="Select Category">
+                           <div class="sec-block">
+                              <select ng-change="catchange()" ng-model="catvalue">
+                                 <option value="">Select Category</option>
+                                 <option ng-repeat="category in menuitem">{{category.title}}</option>
+                              </select>
+                           </div>
+			<i class="fa fa-star" aria-hidden="true"></i>
+                       </div>
+                     <div class="input" title="Select Sub Category">
+                           <div class="sec-block">
+                              <select ng-change="subCatChange()" ng-model="subCatValue">
+				<option value="">Select Sub Category</option>
+				<option ng-repeat="subCat in categorySub">{{subCat.title}}</option>
+			     </select>
+                          </div>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+                     </div>
+                     </fieldset>
+                  </form>
+                  <h4 class="show-title">Product List</h4>
+                  <table id="example" class="hide-content table table-striped table-bordered bootstrap-datatable datatable">
+                     <thead>
+                        <tr>
+                           <th>S.No</th>
+                           <th>Product Id</th>
+                           <th>Product Name</th>
+                           <th>Price</th>
+                           <th>Actions</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="center">1</td>
+                           <td class="center">2345</td>
+                           <td class="center">Eclearwater</td>
+                           <td class="center">560</td>
+                           <td class="center">
+                              <a title="Add" class="btn btn-primary" href="#">Add</a>
+                              <a title="Delete" class="btn btn-danger" href="#">Delete</a>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+<script>
+   $('.dropmenu').click(function(){
+   	$(this).parent().find('ul').slideToggle();  
+   });
+   $(document).ready(function() {
+   	$('#example').DataTable({
+   		"order": [
+   			[4, "desc"]
+   		]
+   	});
+   });
+</script>
