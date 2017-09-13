@@ -1,0 +1,21 @@
+{
+	"subcat": 
+	[
+		{
+			"subcatName": "Kitchen ranges or Modular kitchen",
+			"checked": true
+		},
+		{
+			"subcatName": "Kitchen appliances and accessories",
+			"checked": false
+		},
+		{
+			"subcatName": "Kitchen sinks and taps",
+			"checked": false
+		},
+		{
+			"subcatName": "Kitchen workshops",
+			"checked": true
+		}
+	]
+}

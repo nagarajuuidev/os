@@ -1,0 +1,228 @@
+<div class="wrap">
+<!-- Static navbar -->
+<section class="top" id="top-header">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
+         <div class="col-xs-12 col-sm-6 links">
+            <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUserName}}</span>
+            <!--=== LOGOUT SECTION ===-->
+            <div class="myprofile-block">
+               <div class="mypro-brdr">
+                  <div class="pro-top">
+                     <!--<a href="#" class="pro-pic">
+                        <img src="img/tst-pic.jpg"/>
+                        <span>Change</span>
+                        </a>-->
+                     <div class="pro-txt">
+                        <h3>{{loggedInUserName}}</h3>
+                        <h4>{{loggedInUser}}</h4>
+                     </div>
+                  </div>
+                  <div class="pro-btm">
+                     <span class="mypro-btn"><a href="#" ng-click="logout()">My profile</a></span>
+                     <span class="mypro-logout" ng-click="logout()"><a>Log Out</a></span>
+                  </div>
+               </div>
+            </div>
+            <a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> {{lengthofcart}}</span> </a>
+         </div>
+      </div>
+   </div>
+</section>
+<header class="header">
+   <nav class="navbar navbar-default">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12 ">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                  <a class="navbar-brand" href="#/"></a>
+                  <figure> </figure>
+               </div>
+               <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                     <li><a href="#/todaydeals">Today's Deals</a></li>
+                     <li><a href="#">Buy/Sell</a></li>
+                     <li><a href="#services">Services</a></li>
+                     <li><a href="#">About Us</a></li>
+                     <li class="store"><a href="#">Our Store</a></li>
+                     <li><a href="#/myaccount">My Account</a></li>
+                     <li>
+                        <div class="search">
+                           <div class="input">
+                              <input type="text" placeholder="Search">
+                           </div>
+                        </div>
+                     </li>
+                     <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
+                  </ul>
+               </div>
+               <!--.nav-collapse -->
+            </div>
+         </div>
+      </div>
+      <!--/.container-fluid -->
+   </nav>
+   <category-Directive></category-Directive>
+</header>
+<div class="breadcrumbs">
+   <a href="#/">Home</a>&gt;<a href="#/categories/{{categorytype}}">{{categorytype}}</a><span  ng-show="subcattype">&gt;</span><span class="text-capitalize">{{subcategorytype}}</span>
+</div>
+<section class="plist mid">
+   <div class="container">
+      <div id="subcat-block">
+         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3  ">
+            <div class="subcat-check blck">
+                <h5>{{categorytype}}</h5>
+			<div ng-repeat="subCategory in categorySub">
+               <input id="{{subCategory.title}}" type="checkbox" ng-model="subCategory.checked" ng-click="fil(subCategory)" ><label for="{{ subCategory.title }}">{{ subCategory.title }}</label>
+            </div>
+            </div>
+            <div class="subcat-check s-link blck" ng-repeat="itembrand in branditem">
+               <h5 class="show-brand active">{{itembrand.filterName}}</h5>
+               <div class="scrollbar-inner">
+				<ul class="subcat-link brand">
+				  <li ng-repeat="brandName in itembrand.filterType">
+						<input type="checkbox" name="selectedBrands[]" value="{{brandName.filterTypeName}}" ng-checked="selection.indexOf(brandName.filterTypeName) > -1" ng-click="toggleSelection(brandName.filterTypeName) "id="{{brandName.filterTypeName}}" />
+						<label for="{{brandName.filterTypeName}}">{{brandName.filterTypeName}}</label>
+				  </li>
+				</ul>
+               </div>
+            </div>
+			
+			<!--
+            <div class="subcat-check s-link blck">
+               <h5 class="show-type">Type</h5>
+               <div  class="scrollbar-inner">
+				<ul class="subcat-link type">
+				  <li ng-repeat="itemtype in typeitem">
+					<input type="checkbox" name="selectedTypes[]" value="{{itemtype.item}}" ng-checked="selectionType.indexOf(itemtype.item) > -1" ng-click="toggleSelectionType(itemtype.item) "id="{{itemtype.item}}" />
+					<label for="{{itemtype.item}}">{{itemtype.item}}</label>
+				  </li>
+				</ul>
+               </div>
+            </div>
+            <div class="subcat-check s-link blck">  
+            <h5 class="show-quality">Quality</h5>
+            <div  class="scrollbar-inner">
+            <ul class="subcat-link qty">
+			  <li ng-repeat="itemquantity in quantityitem">
+				<input type="checkbox" name="selectedQuantities[]" value="{{itemquantity.item}}" ng-checked="selectionQuantity.indexOf(itemquantity.item) > -1" ng-click="toggleSelectionQuantity(itemquantity.item) "id="{{itemquantity.item}}" />
+				<label for="{{itemquantity.item}}">{{itemquantity.item}}</label>
+			  </li>
+			</ul>
+            </div>
+            </div>
+			-->
+         </div>
+         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9" >
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" ng-repeat="pl in plist">
+               <div class="t-pro" >
+                  <figure>
+                     <a href="#/productpage/{{pl.productId}}"><img ng-src="{{pl.imageURL}}"></a>
+                     <span class="dis">{{pl.discountPercentage}}% OFF</span>
+                  </figure>
+                  <h3> {{pl.productName}}</h3>
+                  <h4> <i class="fa fa-inr" aria-hidden="true"></i> {{pl.productPrice}} </h4>
+            
+				  <a href="#/productpage/{{pl.productId}}" class="va">View Details</a>
+               <label><input type="checkbox" id="check" ng-show="check" ></label>
+			 </div>
+            </div>
+         </div>
+	<div class="clearfix"></div>
+		<div paging
+			page="1" 
+			page-size="15" 
+			total=totalCount
+			paging-action="PagingAct(page, pageSize, total)">
+		</div>
+	</div>
+    </div>
+</section>
+
+<h2 class="sec-title3 margintb10"><strong>Recommended Products </strong></h2>
+<section id="fp" class="f-block mar0 ">
+  <div class="container">
+  <div class="row">
+	<slick settings="slickrecommendedprocutsConfig" ng-if="RecomendLoaded">
+		<li class="block" ng-repeat="image in recommend">
+		<div class="t-pro">
+			<figure>
+				<a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imageURL}}"></a>
+				<span class="hspace20"></span>
+			</figure>
+				<h3> {{image.productName}}</h3>
+				<h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.productPrice}}</h4>
+				<a href="#/productpage/{{image.productId}}" class="va">View Details</a>
+		</div>
+		</li>
+	</slick>
+  </div>
+  </div>
+</section>
+<section id="fp" class="f-block">
+<div class="container">
+  <div class="row">
+	<h2 class="sec-title margintb10"><strong>Recently Bought</strong></h2>
+	  <ul class="all">
+		<slick settings="slickrecentbroughtConfig" ng-if="RecentlyLoaded">
+		  <li ng-repeat="brought in recently">
+			<div class="t-pro">
+			  <figure>
+				<a href="#/productpage/{{brought.productId}}"><img data-lazy="{{brought.imageURL}}"></a>
+				<span class="dis">{{brought.discountPercentage}}% OFF</span>
+			  </figure>
+				<h3>{{brought.productName}}</h3>
+				<h4><i class="fa fa-inr" aria-hidden="true"></i> {{brought.productDiscountPrice}}</h4>
+				<a href="#/productpage/{{brought.productId}}" class="va">View Details</a>
+			</div>
+		  </li>  
+		</slick>
+	  </ul>
+  </div>
+  </div>
+</section>
+</div>
+
+<link href="css/jquery.scrollbar.css" rel="stylesheet" type="text/css"/>
+<script src="js/jquery.scrollbar.js"></script>
+<script>
+   $(".login-btn").click(function(){
+       $(".myprofile-block").toggle();
+   });
+   $(".cat-link").click(function(){
+       $(".category-menu ul li:hover > ul.dropdown").toggle();
+   });
+   $(".cat-link").click(function(){
+       $(".cat-link").toggleClass("active");
+   });
+   $(".show-brand").click(function(){
+       $(".subcat-link.brand").toggle();
+	   $(".type").hide();
+	   $(".qty").hide();
+   });
+   $(".show-brand").click(function(){
+       $(".show-brand").toggleClass("active");
+   });
+   $(".show-type").click(function(){
+       $(".subcat-link.type").toggle();
+	   $(".brand").hide();
+	   $(".qty").hide();
+   });
+   $(".show-type").click(function(){
+       $(".show-type").toggleClass("active");
+   });
+   $(".show-quality").click(function(){
+       $(".subcat-link.qty").toggle();
+	   $(".brand").hide();
+	   $(".type").hide();
+   });
+   $(".show-quality").click(function(){
+       $(".show-quality").toggleClass("active");
+   });
+   $(document).ready(function(){
+       $(".scrollbar-inner").scrollbar();
+   });
+</script>

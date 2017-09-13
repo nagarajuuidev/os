@@ -1,0 +1,176 @@
+<div class="wrap">
+  <!-- Static navbar -->
+   <section class="top" id="top-header">
+      <div class="nav-fix">
+         <div class="row">
+            <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders Rs 5000 and Above </div>
+            <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <a href="">Login / Signup</a> </a> <a href="" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></a></div>
+         </div>
+      </div>
+   </section>
+   <header class="header">
+      <nav class="navbar navbar-default">
+         <div class="nav-fix">
+            <div class="row">
+               <div class="col-xs-12 strip">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                     <a class="navbar-brand" href="#"></a>
+                     <figure> </figure>
+                     </a>
+                  </div>
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a href="#/todaydeals">Today's Deals</a></li>
+                        <li class="store"><a href="#">Our Store</a></li>
+                        <li class="post" ><a href="#">Post A Requirement</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#">Buy/Sell</a></li>
+                        <li><a href="#">My Account</a></li>
+                     </ul>
+                     <ul class="nav navbar-nav navbar-right">
+                        <li>
+                           <div class="search">
+                              <div class="input">
+                                 <input type="text" placeholder="">
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+                  <!--.nav-collapse -->
+               </div>
+            </div>
+         </div>
+         <!--/.container-fluid -->
+      </nav>
+   </header>
+   <div class="container">
+      <div class="category-menu" style="display: ;">
+        <ul>
+          <li>
+             <a href="#">Categories</a>
+               <ul class="dropdown bgcover" ng-style="set_bg()">
+                  <li  ng-repeat="x in menuitem" >
+                     <a href="#" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                     <ul class="dropdown">
+                        <li  ng-repeat="sub in x.subCategory">
+                           <a href="{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>	                           
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+   
+   <section id="banner">
+      <slick settings="slicktopslideConfig" >
+         <div class="row" ng-repeat="image in topslides">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 banner-left">
+               <figure><a href="#"><img data-lazy="{{image.img1}}"  class="img-responsive imgfullwidth"></a></figure>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 banner-right">
+               <figure><a href="#"><img data-lazy="{{image.img2}}"  class="img-responsive  imgfullwidth banner-topimg"></a></figure>
+               <figure><a href="#"><img data-lazy="{{image.img3}}"  class="img-responsive  imgfullwidth banner-botimg"></a></figure>
+            </div>
+         </div>
+      </slick>
+   </section>
+   <h2 class="sec-title2"><strong>Deal of the day </strong></h2>
+   <section id="dd">
+     <figure><a href="#"><img src="img/what-pic.jpg" class="img-responsive imgfullwidth"></a></figure>
+     <h3 style="background-color:red; color:white">Discount : 10 %</h3>
+	</section>
+        
+         <div class="clearfix"></div>
+     
+
+
+<div class="row">
+   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <h2 class="sec-title2"><strong>New Products </strong></h2>
+      <section class="newprod" id="np">
+         <slick settings="slicknewproductsConfig" ng-if="NewproductsLoaded">
+            <li class="row" ng-repeat="image in products">
+               
+                  <A HREF="">
+                     <figure>
+                  <a href="#"><img data-lazy="{{image.imgurl}}"  width="300" height="188"></a>
+                  </figure>
+                  <h3 class="text-center"> {{image.title}}</h3>
+                  <h4 class="text-center" style="color:red"> <i class="fa fa-inr" aria-hidden="true"></i> {{image.price}}</h4>
+                  <p class="text-center">{{image.vendor}}</p>
+                  <p class="text-center">{{image.location}}</p>
+                  <a href="#"><button class="btn addcart" style="background-color:grey; color:red">{{image.button}}</button></a>
+                  </A>
+               
+            </li>
+         </slick>
+         <div class="clearfix"> </div>
+         <a href="#" class="va">View All</a>
+      </section>
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <h2 class="sec-title2"><strong>Featured Products </strong></h2>
+      <section class="newprod" id="np">
+         <slick settings="slickrecommendedprocutsConfig" ng-if="RecomendLoaded">
+            <li class="row" ng-repeat="image in recomend">
+               
+                  <A HREF="">
+                     <figure>
+                  <a href="#"><img data-lazy="{{image.imgurl}}"  width="300" height="188"></a>
+                  </figure>
+                  <h3 class="text-center"> {{image.title}}</h3>
+                  <h4 class="text-center" style="color:red"> <i class="fa fa-inr" aria-hidden="true"></i> {{image.price}}</h4>
+                  <p class="text-center">{{image.vendor}}</p>
+                  <p class="text-center">{{image.location}}</p>
+                  <a href="#"><button class="btn addcart" style="background-color:grey; color:red">{{image.button}}</button></a>
+                  </A>
+               
+            </li>
+         </slick>
+         <div class="clearfix"> </div>
+         <a href="#" class="va">View All</a>
+      </section>
+   </div>
+</div>
+<section id="ww">
+   <figure><a href="#"><img src="img/what-pic.jpg" class="img-responsive imgfullwidth"></a></figure>
+   <h3 style="background-color:red; color:white;">What we can do</h3>
+</section>
+<h2 class="sec-title3"><strong>Recommended Products </strong></h2>
+<section  id="rp">
+   <slick settings="slickDealsConfig" ng-if="DealsLoaded">
+      <div ng-repeat="image in dealsdata">
+         <figure>
+            <a href="#"> <img data-lazy="{{image.imgurl}}"></a>
+            <h3 class="text-center"> {{image.title}}</h3>
+            <h4 class="text-center" style="color:red"> <i class="fa fa-inr" aria-hidden="true"></i> {{image.price}} </h4>
+            <p class="text-center">{{image.vendor}}</p>
+			<p class="text-center">{{image.location}}</p>
+			<a href="#"><button class="btn addcart" id="atc" style="background-color:grey; color:red">{{image.button}}</button></a>
+         </figure>
+      </div>
+   </slick>
+</section>
+</div>
+</div>
+<section id="tst">
+   <slick settings="slickreviewsectionConfig" ng-if="ReviewLoaded">
+      <div ng-repeat="item in review">
+         <figure><a href="#"><img data-lazy="{{item.imgurl}}"  width="131" height="131"></a></figure>
+         <div class="txt">
+            <h2>{{item.title}}<h2>
+            <h3>{{item.review}}</h3>
+            <p>{{item.description}}</p>
+         </div>
+      </div>
+   </slick>
+</section>
+</div>
+<footer class="footer">
+   <div class="social-links"><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a> <a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> </div>
+   <div class="tag"> Constructions Made From One Seven Home </div>
+   <div class="copy"> One Seven Home, &copy; Copyrights 2017 </div>
+</footer>

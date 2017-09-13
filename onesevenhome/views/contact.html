@@ -1,0 +1,105 @@
+<div class="wrap">
+   <!-- Static navbar -->
+  <section class="top" id="top-header">
+    <div class="container">
+      <div class="row">
+            <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
+            <div class="col-xs-12 col-sm-6 links"> <a class="activelink" href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUserName}}</span>
+			
+			<!--=== LOGOUT SECTION ===-->
+			
+		<div class="myprofile-block">
+		<div class="mypro-brdr">
+			<div class="pro-top">
+				<!--<a href="#" class="pro-pic">
+					<img src="img/tst-pic.jpg"/>
+					<span>Change</span>
+				</a>-->
+				<div class="pro-txt">
+					<h3>{{loggedInUserName}}</h3>
+					<h4>{{loggedInUser}}</h4>
+				</div>
+			</div>
+			<div class="pro-btm">
+				<span class="mypro-btn"><a href="#" ng-click="logout()">My profile</a></span>
+				<span class="mypro-logout" ng-click="logout()"><a>Log Out</a></span>
+			</div>
+		</div>
+		</div>
+			<a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> {{lengthofcart}}</span> </a></div></div>
+      </div>
+   </section>
+   <header class="header">
+      <nav class="navbar navbar-default">
+		   <div class="container">
+            <div class="row">
+               <div class="col-xs-12 ">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                     <a class="navbar-brand" href="#/"></a>
+                     <figure> </figure>
+                  </div>
+                  <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+					<li><a href="#/todaydeals">Today's Deals</a></li>
+					<li><a href="#">Buy/Sell</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#">About Us</a></li>
+					<li class="store"><a href="#">Our Store</a></li>
+					<li><a href="#/myaccount">My Account</a></li>
+				 <li>
+                  <div class="search">
+                    <div class="input">
+                      <input type="text" placeholder="Search">
+                    </div>
+                  </div>
+                 </li>
+					<li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
+				  </ul>
+                  </div>
+                  <!--.nav-collapse -->
+               </div>
+               </div>
+           
+         </div>
+         <!--/.container-fluid -->
+      </nav>
+	  <category-Directive></category-Directive>
+   </header>
+   <div class="container">
+	<section class="contact-address" >
+	<div class="container">
+	 <div class="row">
+      <div class="col-xs-12  ">
+         <h2 class="sec-title mar0"><strong>Contact Us</strong></h2>
+		 <div class="address-area">
+           <aside> 
+		   {{contactdetails.address}}<br>{{contactdetails.postalCode}}<br>
+
+{{contactdetails.city}}, {{contactdetails.state}}, {{contactdetails.country}}
+<hr>
+Phone:{{contactdetails.phone}}
+<hr>
+Email: <a href="mailto:{{contactdetails.eMail}}">{{contactdetails.eMail}}</a>
+</aside>
+           <aside>
+           <a href="mailto:customersupport@onesevenhome.com">customersupport@onesevenhome.com</a><br>
+<a href="mailto:suppliersupport@onesevenhome.com">suppliersupport@onesevenhome.com</a><br>
+<a href="mailto:careers@onesevenhome.com">careers@onesevenhome.com</a>
+<hr>
+<strong>Request a callback</strong><br>
+Directly speak to our customer support executive for any assistance.
+<button class="button">Call Me Back</button>
+</aside></div>
+
+      </div>
+   </div>
+</div>
+</section>
+</div>
+</div>
+<script>
+$(".login-btn").click(function(){
+    $(".myprofile-block").toggle();
+});
+</script>

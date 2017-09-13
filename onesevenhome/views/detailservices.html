@@ -1,0 +1,220 @@
+<div class="wrap bg">
+<!-- Static navbar -->
+<section class="top" id="top-header">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
+         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUserName}}</span>
+			
+			<!--=== LOGOUT SECTION ===-->
+			
+		<div class="myprofile-block">
+		<div class="mypro-brdr">
+			<div class="pro-top">
+				<!--<a href="#" class="pro-pic">
+					<img src="img/tst-pic.jpg"/>
+					<span>Change</span>
+				</a>-->
+				<div class="pro-txt">
+					<h3>{{loggedInUserName}}</h3>
+					<h4>{{loggedInUser}}</h4>
+				</div>
+			</div>
+			<div class="pro-btm">
+				<span class="mypro-btn"><a href="#" ng-click="logout()">My profile</a></span>
+				<span class="mypro-logout" ng-click="logout()"><a>Log Out</a></span>
+			</div>
+		</div>
+		</div>
+		<a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> {{lengthofcart}}</span> </a>
+		</div>
+      </div>
+   </div>
+</section>
+<header class="header">
+   <nav class="navbar navbar-default">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                  <a class="navbar-brand" href="#/"></a>
+                  <figure> </figure>
+               </div>
+               <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                     <li><a href="#/todaydeals">Today's Deals</a></li>
+                     <li><a href="#">Buy/Sell</a></li>
+                     <li><a href="#services">Services</a></li>
+                     <li><a href="#">About Us</a></li>
+                     <li class="store"><a href="#">Our Store</a></li>
+                     <li><a href="#/myaccount">My Account</a></li>
+                     <li>
+                        <div class="search">
+                           <div class="input">
+                              <input type="text" placeholder="Search">
+                           </div>
+                        </div>
+                     </li>
+                     <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
+                  </ul>
+               </div>
+               <!--.nav-collapse -->
+            </div>
+         </div>
+      </div>
+      <!--/.container-fluid -->
+   </nav>
+   <category-Directive></category-Directive>
+</header>
+<div class="container">
+   <section class="services-list title">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12  ">
+               <h2 class="sec-title"><strong>{{selectedtype}}</strong></h2>
+               <p class="sub-tag">From an idea to an unforgettable and measurable digital experience.
+                  Choose from an wide variety of services we offer.
+               </p>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="services-list ">
+      <div class="container">
+         <div class=" head ">
+            <div class=" row ">
+               <div class="col-xs-12 col-lg-3 ">
+                  <strong>Showing all <span>{{selectedtype}}</span></strong>
+               </div>
+               <div class="col-xs-12  col-lg-9">
+                  <div class="text-left service-location">
+                     <form>
+                        <div class="form-group">
+                          <input id="filterloc" type="text" class="svc-ltn" ng-model="searchlocation" ng-model-options="{updateOn : 'change'}" placeholder="Enter a new location"/>
+                        </div>
+                     </form>
+                  </div>
+				  <span ng-show="locvalue" class="filter-location pull-left"><b>{{fillocation}}</b> <i class="fa fa-remove" ng-click="removelocation()" aria-hidden="true"></i></span>
+                  <div class="text-right ">
+                     <div class="sort">
+                        <label>Sort By</label>
+                        <div class="selectbox">
+                           <select>
+							  <option value="">Popularity</option>
+							  <option value="">5 Star Vendors</option>
+							  <option value="">Lower Cost Vendors</option>
+							  <option value="">Top Rated Vendors</option>
+                           </select>
+						</div>
+						<div class="selectbox">
+						   <select>
+							  <option value="">Distance</option>
+							  <option value="">0-2 KMS</option>
+							  <option value="">2-5 KMS</option>
+							  <option value="">5-10 KMS</option>
+                           </select>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3  ">
+               <div class="todaydeal-sorting">
+                  <div ng-repeat="x in workers">
+                     <input id="{{ x.serviceType }}" type="checkbox" /><label for="{{ x.serviceType }}">{{ x.serviceType }}</label>
+                  </div>
+               </div>
+               <div class="todaydeals rp">
+                  <div class="rp-block">
+                     <h2 class="sec-title2"><strong>Recommended Products </strong></h2>
+                     <slick settings="slickrecommendedprocutsConfig" ng-if="RecomendLoaded">
+                        <li class="block" ng-repeat="image in recommend">
+                          <div class="t-pro">
+                              <figure>
+                           <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imageURL}}"></a>
+                           <span class="dis">{{image.discountPercentage}}% OFF</span>
+                           </figure>
+                           <h3> {{image.productName}}</h3>
+                           <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.productDiscountPrice}}</h4>
+                           <a href="#/productpage/{{image.productId}}" class="va">View Details</a>
+                          </div>
+                        </li>
+                     </slick>
+                  </div>
+               </div>
+              <!-- <div class="pagination">
+                  <ul>
+                     <li><a href="#">1</a></li>
+                     <li class="active"><a href="#">2</a></li>
+                     <li><a href="#">3</a></li>
+                     <li><a href="#">4</a></li>
+                  </ul>
+               </div>-->
+            </div>
+            <div class="list-view col-xs-12 col-sm-9 col-md-9 col-lg-9">
+               <ul>
+                  <li ng-repeat="detailsevice in servicedetails | filter:filterlocation(searchlocation)">
+                     <figure><a href="#"><img ng-src="{{detailsevice.imageUrl}}"></a></figure>
+                     <h3> {{detailsevice.companyName}}</h3>
+                     <h4> {{detailsevice.houseNumber}},{{detailsevice.street}},{{detailsevice.area}}<br>{{detailsevice.city}},{{detailsevice.state}}-{{detailsevice.pinCode}}<br>
+                        Phone: +91 {{detailsevice.contactNumber}}
+                     </h4>
+                     <span class="rating line sm">
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star disabled" aria-hidden="true"></i> |
+                     <span>{{detailsevice.totalRating}} Votes</span> |
+                     <span class="rate"> Rate
+                     <span class="rating line sm srv-show">
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star disabled" aria-hidden="true"></i>
+                     </span>
+                     </span>
+                     </span>
+                     <div class="push-right">
+                        <!--<button class="like">Like</button>-->
+                        <button class="booknow">Book Now</button>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="services-slide">
+      <div class="container">
+         <div class="row">
+            <h2 class="sec-title"><strong>Recommended Vendors</strong></h2>
+            <ul>
+               <slick settings="slickrecommendedvendorsConfig" ng-if="RecommendvendorLoaded">
+                  <li ng-repeat="vendor in vendorrecommended">
+                    
+					 <figure>
+                        <a href="#"><img ng-src="{{vendor.imgUrl}}"></a>
+                        <!--<a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a>-->
+                     </figure>
+                     <h4>{{vendor.title}}</h4>
+                     <p>{{vendor.location}}{{vendor.address}}</p>
+					 
+                  </li>
+               </slick>
+            </ul>
+         </div>
+      </div>
+   </section>
+</div>
+</div>
+
+<script>
+$(".login-btn").click(function(){
+    $(".myprofile-block").toggle();
+});
+</script>

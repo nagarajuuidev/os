@@ -1,0 +1,30 @@
+{
+	"cart": [
+	{	"imgurl": "img/np2.png",
+		"title": "EClearwater Elara Single Kitchen Mixer",
+		"subdescription":"Vendor Name",
+		"description" :"VZX765890",
+		"originalPrice": 999,
+		"discountPrice": 799,
+		"discount": "10"
+	},
+	{
+		"imgurl": "img/np2.png",
+		"title": "EClearwater Elara Single Kitchen Mixer",
+		"subdescription":"Vendor Name",
+		"description" :"VZX765890",
+		"originalPrice": 999,
+		"discountPrice": 799,
+		"discount": "10"
+	},
+	{
+		"imgurl": "img/np2.png",
+		"title": "EClearwater Elara Single Kitchen Mixer",
+		"subdescription":"Vendor Name",
+		"description" :"VZX765890",
+		"originalPrice": 999,
+		"discountPrice": 799,
+		"discount": "10"
+	}
+  ]
+}

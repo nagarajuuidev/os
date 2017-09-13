@@ -1,0 +1,339 @@
+<div class="wrap">
+<!-- Static navbar -->
+<section class="top" id="top-header">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-sm-6 hidden-xs shipping-text"> Free Shipping on Orders <i class="fa fa-rupee"></i> 5000 and Above </div>
+         <div class="col-xs-12 col-sm-6 links"> <a href="#contact">Contact Us</a> <span ng-hide="userlogged"><a href="#/login" >Login </a> / <a href="#/registration" > Signup</a></span><span class="login-btn" ng-show="userlogged">{{loggedInUserName}}</span>
+			
+			<!--=== LOGOUT SECTION ===-->
+			
+		<div class="myprofile-block">
+		<div class="mypro-brdr">
+			<div class="pro-top">
+				<!--<a href="#" class="pro-pic">
+					<img src="img/tst-pic.jpg"/>
+					<span>Change</span>
+				</a>-->
+				<div class="pro-txt">
+					<h3>{{loggedInUserName}}</h3>
+					<h4>{{loggedInUser}}</h4>
+				</div>
+			</div>
+			<div class="pro-btm">
+				<span class="mypro-btn"><a href="#" ng-click="logout()">My profile</a></span>
+				<span class="mypro-logout" ng-click="logout()"><a>Log Out</a></span>
+			</div>
+		</div>
+		</div>
+		<a href="#cart" class="cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="cart-value"> {{cartvalue}}</span> </a>
+		</div>
+	  </div>
+   </div>
+</section>
+<header class="header">
+   <nav class="navbar navbar-default">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12 ">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                  <a class="navbar-brand" href="#/"></a>
+                  <figure> </figure>
+               </div>
+               <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                     <li><a href="#/todaydeals">Today's Deals</a></li>
+                     <li><a href="#">Buy/Sell</a></li>
+                     <li><a href="#services">Services</a></li>
+                     <li><a href="#">About Us</a></li>
+                     <li class="store"><a href="#">Our Store</a></li>
+                     <li><a href="#/myaccount">My Account</a></li>
+                     <li>
+                        <div class="search">
+                           <div class="input">
+                              <input type="text" placeholder="Search">
+                           </div>
+                        </div>
+                     </li>
+                     <li class="post" ><a href="#"><span>Post A Requirement</span></a></li>
+                  </ul>
+               </div>
+               <!--.nav-collapse -->
+            </div>
+         </div>
+      </div>
+      <!--/.container-fluid -->
+   </nav>
+   <category-Directive></category-Directive>
+</header>
+<div class="container">
+   <div class="breadcrumbs"><a href="#/">Home</a>    >    <a href="">Kitchen Taps</a>   > EClearwater Elara Single Lever Kitchen Mixer</div>
+</div>
+<div class="prd">
+<section class="prd-detail  ">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="prd-tb">
+               <img ng-src="{{ppage.productImages[0]}}" ng-click="setImage(img)">
+               <img ng-src="{{ppage.productImages[1]}}" ng-click="setImage(img)">
+               <img ng-src="{{ppage.productImages[2]}}" ng-click="setImage(img)">
+               <img ng-src="{{ppage.productImages[3]}}" ng-click="setImage(img)">
+            </div>
+            <div class="prd-lg" >
+               <a href="#"><img ng-src="{{ppage.defaultImage}}"></a>
+            </div>
+         </div>
+         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6  ">
+            <h2>{{ppage.productTitle}}</h2>
+            <p>{{ppage.productDescription}}</p>
+           <div class="price"><i class="fa fa-inr" aria-hidden="true"></i>  {{ppage.productDiscountPrice}}</div>
+            <div class="price-off"> <span><i class="fa fa-inr" aria-hidden="true"></i> {{ppage.productOriginalPrice}} </span> <b>{{ppage.discountPercentage}}% OFF</b> </div>
+            <div class="selectbox">
+               <select>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+               </select>
+            </div>
+            <button class="addtocart" ng-click="addcart(cartparam)">Add to Cart</button> <small> *Please select a vendor</small>
+            <div class="rating">
+               <i class="fa fa-star" aria-hidden="true"></i>
+               <i class="fa fa-star" aria-hidden="true"></i>
+               <i class="fa fa-star" aria-hidden="true"></i>
+               <i class="fa fa-star" aria-hidden="true"></i>
+               <i class="fa fa-star disabled" aria-hidden="true"></i> 
+               <div> {{averagereview}}/5 ({{totalreview}} Reviews)</div>
+            </div>
+            <div class="prd-dlvry">
+               <img src="img/prddelivery-icon.jpg">
+				<div class="estimate">Estimated delivery in 12 to 24 Hours
+				</div>
+               <!--<div >Estimated delivery in 12 to 24 Hours
+                  <span><A HREF="">
+                  Too long to wait?</A> View similar products <a href="#">with</a> Next Day <A HREF="">availability</A></span>
+               </div>-->
+            </div>
+            <div class="prd-dlvry">
+               <img src="img/prddelivery-icon.jpg">
+               <div >Standard Delivery charges applicable 
+			   <span class="popup"><b class="qtn">?</b>
+				  <div class="cart-terms popuptext">
+						<h6>Terms & Conditions</h6>
+						<p>This following sets out the terms and conditions on which you may use the content on bother digital publishing services www.osh.com owned by business standard content services.</p>
+				  </div>
+				</span>
+                  <span><a href="">Check your location for product availability</a></span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+	<section class="prd-select-list  "> 
+		<div class="container">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tdm-block">
+		<div class="head">
+		<h3>Select a Vendor</h3>
+			<div class="todaydeals-sort">
+			<ul>
+			<li><span>Sory By</span></li>
+			<li class="sec-block"><select>
+				<option value="">Area</option>
+				<option value="">Area</option>
+			</select></li>
+			<li class="sec-block"><select>
+				<option value="">Distance</option>
+				<option value="">Distance</option>
+			</select></li>
+			</ul>
+			</div>
+		</div>
+		<div class="prds">
+		<ul>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr1.jpg"></a>
+				<a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a>
+			</figure>
+			<h4>S.K Plumbers & Sanitary Co..</h4>
+			<p>9-8-466, Chota bazar, Golconda, Hyd- 500008 (Map) </p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr2.jpg"></a>
+				<a class="prd-str"><i class="fa fa-star" aria-hidden="true"></i></a>
+			</figure>
+			<h4>Novella Plumbing Pvt.Ltd..</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad</p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr3.jpg"></a>
+			</figure>
+			<h4>Kalpana Plumbing Services</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad</p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr4.jpg"></a>
+			</figure>
+			<h4>AAA Plumbing Enge..</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad</p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr5.jpg"></a>
+			</figure>
+			<h4>Taj Plumbing contractor</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad</p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr1.jpg"></a>
+			</figure>
+			<h4>S.K Plumbers & Sanitary Co..</h4>
+			<p>9-8-466, Chota bazar, Golconda, Hyd- 500008 (Map) </p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr2.jpg"></a>
+			</figure>
+			<h4>Novella Plumbing Pvt.Ltd..</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad </p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr3.jpg"></a>
+			</figure>
+			<h4>Kalpana Plumbing Services</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad </p> 			</li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr4.jpg"></a>
+			</figure>
+			<h4>AAA Plumbing Enge..</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad </p>
+		  </li>
+		  <li>
+			<figure>
+				<a href="#"><img src="img/vdr5.jpg"></a>
+			</figure>
+			<h4>Taj Plumbing Contractor</h4>
+			<p>Flat no:108 1st floor, Sun City, Qayeem appartment, Hyderabad</p>
+		  </li>
+		</ul> 
+		</div> 
+	</div> 
+	</div>
+	</section>
+	<section class="prd-mid">
+	<div class="container">
+	<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left">
+		<h4>Description</h4>
+		<p>Express your vision of comfortable living with brick. Brick walks, patios and driveways add character, charm and color permanence no other paving material can match. Brick are also easy to install, whether you hire a contractor or do it yourself. Regardless of the application, a highly stable and durable paving project requires proper installation.</p>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 right">
+		<h4>Quality Promise</h4>
+		<p>We ensure the best quality products are provided to our customers by meticulously selecting the vendors and continuously evaluating them to ensure minimal defects. Our team of industry experts and domain specialist ensure the products delivered are of best in class quality. Prior mystery visits are made to vendor sites and delivery locations to ensure superior quality.</p>
+	</div>
+	</div>
+	</div>
+	</section>
+	<section class="prd-mid btm">
+	<div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left">
+            <h3>Reviews</h3>
+            <div class="prd-rvw" ng-repeat="reviews in prod.productReviews">
+               <h5>{{reviews.nick}}</h5>
+               <div class="rating">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star disabled" aria-hidden="true"></i> 
+               </div>
+               <p>{{reviews.description}}</p>
+               <h6>{{reviews.reviewDate | date:'dd-MMM-yyyy'}}</h6>
+            </div>
+            <p class="prd-more"><a href="#">See More...</a></p>
+         </div>
+         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 right">
+            <h3>Add a Review</h3>
+            <div class="rating">
+               <h4>Rating <span class="red">*</span></h4>
+               <i class="fa fa-star disabled" aria-hidden="true"></i>
+               <i class="fa fa-star disabled" aria-hidden="true"></i>
+               <i class="fa fa-star disabled" aria-hidden="true"></i>
+               <i class="fa fa-star disabled" aria-hidden="true"></i>
+               <i class="fa fa-star disabled" aria-hidden="true"></i> 
+            </div>
+            <form class="prd-form">
+               <div class="form-group">
+                  <textarea name="review" placeholder="Review *"></textarea>
+               </div>
+               <div class="form-group">
+                  <button type="submit" class="btn btn-default">Submit</button>
+               </div>
+            </form>
+         </div>
+      </div>
+	</div>
+	</section>
+	<div class="container">
+	<h2 class="sec-title3"><strong>Recommended Products </strong></h2>
+	<section  id="fp">
+	<div class="container">
+      <div class="row">
+         <slick settings="slickrecommendedprocutsConfig" ng-if="RecomendLoaded">
+            <li class="block" ng-repeat="image in recommend">
+               <div class="t-pro">
+                  <figure>
+               <a href="#/productpage/{{image.productId}}"><img data-lazy="{{image.imageURL}}"></a>
+               </figure>
+               <h3> {{image.productName}}</h3>
+               <h4><i class="fa fa-inr" aria-hidden="true"></i> {{image.productPrice}}</h4>
+               <a href="#/productpage/{{image.productId}}" class="va">View Details</a>
+               </div>
+            </li>
+         </slick>
+      </div>
+	</div>
+	</section>
+	</div>
+	<section class="todaydeals rview" >
+	<div class="container">
+      <div class="row">
+         <div class="col-xs-12">
+            <h2 class="sec-title"><strong>Recently Bought</strong></h2>
+            <ul class="all">
+               <slick settings="slickrecentbroughtConfig" ng-if="RecentlyLoaded">
+                  <li ng-repeat="brought in recently">
+                     <div class="t-pro">
+					 <figure>
+                        <a href="#/productpage/{{brought.productId}}"><img data-lazy="{{brought.imageURL}}"></a>
+                        <span class="dis">{{brought.discountPercentage}}% OFF</span>
+                     </figure>
+                     <h3>{{brought.productName}}</h3>
+                     <h4><i class="fa fa-inr" aria-hidden="true"></i> {{brought.productDiscountPrice}}</h4>
+                     <a href="#/productpage/{{brought.productId}}" class="va">View Details</a>
+					 </div>
+                  </li>
+               </slick>
+            </ul>
+         </div>
+      </div>
+	</div>
+	</section>
+
+<script>
+	jQuery(".popup .qtn").click(function(){
+    jQuery(".popuptext").toggle();
+	});
+	$(".login-btn").click(function(){
+		$(".myprofile-block").toggle();
+	});
+</script>

@@ -1,0 +1,19 @@
+  <div class="container">
+         <div class="category-menu" style="display: ;">
+            <ul>
+               <li>
+                  <a class="cat-link">All Categories</a>
+                  <ul class="dropdown bgcover" ng-style="set_bg()">
+                     <li  ng-repeat="x in menuitem" >
+                        <a href="#{{x.url}}" ng-mouseover="mouseOver(x)"> {{ x.title  }}</a>
+                        <ul class="dropdown">
+                           <li ng-repeat="sub in x.subCategory">
+                              <a href="#/{{sub.type}}/{{ x.title  }}{{sub.url}}" ng-mouseover="mouseOver(sub)">{{sub.title}}</a>                            
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </div>

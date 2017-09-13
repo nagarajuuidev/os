@@ -1,0 +1,48 @@
+{
+	"deals": [{
+			"imgurl": "img/prd1.jpg",
+			"title": "Water Tap",
+			"price": "999",
+			"vendor": "Vendor Name",
+			"location": "Hyderabad",
+			"button": "Add to Cart"
+		}, {
+			"imgurl": "img/prd2.jpg",
+			"title": "Cement",
+			"price": "2500",
+			"vendor": "Vendor Name",
+			"location": "Hyderabad",
+			"button": "Add to Cart"
+		}, {
+			"imgurl": "img/prd3.jpg",
+			"title": "Bath Tub",
+			"price": "5550",
+			"vendor": "Vendor Name",
+			"location": "Hyderabad",
+			"button": "Add to Cart"
+		}, {
+			"imgurl": "img/prd3.jpg",
+			"title": "Bath Tub",
+			"price": "5550",
+			"vendor": "Vendor Name",
+			"location": "Hyderabad",
+			"button": "Add to Cart"
+		},
+		{
+			"imgurl": "img/prd2.jpg",
+			"title": "Cement",
+			"price": "250",
+			"vendor": "Vendor Name",
+			"location": "Hyderabad",
+			"button": "Add to Cart"
+		},
+		{
+			"imgurl": "img/prd1.jpg",
+			"title": "Water Tap",
+			"price": "999",
+			"vendor": "Vendor Name",
+			"location": "Hyderabad",
+			"button": "Add to Cart"
+		}
+	]
+}

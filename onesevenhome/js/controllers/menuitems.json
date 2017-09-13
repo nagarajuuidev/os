@@ -1,0 +1,512 @@
+{
+	"categorydata": {
+		"Architects": {
+			"type": "category",
+			"title": "Architects",
+			"url": "/Architects",
+			"sub_category": [{
+					"title": "Civil Architects",
+					"url": "/building_materials/Civil_Architects",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Interior Architects",
+					"url": "sub/building_materials/Interior_Architects",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic2.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+		},
+		"Building Materials": {
+			"type": "category",
+			"title": "Building Materials",
+			"url": "/building_materials",
+			"sub_category": [{
+					"title": "Bricks and Blocks",
+					"url": "/building_materials/bricks_blocks",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Sand & Aggregates",
+					"url": "sub/building_materials/sand_aggregates",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Cement",
+					"url": "/building_materials/cement",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic2.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic1.jpg"
+					}
+				},
+				{
+					"title": "Steel and Iron",
+					"url": "/building_materials/Steel_and_Iron",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic2.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Roofing & wall claddings",
+					"url": "/building_materials/Roofing_wall_claddings",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic1.jpg"
+					}
+				},
+				{
+					"title": "Drainage and Supplies",
+					"url": "/building_materials/Drainage_and_Supplies",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic1.jpg"
+					}
+				},
+				{
+					"title": "Building Metalworks and Tools",
+					"url": "/building_materials/Building_Metalworks_and_Tools",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic1.jpg"
+					}
+				},
+				{
+					"title": "construction safety products",
+					"url": "/building_materials/construction_safety_products",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic1.jpg"
+					}
+				}
+			]
+		},
+		"Doors/Windows and Joinery": {
+			"type": "category",
+			"title": "Doors/Windows and Joinery",
+			"url": "/building_materials",
+			"sub_category": [{
+					"title": "Internal Doors",
+					"url": "/building_materials/Internal_Doors",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic2.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "External Doors",
+					"url": "sub/building_materials/External Doors",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/prd3.jpg"
+					}
+				},
+				{
+					"title": "Door Furniture and accessories",
+					"url": "/building_materials/Door_Furniture_and_accessories",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+
+		},
+		"Shower": {
+			"type": "category",
+			"title": "Shower",
+			"url": "/shower",
+			"sub_category": [{
+					"title": "Bathroom Sets",
+					"url": "/building_materials/bathroom_sets",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Sand & Aggregates2",
+					"url": "sub/building_materials/sand_aggregates",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Cement3",
+					"url": "/building_materials/cement",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+
+		},
+		"Shower Tray1": {
+			"type": "category",
+			"title": "Shower Tray",
+			"url": "/shower_tray",
+			"sub_category": [{
+					"title": "Bathroom Sets",
+					"url": "/building_materials/bathroom_sets",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Sand & Aggregates2",
+					"url": "sub/building_materials/sand_aggregates",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Cement3",
+					"url": "/building_materials/cement",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+
+		},
+		"Shower Tray2": {
+			"type": "category",
+			"title": "Shower Tray2",
+			"url": "/shower_tray2",
+			"sub_category": [{
+					"title": "Bathroom Sets",
+					"url": "/building_materials/bathroom_sets",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Sand & Aggregates2",
+					"url": "sub/building_materials/sand_aggregates",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Cement3",
+					"url": "/building_materials/cement",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+
+		},
+		"Shower Tray9": {
+			"type": "category",
+			"title": "Shower Tray9",
+			"url": "/shower_tray9",
+			"sub_category": [{
+					"title": "Bathroom Sets9",
+					"url": "/building_materials/bathroom_sets9",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Sand & Aggregates2",
+					"url": "sub/building_materials/sand_aggregates",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Cement3",
+					"url": "/building_materials/cement",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+
+		},
+		"Building Materials2": {
+			"type": "category",
+			"title": "Building Materials2",
+			"url": "/building_materials",
+			"sub_category": [{
+					"title": "Bricks and Blocks1",
+					"url": "/building_materials/bricks_blocks",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Sand & Aggregates2",
+					"url": "sub/building_materials/sand_aggregates",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Cement3",
+					"url": "/building_materials/cement",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+
+		},
+
+		"Building Materials3": {
+			"type": "category",
+			"title": "Building Materials3",
+			"url": "/building_materials",
+			"sub_category": [{
+					"title": "Bricks and Blocks3",
+					"url": "/building_materials/bricks_blocks",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Sand 6",
+					"url": "sub/building_materials/sand_aggregates",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Cement6",
+					"url": "/building_materials/cement",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+
+		},
+
+		"Ceiling": {
+			"type": "category",
+			"title": "Ceiling",
+			"url": "/building_materials",
+			"sub_category": [{
+					"title": "False ceiling",
+					"url": "/building_materials/False_ceiling",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Sand 6",
+					"url": "sub/building_materials/sand_aggregates",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Cement6",
+					"url": "/building_materials/cement",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+
+		},
+
+		"Building Materials5": {
+			"type": "category",
+			"title": "Building Materials5",
+			"url": "/building_materials",
+			"sub_category": [{
+					"title": "Bricks and Blocks5",
+					"url": "/building_materials/bricks_blocks",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Sand & Aggregates8",
+					"url": "sub/building_materials/sand_aggregates",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Cement8",
+					"url": "/building_materials/cement",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+
+		},
+
+		"Building Materials15": {
+			"type": "category",
+			"title": "Building Materials15",
+			"url": "/building_materials",
+			"sub_category": [{
+					"title": "Bricks and Blocks5",
+					"url": "/building_materials/bricks_blocks",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Sand & Aggregates8",
+					"url": "sub/building_materials/sand_aggregates",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Cement8",
+					"url": "/building_materials/cement",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+
+		},
+
+		"Building Materials12": {
+			"type": "category",
+			"title": "Building Materials12",
+			"url": "/building_materials",
+			"sub_category": [{
+					"title": "Bricks and Blocks5",
+					"url": "/building_materials/bricks_blocks",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Sand & Aggregates8",
+					"url": "sub/building_materials/sand_aggregates",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "Cement8",
+					"url": "/building_materials/cement",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+
+		},
+
+		"Doors/Windows ": {
+			"type": "category",
+			"title": "Doors/Windows and Joinery",
+			"url": "/doors_windows_joinery",
+			"sub_category": [{
+					"title": "Internal Doors",
+					"url": "/doors_windows_joinery/internal_doors",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				},
+				{
+					"title": "External Doors",
+					"url": "/doors_windows_joinery/external_doors",
+					"type": "sub_category",
+					"images": {
+						"image_1": "http://localhost:9000/images/menu-pic1.jpg",
+						"image_2": "http://localhost:9000/images/menu-pic2.jpg"
+					}
+				}
+			]
+
+
+		}
+	}
+}
